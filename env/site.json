@@ -1,0 +1,16 @@
+{
+  "companyName": { "ko": "루아", "en": "Lua" },
+  "domain": "https://example.com",
+  "contact": { "tel": "02-0000-0000", "fax": "02-0000-0001", "email": "contact@example.com" },
+  "addresses": {
+    "hq": { "ko": "서울특별시 placeholder", "en": "Seoul placeholder", "zip": "00000" }
+  },
+  "maps": {
+    "hq": "https://maps.google.com/maps?q=placeholder&output=embed",
+    "factory1": "https://maps.google.com/maps?q=placeholder&output=embed",
+    "factory2": "https://maps.google.com/maps?q=placeholder&output=embed",
+    "lab": "https://maps.google.com/maps?q=placeholder&output=embed",
+    "overseas": "https://maps.google.com/maps?q=placeholder&output=embed"
+  },
+  "copyright": { "ko": "© 루아. All rights reserved.", "en": "© Lua. All rights reserved." }
+}

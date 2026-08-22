@@ -76,7 +76,7 @@
 | 프레임워크 | Next.js 16.3 App Router + TypeScript |
 | 렌더링 | `output: 'export'` 완전 정적 |
 | 스타일 | Tailwind CSS v4 (CSS-first `@theme`) |
-| i18n | next-intl v4 + `[locale]` + `rootParams` |
+| i18n | next-intl v4 + `[locale]` + `requestLocale` (static export, middleware 없음) |
 | proxy/middleware | **금지** (정적 export 충돌) |
 | `next/image` | `unoptimized: true` |
 | 패키지 매니저 | pnpm workspace |

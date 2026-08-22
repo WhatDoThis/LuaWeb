@@ -1,0 +1,16 @@
+{
+  "_readme": "Prd: Rocky Linux (iwinv). IP/domain 미확정 — 확정 후 publicIp, domain, siteUrl 갱신",
+  "environment": "production",
+  "serverOs": "Rocky Linux 9",
+  "provider": "iwinv",
+  "publicIp": "",
+  "domain": "",
+  "siteUrl": "",
+  "deployRoot": "/var/www/woori-tech/out",
+  "nginxConfig": "deploy/rocky-linux/nginx.conf.example",
+  "ssl": {
+    "enabled": false,
+    "provider": "letsencrypt",
+    "_note": "도메인 확정 후 certbot --nginx 적용"
+  }
+}

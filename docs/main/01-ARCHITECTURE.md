@@ -245,7 +245,7 @@ lib/*
 ```
 Request
   → [locale] segment (URL)
-  → rootParams() in request.ts
+  → requestLocale in request.ts (Next 16.3+: rootParams 미사용)
   → loadMessages(locale)
   → NextIntlClientProvider (layout)
   → useTranslations() / getTranslations()

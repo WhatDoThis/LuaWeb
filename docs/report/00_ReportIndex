@@ -2,8 +2,16 @@
 
 | 파일 | 용도 |
 |---|---|
-| `01_ImplementationRoadmap.md` | **Phase 0~7 상세 구현 로드맵** — 요구사항·아키텍처·스키마·컴포넌트·단계별 작업·검증·커밋을 단일 문서에 통합. Phase별 개발 가이드의 유일한 실행본 |
-| `IMAGE-REQUEST.md` | `pnpm check:images` 실행 시 자동 생성되는 이미지 발주서 (Phase 3 이후) |
+| `01_ImplementationRoadmap.md` | **Phase 0~7 상세 구현 로드맵** — 요구사항·아키텍처·스키마·컴포넌트·단계별 작업·검증·커밋을 단일 문서에 통합 |
+| `02_Phase_0.md` | **Phase 0 실행 가이드** — 모노레포 스캐폴딩 체크리스트·파일 스펙·검증 명령. 개발 진행 시 체크박스 업데이트 |
+| `03_Phase_1.md` | **Phase 1 실행 가이드** — next-intl i18n 배선·Rocky Linux 배포 토대·체크리스트 |
+| `04_Phase_2.md` | **Phase 2 실행 가이드** — Header/GNB/Footer/Sitemap/Modal 공통 레이아웃 |
+| `05_Phase_3.md` | **Phase 3 실행 가이드** — images.json, SmartImage, check:images |
+| `06_Phase_4.md` | **Phase 4 실행 가이드** — IntroHero, LnbBar, SpHead 서브 페이지 골격 |
+| `07_Phase_5.md` | **Phase 5 실행 가이드** — company/technology/management/career 도메인 섹션 14페이지 |
+| `08_Phase_6.md` | **Phase 6 실행 가이드** — JSON 뉴스 게시판 목록/상세/검색/페이지네이션 |
+| `09_Phase_7.md` | **Phase 7 실행 가이드** — 홈 슬라이더·SEO·CI 배포 파이프라인 |
+| `IMAGE-REQUEST.md` | `pnpm check:images` 실행 시 자동 생성되는 이미지 발주서 |
 
 ## main 폴더 (기반 자료)
 

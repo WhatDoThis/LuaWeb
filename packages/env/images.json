@@ -1,0 +1,165 @@
+{
+  "common": {
+    "logo": {
+      "src": "",
+      "size": "180x48",
+      "where": "Header 좌측 로고",
+      "alt": { "ko": "루아 로고", "en": "Lua logo" }
+    },
+    "logoFooter": {
+      "src": "",
+      "size": "160x44",
+      "where": "Footer 로고",
+      "alt": { "ko": "루아 로고", "en": "Lua logo" }
+    },
+    "favicon": {
+      "src": "",
+      "size": "32x32",
+      "where": "favicon.ico 소스"
+    },
+    "ogDefault": {
+      "src": "",
+      "size": "1200x630",
+      "where": "OG 기본 이미지"
+    }
+  },
+  "home": {
+    "heroSlides": [
+      { "src": "", "size": "1920x1080", "where": "메인 히어로 1 / Global Leading" },
+      { "src": "", "size": "1920x1080", "where": "메인 히어로 2 / High-Tech Solution" },
+      { "src": "", "size": "1920x1080", "where": "메인 히어로 3 / Everlasting Innovation" }
+    ],
+    "techCards": [
+      { "src": "", "size": "420x560", "where": "기술카드 슬라이더 1" },
+      { "src": "", "size": "420x560", "where": "기술카드 슬라이더 2" }
+    ],
+    "linkCards": {
+      "prCenter": { "src": "", "size": "440x300", "where": "하단 링크카드 PR Center" },
+      "irCenter": { "src": "", "size": "440x300", "where": "하단 링크카드 IR Center" },
+      "location": { "src": "", "size": "440x300", "where": "하단 링크카드 오시는 길" }
+    },
+    "bizField": {
+      "bg": { "src": "", "size": "1920x600", "where": "사업분야 섹션 배경 (선택)" }
+    }
+  },
+  "company": {
+    "hero": { "src": "", "size": "1920x420", "where": "회사소개 IntroHero 공통" },
+    "greeting": {
+      "portrait": { "src": "", "size": "560x700", "where": "인사말 대표 사진" },
+      "ceoSign": { "src": "", "size": "260x80", "where": "인사말 서명 PNG" }
+    },
+    "overview": {
+      "diagram": { "src": "", "size": "1200x680", "where": "회사개요 조직/사업 다이어그램" }
+    },
+    "history": {
+      "banner": { "src": "", "size": "1200x400", "where": "연혁 상단 배너 (선택)" }
+    },
+    "organizations": {
+      "chart": { "src": "", "size": "1069x760", "where": "조직도 PC" },
+      "chartMobile": { "src": "", "size": "750x1200", "where": "조직도 MO" }
+    },
+    "certificates": {
+      "items": [
+        { "src": "", "size": "400x560", "where": "인증서 썸네일 1" },
+        { "src": "", "size": "400x560", "where": "인증서 썸네일 2" },
+        { "src": "", "size": "400x560", "where": "인증서 썸네일 3" }
+      ]
+    },
+    "location": {
+      "tabs": [
+        { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭1 사진 (선택)" } },
+        { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭2 사진 (선택)" } },
+        { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭3 사진 (선택)" } },
+        { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭4 사진 (선택)" } },
+        { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭5 사진 (선택)" } }
+      ]
+    }
+  },
+  "technology": {
+    "hero": { "src": "", "size": "1920x420", "where": "기술소개 IntroHero 공통" },
+    "tech1": {
+      "hero": { "src": "", "size": "1920x420", "where": "tech-1 IntroHero" },
+      "featureA": { "src": "", "size": "660x420", "where": "tech-1 01 좌측" },
+      "featureB": { "src": "", "size": "660x420", "where": "tech-1 01 우측" },
+      "diagram": { "src": "", "size": "1200x520", "where": "tech-1 02 시스템 구성도" },
+      "process": [
+        { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 1 (선택)" },
+        { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 2 (선택)" },
+        { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 3 (선택)" },
+        { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 4 (선택)" }
+      ]
+    },
+    "tech2": {
+      "hero": { "src": "", "size": "1920x420", "where": "tech-2 IntroHero" },
+      "featureMain": { "src": "", "size": "1200x520", "where": "tech-2 01 메인" },
+      "gallery": [
+        { "src": "", "size": "580x360", "where": "tech-2 갤러리 1" },
+        { "src": "", "size": "580x360", "where": "tech-2 갤러리 2" },
+        { "src": "", "size": "580x360", "where": "tech-2 갤러리 3" }
+      ]
+    }
+  },
+  "management": {
+    "hero": { "src": "", "size": "1920x420", "where": "경영방침 IntroHero" },
+    "policy": {
+      "diagram": { "src": "", "size": "1000x600", "where": "경영방침 다이어그램" }
+    },
+    "ethics": {
+      "banner": { "src": "", "size": "1200x400", "where": "윤리경영 상단" },
+      "icons": [
+        { "src": "", "size": "120x120", "where": "윤리 4원칙 아이콘 1" },
+        { "src": "", "size": "120x120", "where": "윤리 4원칙 아이콘 2" },
+        { "src": "", "size": "120x120", "where": "윤리 4원칙 아이콘 3" },
+        { "src": "", "size": "120x120", "where": "윤리 4원칙 아이콘 4" }
+      ]
+    },
+    "esg": {
+      "banner": { "src": "", "size": "1200x400", "where": "ESG 상단" },
+      "pillars": [
+        { "src": "", "size": "360x240", "where": "ESG 3축 카드 1" },
+        { "src": "", "size": "360x240", "where": "ESG 3축 카드 2" },
+        { "src": "", "size": "360x240", "where": "ESG 3축 카드 3" }
+      ]
+    }
+  },
+  "prCenter": {
+    "hero": { "src": "", "size": "1920x420", "where": "홍보센터 IntroHero" },
+    "news": {
+      "hero": { "src": "", "size": "1920x420", "where": "뉴스 목록 IntroHero" }
+    },
+    "disclosure": {
+      "hero": { "src": "", "size": "1920x420", "where": "공시정보 IntroHero (미사용)" }
+    }
+  },
+  "career": {
+    "hero": { "src": "", "size": "1920x420", "where": "채용정보 IntroHero" },
+    "recruitment": {
+      "diagram": { "src": "", "size": "1000x500", "where": "인재상 다이어그램" },
+      "process": [
+        { "src": "", "size": "200x200", "where": "채용 프로세스 1단계" },
+        { "src": "", "size": "200x200", "where": "채용 프로세스 2단계" },
+        { "src": "", "size": "200x200", "where": "채용 프로세스 3단계" },
+        { "src": "", "size": "200x200", "where": "채용 프로세스 4단계" },
+        { "src": "", "size": "200x200", "where": "채용 프로세스 5단계" }
+      ]
+    },
+    "welfare": {
+      "icons": [
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 1" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 2" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 3" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 4" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 5" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 6" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 7" },
+        { "src": "", "size": "120x120", "where": "복리후생 아이콘 8" }
+      ]
+    },
+    "certificates": {
+      "items": [
+        { "src": "", "size": "400x560", "where": "채용 인증서 1" },
+        { "src": "", "size": "400x560", "where": "채용 인증서 2" }
+      ]
+    }
+  }
+}

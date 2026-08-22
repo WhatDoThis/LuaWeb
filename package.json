@@ -1,0 +1,17 @@
+{
+  "name": "woori-tech-site",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "lint": "turbo lint",
+    "check:images": "tsx scripts/check-images.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4",
+    "turbo": "^2",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@9.15.9"
+}

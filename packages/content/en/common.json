@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "company": {
+      "label": "Company",
+      "greeting": "CEO Message",
+      "overview": "Overview",
+      "history": "History",
+      "organizations": "Organization",
+      "certificates": "Certificates",
+      "location": "Location"
+    },
+    "technology": {
+      "label": "Technology",
+      "tech1": "Technology 1",
+      "tech2": "Technology 2"
+    },
+    "management": {
+      "label": "Management",
+      "policy": "Management Policy",
+      "ethics": "Ethics",
+      "esg": "ESG"
+    },
+    "prCenter": {
+      "label": "PR Center",
+      "news": "News & Notice"
+    },
+    "career": {
+      "label": "Careers",
+      "recruitment": "Recruitment",
+      "welfare": "Benefits",
+      "certificates": "Certificate Request"
+    }
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "address": "Address",
+    "tel": "Tel",
+    "fax": "Fax",
+    "copyright": "Copyright © Lua. All rights reserved."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "body": "Privacy policy placeholder content. Replace with the official policy before launch."
+  },
+  "lang": {
+    "ko": "KOR",
+    "en": "ENG"
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "board": {
+    "notice": "Notice",
+    "news": "News",
+    "searchPlaceholder": "Enter search keyword",
+    "search": "Search",
+    "noResults": "No results found",
+    "prev": "Previous",
+    "next": "Next",
+    "number": "No.",
+    "titleCol": "Title",
+    "dateCol": "Date",
+    "categoryCol": "Category",
+    "pinned": "PIN",
+    "backToList": "Back to list",
+    "disclosureDart": "DART",
+    "disclosurePdf": "PDF"
+  },
+  "layout": {
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "topButton": "Back to top"
+  }
+}

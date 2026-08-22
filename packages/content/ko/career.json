@@ -1,0 +1,55 @@
+{
+  "meta": { "sectionTag": "CAREER", "sectionTitle": "채용정보" },
+  "lnb": {
+    "recruitment": "채용안내",
+    "welfare": "복리후생",
+    "certificates": "증명서 발급"
+  },
+  "pages": {
+    "recruitment": {
+      "tag": "RECRUITMENT",
+      "title": "채용안내",
+      "desc": "인재상 및 채용 절차를 안내합니다.",
+      "body": [
+        "루아는 도전과 혁신을 즐기는 인재를 환영합니다.",
+        "전문성과 협업 능력을 갖춘 인재와 함께 성장하고자 합니다."
+      ],
+      "steps": [
+        { "step": "01", "title": "서류 전형", "body": "이력서·자기소개서 접수 및 검토" },
+        { "step": "02", "title": "1차 면접", "body": "직무 및 인성 면접" },
+        { "step": "03", "title": "2차 면접", "body": "임원 면접 및 최종 검토" },
+        { "step": "04", "title": "처우 협의", "body": "연봉·복리후생 조건 협의" },
+        { "step": "05", "title": "입사", "body": "입사 일정 조율 및 온보딩" }
+      ]
+    },
+    "welfare": {
+      "tag": "WELFARE",
+      "title": "복리후생",
+      "desc": "루아의 복리후생 제도입니다.",
+      "intro": [
+        "루아는 임직원의 삶의 질 향상을 위해 다양한 복리후생 제도를 운영합니다."
+        ],
+      "items": [
+        { "title": "4대 보험", "body": "국민연금, 건강보험, 고용보험, 산재보험" },
+        { "title": "퇴직연금", "body": "DC형 퇴직연금 제도" },
+        { "title": "건강검진", "body": "연 1회 종합 건강검진 지원" },
+        { "title": "교육 지원", "body": "직무·어학 교육비 지원" },
+        { "title": "경조사", "body": "경조금 및 경조휴가" },
+        { "title": "자기계발", "body": "도서 구입비 및 학습 지원" },
+        { "title": "휴가", "body": "연차·Refresh 휴가" },
+        { "title": "사내 동호회", "body": "동호회 활동비 지원" }
+      ]
+    },
+    "certificates": {
+      "tag": "CERTIFICATES",
+      "title": "증명서 발급",
+      "desc": "채용 관련 증명서 발급 안내입니다.",
+      "downloadLabel": "증명서 발급 안내 PDF 다운로드",
+      "downloadHref": "/static/downloads/certificate-guide.pdf",
+      "items": [
+        { "name": "재직증명서", "issuer": "인사팀 발급" },
+        { "name": "경력증명서", "issuer": "인사팀 발급" }
+      ]
+    }
+  }
+}

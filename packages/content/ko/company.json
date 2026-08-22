@@ -1,0 +1,120 @@
+{
+  "meta": { "sectionTag": "COMPANY", "sectionTitle": "회사소개" },
+  "lnb": {
+    "greeting": "CEO 인사말",
+    "overview": "회사개요",
+    "history": "연혁",
+    "organizations": "조직도",
+    "certificates": "인증현황",
+    "location": "찾아오시는 길"
+  },
+  "locationLabels": {
+    "address": "주소",
+    "tel": "전화",
+    "fax": "팩스",
+    "directions": "오시는 길",
+    "tabsAria": "사업장 위치 탭"
+  },
+  "pages": {
+    "greeting": {
+      "tag": "GREETING",
+      "title": "CEO 인사말",
+      "desc": "루아를 방문해 주셔서 감사합니다.",
+      "body": [
+        "안녕하십니까. 루아 대표이사입니다. 저희 홈페이지를 방문해 주신 여러분께 진심으로 감사드립니다.",
+        "루아는 첨단 기술 기반의 솔루션을 통해 산업 현장의 디지털 전환을 선도하고 있습니다. 고객과의 신뢰를 최우선 가치로 삼아 지속 가능한 성장을 추구합니다.",
+        "앞으로도 혁신적인 R&D 투자와 글로벌 파트너십을 확대하여, 더 나은 미래를 만들어가는 기업이 되겠습니다.",
+        "여러분의 변함없는 관심과 성원을 부탁드립니다. 감사합니다."
+      ]
+    },
+    "overview": {
+      "tag": "OVERVIEW",
+      "title": "회사개요",
+      "desc": "회사 개요 및 사업 영역을 소개합니다.",
+      "tables": [
+        [
+          { "label": "회사명", "value": "주식회사 루아" },
+          { "label": "설립일", "value": "2000년 1월" },
+          { "label": "대표이사", "value": "홍길동" },
+          { "label": "본사", "value": "서울특별시 placeholder" }
+        ],
+        [
+          { "label": "주요 사업", "value": "산업용 제어 시스템, IoT 플랫폼, 스마트 팩토리 솔루션" },
+          { "label": "종업원 수", "value": "500명 (2025년 기준)" },
+          { "label": "매출액", "value": "1,000억 원 (2024년)" },
+          { "label": "해외 법인", "value": "미국, 유럽, 동남아" }
+        ]
+      ]
+    },
+    "history": {
+      "tag": "HISTORY",
+      "title": "연혁",
+      "desc": "루아의 성장 역사입니다.",
+      "events": [
+        { "year": "2000", "items": ["루아 설립", "산업용 제어 시스템 사업 시작"] },
+        { "year": "2005", "items": ["ISO 9001 인증 취득", "연구소 설립"] },
+        { "year": "2010", "items": ["스마트 팩토리 사업부 신설", "해외 법인 설립"] },
+        { "year": "2015", "items": ["IoT 플랫폼 출시", "국내 대기업 납품 계약"] },
+        { "year": "2020", "items": ["ESG 경영 선언", "글로벌 R&D 센터 개소"] },
+        { "year": "2025", "items": ["차세대 제어 시스템 v2.0 출시", "매출 1,000억 원 달성"] }
+      ]
+    },
+    "organizations": {
+      "tag": "ORGANIZATION",
+      "title": "조직도",
+      "desc": "조직 구조를 안내합니다."
+    },
+    "certificates": {
+      "tag": "CERTIFICATES",
+      "title": "인증현황",
+      "desc": "보유 인증 및 수상 내역입니다.",
+      "items": [
+        { "name": "ISO 9001", "issuer": "품질경영시스템" },
+        { "name": "ISO 14001", "issuer": "환경경영시스템" },
+        { "name": "ISO 45001", "issuer": "안전보건경영" }
+      ]
+    },
+    "location": {
+      "tag": "LOCATION",
+      "title": "찾아오시는 길",
+      "desc": "본사 및 사업장 위치 안내입니다.",
+      "tabs": [
+        {
+          "id": "hq",
+          "label": "본사",
+          "mapKey": "hq",
+          "address": "서울특별시 placeholder (우)00000",
+          "directions": "지하철 2호선 placeholder역 3번 출구 도보 5분"
+        },
+        {
+          "id": "factory1",
+          "label": "1공장",
+          "mapKey": "factory1",
+          "address": "경기도 placeholder 1공장",
+          "directions": "경부고속도로 placeholder IC에서 10분"
+        },
+        {
+          "id": "factory2",
+          "label": "2공장",
+          "mapKey": "factory2",
+          "address": "경기도 placeholder 2공장",
+          "directions": "경부고속도로 placeholder IC에서 15분"
+        },
+        {
+          "id": "lab",
+          "label": "연구소",
+          "mapKey": "lab",
+          "address": "경기도 placeholder 연구단지",
+          "directions": "placeholder 연구단지 정문 이용"
+        },
+        {
+          "id": "overseas",
+          "label": "해외",
+          "mapKey": "overseas",
+          "address": "Overseas Office placeholder",
+          "directions": "Contact HQ for visit arrangements"
+        }
+      ]
+    }
+  }
+}

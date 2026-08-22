@@ -1,0 +1,44 @@
+# Woori Tech — nginx 정적 호스팅 (Rocky Linux / iwinv)
+#
+# 적용: sudo cp nginx.conf.example /etc/nginx/conf.d/woori-tech.conf
+# 수정: server_name, root 경로를 실제 도메인·IP에 맞게 교체
+#
+# Prd placeholder — IP·도메인 확정 후 아래 값 변경:
+#   server_name  YOUR_DOMAIN www.YOUR_DOMAIN;
+#   root         /var/www/woori-tech/out;
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    # TODO(Prd): 도메인 확정 시 교체 — 예: www.wooritech.com
+    server_name _;
+
+    root /var/www/woori-tech/out;
+    index index.html;
+
+    # trailingSlash: true — /ko/ 형태
+    location / {
+        try_files $uri $uri/ $uri/index.html =404;
+    }
+
+    # 정적 자산 캐시
+    location /_next/static/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    location /static/ {
+        expires 30d;
+        add_header Cache-Control "public";
+    }
+
+    # 보안 헤더 (기본)
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+
+    access_log /var/log/nginx/woori-tech.access.log;
+    error_log  /var/log/nginx/woori-tech.error.log;
+}
+
+# TODO(Prd): certbot 적용 후 HTTPS server 블록 추가

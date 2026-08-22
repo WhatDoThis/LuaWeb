@@ -1,0 +1,55 @@
+{
+  "meta": { "sectionTag": "CAREER", "sectionTitle": "Careers" },
+  "lnb": {
+    "recruitment": "Recruitment",
+    "welfare": "Benefits",
+    "certificates": "Certificates"
+  },
+  "pages": {
+    "recruitment": {
+      "tag": "RECRUITMENT",
+      "title": "Recruitment",
+      "desc": "Our ideal talent profile and hiring process.",
+      "body": [
+        "Lua welcomes talent who embrace challenge and innovation.",
+        "We seek to grow together with professionals who excel in collaboration."
+      ],
+      "steps": [
+        { "step": "01", "title": "Document Screening", "body": "Resume and cover letter review" },
+        { "step": "02", "title": "1st Interview", "body": "Job and personality interview" },
+        { "step": "03", "title": "2nd Interview", "body": "Executive interview and final review" },
+        { "step": "04", "title": "Offer", "body": "Salary and benefits negotiation" },
+        { "step": "05", "title": "Onboarding", "body": "Start date coordination and onboarding" }
+      ]
+    },
+    "welfare": {
+      "tag": "WELFARE",
+      "title": "Employee Benefits",
+      "desc": "Lua employee benefit programs.",
+      "intro": [
+        "Lua operates various benefit programs to improve employees' quality of life."
+      ],
+      "items": [
+        { "title": "Social Insurance", "body": "National pension, health, employment, industrial accident" },
+        { "title": "Retirement Pension", "body": "Defined contribution pension plan" },
+        { "title": "Health Checkup", "body": "Annual comprehensive health screening" },
+        { "title": "Education", "body": "Job and language training support" },
+        { "title": "Family Events", "body": "Congratulatory payments and leave" },
+        { "title": "Self-Development", "body": "Book purchase and learning support" },
+        { "title": "Leave", "body": "Annual and refresh leave" },
+        { "title": "Clubs", "body": "Employee club activity support" }
+      ]
+    },
+    "certificates": {
+      "tag": "CERTIFICATES",
+      "title": "Certificate Issuance",
+      "desc": "Guide for employment-related certificates.",
+      "downloadLabel": "Download Certificate Guide (PDF)",
+      "downloadHref": "/static/downloads/certificate-guide.pdf",
+      "items": [
+        { "name": "Employment Certificate", "issuer": "Issued by HR" },
+        { "name": "Career Certificate", "issuer": "Issued by HR" }
+      ]
+    }
+  }
+}

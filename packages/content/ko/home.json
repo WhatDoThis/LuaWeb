@@ -1,0 +1,50 @@
+{
+  "title": "루아",
+  "localeLabel": "현재 언어",
+  "meta": {
+    "description": "루아 — 산업용 제어 시스템, IoT 플랫폼, 스마트 팩토리 솔루션"
+  },
+  "hero": {
+    "slides": [
+      { "title": "Global Leading", "subtitle": "세계를 선도하는 기술 혁신" },
+      { "title": "High-Tech Solution", "subtitle": "첨단 산업 솔루션 제공" },
+      { "title": "Everlasting Innovation", "subtitle": "지속 가능한 미래를 만들어갑니다" }
+    ],
+    "prev": "이전 슬라이드",
+    "next": "다음 슬라이드"
+  },
+  "techCards": [
+    { "title": "스마트 제어 시스템", "href": "/technology/tech-1" },
+    { "title": "IoT 플랫폼", "href": "/technology/tech-2" }
+  ],
+  "bizFields": [
+    { "title": "산업용 제어", "desc": "PLC·SCADA 기반 공장 자동화" },
+    { "title": "IoT 플랫폼", "desc": "디바이스 연결 및 데이터 통합" },
+    { "title": "스마트 팩토리", "desc": "디지털 전환 컨설팅·구축" },
+    { "title": "에너지 솔루션", "desc": "에너지 모니터링·최적화" },
+    { "title": "글로벌 서비스", "desc": "해외 법인·파트너 네트워크" },
+    { "title": "R&D", "desc": "차세대 기술 연구개발" }
+  ],
+  "sections": {
+    "technology": { "tag": "TECHNOLOGY", "title": "핵심 기술" },
+    "news": { "tag": "NEWS", "title": "최신 소식", "more": "더보기" },
+    "links": { "tag": "LINKS", "title": "바로가기" }
+  },
+  "linkCards": {
+    "prCenter": {
+      "title": "PR Center",
+      "desc": "뉴스 및 공지사항",
+      "href": "/pr-center/news"
+    },
+    "irCenter": {
+      "title": "IR Center",
+      "desc": "투자자 정보 (준비 중)",
+      "href": "https://example.com/ir"
+    },
+    "location": {
+      "title": "오시는 길",
+      "desc": "본사 및 사업장 안내",
+      "href": "/company/location"
+    }
+  }
+}

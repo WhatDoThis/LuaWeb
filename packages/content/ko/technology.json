@@ -1,0 +1,63 @@
+{
+  "meta": { "sectionTag": "TECHNOLOGY", "sectionTitle": "기술소개" },
+  "lnb": { "tech1": "기술 소개 1", "tech2": "기술 소개 2" },
+  "pages": {
+    "tech1": {
+      "tag": "TECHNOLOGY 01",
+      "title": "스마트 제어 시스템",
+      "desc": "산업 현장을 위한 통합 제어 솔루션입니다.",
+      "intro": "루아의 스마트 제어 시스템은 실시간 데이터 수집·분석·제어를 하나의 플랫폼에서 제공합니다. 다양한 산업 환경에 맞춤형으로 구성할 수 있습니다.",
+      "sections": [
+        {
+          "number": "01",
+          "title": "핵심 기능",
+          "body": [
+            "실시간 모니터링과 원격 제어를 지원하며, 다중 설비를 통합 관리합니다.",
+            "엣지 컴퓨팅 기반의 빠른 응답 속도로 현장 안정성을 확보합니다."
+          ],
+          "layout": "split",
+          "images": ["featureA", "featureB"]
+        },
+        {
+          "number": "02",
+          "title": "시스템 구성도",
+          "body": "센서, PLC, SCADA, 클라우드가 유기적으로 연결된 end-to-end 아키텍처를 제공합니다.",
+          "layout": "full",
+          "images": ["diagram"]
+        },
+        {
+          "number": "03",
+          "title": "적용 분야",
+          "body": [
+            "반도체·디스플레이·자동차 등 제조업 전반",
+            "에너지·유틸리티 인프라 모니터링",
+            "스마트 빌딩 및 물류 자동화"
+          ],
+          "layout": "text"
+        }
+      ]
+    },
+    "tech2": {
+      "tag": "TECHNOLOGY 02",
+      "title": "IoT 플랫폼",
+      "desc": "연결된 디바이스와 데이터를 통합 관리하는 IoT 플랫폼입니다.",
+      "intro": "루아 IoT 플랫폼은 수많은 디바이스의 연결, 데이터 수집, 분석, 시각화를 지원합니다. 확장 가능한 마이크로서비스 아키텍처 기반으로 구축되었습니다.",
+      "sections": [
+        {
+          "number": "01",
+          "title": "플랫폼 개요",
+          "body": "디바이스 온보딩부터 대시보드까지 전 과정을 웹 기반으로 관리할 수 있습니다. REST API와 MQTT 프로토콜을 모두 지원합니다.",
+          "layout": "full",
+          "images": ["featureMain"]
+        },
+        {
+          "number": "02",
+          "title": "현장 적용 사례",
+          "body": "국내외 다수의 스마트 팩토리 및 에너지 현장에 적용되어 운영 중입니다.",
+          "layout": "gallery",
+          "images": ["gallery.0", "gallery.1", "gallery.2"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+---
+description: Woori Tech 모노레포·정적 export·import·i18n 금지 목록
+globs: apps/**/*.{ts,tsx},packages/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Monorepo & Static Export
+
+## Import (R-01~R-05)
+
+- `packages/*` → `apps/*` import 금지
+- `ui/*` → `sections/*` import 금지
+- domain 간 `sections/*` cross-import 금지
+- `apps/web` → `@repo/env`, `@repo/content` only (via lib or i18n)
+
+## 금지
+
+- `middleware.ts`, `proxy.ts`, `app/api/*`
+- `next/image` optimization (use SmartImage Phase 3+)
+- disclosure GNB 활성화 (승인 전)
+- technology 페이지 CTA
+- UI 문자열·이미지 경로 하드코딩 (JSON만)
+
+## i18n
+
+- 앱 코드: `@/lib/i18n`만 import (`src/i18n/**` 내부 제외)
+- `[locale]/layout.tsx`: `<html lang={locale}>`
+- static export: `requestLocale` (not rootParams)
+
+## Dev / Prd
+
+- Dev: Windows local (`pnpm dev`)
+- Prd: Rocky Linux iwinv — `deploy/`, `packages/env/deploy.json`, IP/domain 확정 후 갱신

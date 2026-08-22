@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "company": {
+      "label": "회사소개",
+      "greeting": "CEO 인사말",
+      "overview": "회사개요",
+      "history": "연혁",
+      "organizations": "조직도",
+      "certificates": "인증현황",
+      "location": "찾아오시는 길"
+    },
+    "technology": {
+      "label": "기술소개",
+      "tech1": "기술 소개 1",
+      "tech2": "기술 소개 2"
+    },
+    "management": {
+      "label": "경영방침",
+      "policy": "경영방침",
+      "ethics": "윤리경영",
+      "esg": "ESG 경영"
+    },
+    "prCenter": {
+      "label": "홍보센터",
+      "news": "뉴스&공지"
+    },
+    "career": {
+      "label": "채용정보",
+      "recruitment": "채용안내",
+      "welfare": "복리후생",
+      "certificates": "증명서 발급"
+    }
+  },
+  "footer": {
+    "privacy": "개인정보처리방침",
+    "address": "주소",
+    "tel": "대표전화",
+    "fax": "팩스",
+    "copyright": "Copyright © 루아. All rights reserved."
+  },
+  "privacy": {
+    "title": "개인정보처리방침",
+    "body": "개인정보처리방침 내용 placeholder입니다. 추후 운영 정책에 맞게 교체합니다."
+  },
+  "lang": {
+    "ko": "KOR",
+    "en": "ENG"
+  },
+  "breadcrumb": {
+    "home": "홈"
+  },
+  "board": {
+    "notice": "공지",
+    "news": "뉴스",
+    "searchPlaceholder": "검색어를 입력하세요",
+    "search": "검색",
+    "noResults": "검색 결과가 없습니다",
+    "prev": "이전",
+    "next": "다음",
+    "number": "번호",
+    "titleCol": "제목",
+    "dateCol": "날짜",
+    "categoryCol": "구분",
+    "pinned": "고정",
+    "backToList": "목록으로",
+    "disclosureDart": "DART",
+    "disclosurePdf": "PDF"
+  },
+  "layout": {
+    "menuOpen": "전체 메뉴 열기",
+    "menuClose": "전체 메뉴 닫기",
+    "topButton": "맨 위로"
+  }
+}

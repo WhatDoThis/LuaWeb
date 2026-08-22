@@ -1,0 +1,63 @@
+{
+  "meta": { "sectionTag": "TECHNOLOGY", "sectionTitle": "Technology" },
+  "lnb": { "tech1": "Technology 1", "tech2": "Technology 2" },
+  "pages": {
+    "tech1": {
+      "tag": "TECHNOLOGY 01",
+      "title": "Smart Control System",
+      "desc": "Integrated control solution for industrial sites.",
+      "intro": "Lua's smart control system provides real-time data collection, analysis, and control on a single platform. It can be customized for various industrial environments.",
+      "sections": [
+        {
+          "number": "01",
+          "title": "Core Features",
+          "body": [
+            "Supports real-time monitoring and remote control with unified multi-equipment management.",
+            "Edge computing ensures fast response and on-site stability."
+          ],
+          "layout": "split",
+          "images": ["featureA", "featureB"]
+        },
+        {
+          "number": "02",
+          "title": "System Architecture",
+          "body": "Provides an end-to-end architecture connecting sensors, PLC, SCADA, and cloud seamlessly.",
+          "layout": "full",
+          "images": ["diagram"]
+        },
+        {
+          "number": "03",
+          "title": "Applications",
+          "body": [
+            "Manufacturing: semiconductor, display, automotive",
+            "Energy and utility infrastructure monitoring",
+            "Smart building and logistics automation"
+          ],
+          "layout": "text"
+        }
+      ]
+    },
+    "tech2": {
+      "tag": "TECHNOLOGY 02",
+      "title": "IoT Platform",
+      "desc": "IoT platform for unified device and data management.",
+      "intro": "Lua IoT Platform supports device connectivity, data collection, analysis, and visualization. Built on a scalable microservices architecture.",
+      "sections": [
+        {
+          "number": "01",
+          "title": "Platform Overview",
+          "body": "Manage the entire lifecycle from device onboarding to dashboards via web interface. Supports both REST API and MQTT protocols.",
+          "layout": "full",
+          "images": ["featureMain"]
+        },
+        {
+          "number": "02",
+          "title": "Field Applications",
+          "body": "Deployed and operating at numerous smart factory and energy sites domestically and internationally.",
+          "layout": "gallery",
+          "images": ["gallery.0", "gallery.1", "gallery.2"]
+        }
+      ]
+    }
+  }
+}

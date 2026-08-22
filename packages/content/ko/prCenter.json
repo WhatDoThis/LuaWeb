@@ -1,0 +1,32 @@
+{
+  "meta": { "sectionTag": "PR CENTER", "sectionTitle": "홍보센터" },
+  "lnb": { "news": "뉴스&공지" },
+  "pages": {
+    "news": { "tag": "NEWS", "title": "뉴스&공지", "desc": "루아의 최신 소식입니다." }
+  },
+  "disclosure": {
+    "tag": "DISCLOSURE",
+    "title": "공시정보",
+    "desc": "공시정보 페이지 (미연결)",
+    "items": [
+      {
+        "date": "2026-08-01",
+        "title": "2026년 2분기 경영실적 공시",
+        "url": "https://dart.fss.or.kr/",
+        "type": "dart"
+      },
+      {
+        "date": "2026-05-15",
+        "title": "2025년 사업보고서",
+        "url": "/static/downloads/annual-report-2025.pdf",
+        "type": "pdf"
+      },
+      {
+        "date": "2026-03-20",
+        "title": "정기 주주총회 결과 공시",
+        "url": "https://dart.fss.or.kr/",
+        "type": "dart"
+      }
+    ]
+  }
+}

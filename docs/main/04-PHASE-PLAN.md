@@ -6,7 +6,7 @@
 | Phase | 한 줄 요약 |
 |---|---|
 | 0 | 모노레포 스캐폴딩, 17 라우트, Tailwind v4 |
-| 1 | next-intl + rootParams i18n |
+| 1 | next-intl + requestLocale i18n |
 | 2 | Header/GNB/Footer/Sitemap/Modal |
 | 3 | env + SmartImage + check:images |
 | 4 | IntroHero + LnbBar + SpHead 서브 골격 |

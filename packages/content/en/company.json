@@ -1,0 +1,120 @@
+{
+  "meta": { "sectionTag": "COMPANY", "sectionTitle": "About Us" },
+  "lnb": {
+    "greeting": "CEO Message",
+    "overview": "Overview",
+    "history": "History",
+    "organizations": "Organization",
+    "certificates": "Certifications",
+    "location": "Location"
+  },
+  "locationLabels": {
+    "address": "Address",
+    "tel": "Tel",
+    "fax": "Fax",
+    "directions": "Directions",
+    "tabsAria": "Location tabs"
+  },
+  "pages": {
+    "greeting": {
+      "tag": "GREETING",
+      "title": "CEO Message",
+      "desc": "Thank you for visiting Lua.",
+      "body": [
+        "Welcome to Lua. I sincerely thank you for visiting our website.",
+        "Lua leads industrial digital transformation through advanced technology solutions. We prioritize trust with our customers and pursue sustainable growth.",
+        "We will continue to invest in innovative R&D and expand global partnerships to build a better future.",
+        "Thank you for your continued support."
+      ]
+    },
+    "overview": {
+      "tag": "OVERVIEW",
+      "title": "Company Overview",
+      "desc": "Company profile and business areas.",
+      "tables": [
+        [
+          { "label": "Company", "value": "Lua Co., Ltd." },
+          { "label": "Founded", "value": "January 2000" },
+          { "label": "CEO", "value": "John Doe" },
+          { "label": "Headquarters", "value": "Seoul, Korea (placeholder)" }
+        ],
+        [
+          { "label": "Main Business", "value": "Industrial control systems, IoT platform, smart factory solutions" },
+          { "label": "Employees", "value": "500 (as of 2025)" },
+          { "label": "Revenue", "value": "KRW 100B (2024)" },
+          { "label": "Overseas Offices", "value": "USA, Europe, Southeast Asia" }
+        ]
+      ]
+    },
+    "history": {
+      "tag": "HISTORY",
+      "title": "History",
+      "desc": "The growth history of Lua.",
+      "events": [
+        { "year": "2000", "items": ["Lua founded", "Industrial control systems business launched"] },
+        { "year": "2005", "items": ["ISO 9001 certified", "R&D center established"] },
+        { "year": "2010", "items": ["Smart factory division created", "Overseas subsidiary established"] },
+        { "year": "2015", "items": ["IoT platform released", "Major domestic enterprise contracts"] },
+        { "year": "2020", "items": ["ESG management declared", "Global R&D center opened"] },
+        { "year": "2025", "items": ["Next-gen control system v2.0 released", "KRW 100B revenue achieved"] }
+      ]
+    },
+    "organizations": {
+      "tag": "ORGANIZATION",
+      "title": "Organization",
+      "desc": "Our organizational structure."
+    },
+    "certificates": {
+      "tag": "CERTIFICATES",
+      "title": "Certifications",
+      "desc": "Certifications and awards.",
+      "items": [
+        { "name": "ISO 9001", "issuer": "Quality Management System" },
+        { "name": "ISO 14001", "issuer": "Environmental Management System" },
+        { "name": "ISO 45001", "issuer": "Occupational Health & Safety" }
+      ]
+    },
+    "location": {
+      "tag": "LOCATION",
+      "title": "Location",
+      "desc": "Headquarters and office locations.",
+      "tabs": [
+        {
+          "id": "hq",
+          "label": "Headquarters",
+          "mapKey": "hq",
+          "address": "Seoul placeholder (Zip 00000)",
+          "directions": "5 min walk from placeholder Station, Exit 3"
+        },
+        {
+          "id": "factory1",
+          "label": "Plant 1",
+          "mapKey": "factory1",
+          "address": "Gyeonggi-do placeholder Plant 1",
+          "directions": "10 min from placeholder IC on Gyeongbu Expressway"
+        },
+        {
+          "id": "factory2",
+          "label": "Plant 2",
+          "mapKey": "factory2",
+          "address": "Gyeonggi-do placeholder Plant 2",
+          "directions": "15 min from placeholder IC on Gyeongbu Expressway"
+        },
+        {
+          "id": "lab",
+          "label": "R&D Center",
+          "mapKey": "lab",
+          "address": "Gyeonggi-do placeholder Research Complex",
+          "directions": "Use main gate of placeholder Research Complex"
+        },
+        {
+          "id": "overseas",
+          "label": "Overseas",
+          "mapKey": "overseas",
+          "address": "Overseas Office placeholder",
+          "directions": "Contact HQ for visit arrangements"
+        }
+      ]
+    }
+  }
+}

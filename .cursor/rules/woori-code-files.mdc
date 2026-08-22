@@ -1,0 +1,21 @@
+---
+description: Woori Tech 파일 헤더·Server-Client·Tailwind v4
+globs: apps/**/*.{ts,tsx},packages/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Code Files
+
+## Docstring (모든 .ts/.tsx 상단, 한국어)
+
+ModuleName(요약) → [Main Functions] → [Dependencies]. 함수에 `# 1.` 번호 주석.
+
+## Server / Client
+
+- 기본 Server. `'use client'` 허용 목록: `05-CONVENTIONS.md` §2
+- Client에 content JSON 전체 pass 금지 — primitive/string만
+
+## Tailwind v4
+
+- `globals.css` `@theme` only — `tailwind.config.js` 없음
+- `cn()` via `@/lib/cn` (clsx + tailwind-merge)

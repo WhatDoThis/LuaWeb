@@ -1,0 +1,28 @@
+---
+description: Woori Tech Phase 기반 개발 워크플로 — report·체크리스트·에이전트 검수 루프
+alwaysApply: true
+---
+
+# Phase Workflow
+
+## 문서·빌드
+
+- 실행본: `docs/report/0N_Phase_N.md`
+- Phase 시작: 선행 Phase 사용자 확인 후 다음 Phase 문서 생성
+- 진행 중: Phase 문서 체크박스 `[ ]` → `[x]` 업데이트
+- 게이트: `pnpm typecheck && pnpm build` 통과 → 문서 `완료`, `docs/log/log.md` 갱신
+- 커밋: 사용자 요청 시에만
+
+## 코드 생성 루프 (필수)
+
+1. **메인**: Phase 구현 + 빌드 검증
+2. **검토 에이전트** (`explore`, thoroughness: very thorough): 구현 완료 직후 전용 검수 — 이슈·심각도·수정 필요 여부 보고
+3. **분기**
+   - 후속 처리 필요 → **리팩토링 에이전트** (`generalPurpose`): 검수 이슈만 최소 수정 → **다시 2.** 반복
+   - 후속 처리 불필요 → **4.** 완료 보고
+
+## 완료 보고 (메인 → 사용자)
+
+- 수정사항 확인 질문 **금지**
+- 간략 요약: 구현 범위 + 검수 결과 (+ 리팩토링 했으면 처리 요약)
+- **다음 Phase 진행 여부만** 질문
