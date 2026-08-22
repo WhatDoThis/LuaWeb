@@ -2,10 +2,18 @@
 
 ## Log Index
 
+3. 2026-08-22 GitHub 원격 저장소 초기 푸시
 2. 2026-08-22 Phase별 상세 구현 로드맵 작성 및 docs 구조 재편
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+3. 2026-08-22 GitHub 원격 저장소 초기 푸시
+Purpose: 로컬 프로젝트를 GitHub 원격 저장소에 최초 등록 및 main 브랜치 푸시 Changes:
+
+.gitignore: Node/Next.js/pnpm 빌드·의존성·환경변수 제외 규칙 추가
+git init, initial commit, origin remote 설정, main 푸시 완료
+Changed files: .gitignore, docs/log/log.md
 
 2. 2026-08-22 Phase별 상세 구현 로드맵 작성 및 docs 구조 재편
 Purpose: 단일 자립형 Phase 0~7 개발 가이드 작성. 기존 00~05 문서를 main으로 이동 Changes:
