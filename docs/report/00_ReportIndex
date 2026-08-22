@@ -1,0 +1,17 @@
+# Report Index
+
+| 파일 | 용도 |
+|---|---|
+| `01_ImplementationRoadmap.md` | **Phase 0~7 상세 구현 로드맵** — 요구사항·아키텍처·스키마·컴포넌트·단계별 작업·검증·커밋을 단일 문서에 통합. Phase별 개발 가이드의 유일한 실행본 |
+| `IMAGE-REQUEST.md` | `pnpm check:images` 실행 시 자동 생성되는 이미지 발주서 (Phase 3 이후) |
+
+## main 폴더 (기반 자료)
+
+| 파일 | 용도 |
+|---|---|
+| `main/00-PRD.md` | 제품 요구사항 원본 |
+| `main/01-ARCHITECTURE.md` | 아키텍처·디렉터리 트리 원본 |
+| `main/02-COMPONENT-SPEC.md` | UI 12패턴 props 명세 원본 |
+| `main/03-CONTENT-SCHEMA.md` | JSON 스키마 원본 |
+| `main/04-PHASE-PLAN.md` | Phase 한 줄 요약 (상세는 report 로드맵) |
+| `main/05-CONVENTIONS.md` | 코딩 컨벤션 원본 |
