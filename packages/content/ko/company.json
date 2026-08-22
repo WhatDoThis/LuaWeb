@@ -12,8 +12,7 @@
     "address": "주소",
     "tel": "전화",
     "fax": "팩스",
-    "directions": "오시는 길",
-    "tabsAria": "사업장 위치 탭"
+    "directions": "오시는 길"
   },
   "pages": {
     "greeting": {
@@ -36,13 +35,8 @@
           { "label": "회사명", "value": "주식회사 루아" },
           { "label": "설립일", "value": "2000년 1월" },
           { "label": "대표이사", "value": "홍길동" },
-          { "label": "본사", "value": "서울특별시 placeholder" }
-        ],
-        [
-          { "label": "주요 사업", "value": "산업용 제어 시스템, IoT 플랫폼, 스마트 팩토리 솔루션" },
-          { "label": "종업원 수", "value": "500명 (2025년 기준)" },
-          { "label": "매출액", "value": "1,000억 원 (2024년)" },
-          { "label": "해외 법인", "value": "미국, 유럽, 동남아" }
+          { "label": "본사", "value": "서울특별시 placeholder" },
+          { "label": "주요 사업", "value": "산업용 제어 시스템, IoT 플랫폼, 스마트 팩토리 솔루션" }
         ]
       ]
     },
@@ -77,44 +71,12 @@
     "location": {
       "tag": "LOCATION",
       "title": "찾아오시는 길",
-      "desc": "본사 및 사업장 위치 안내입니다.",
-      "tabs": [
-        {
-          "id": "hq",
-          "label": "본사",
-          "mapKey": "hq",
-          "address": "서울특별시 placeholder (우)00000",
-          "directions": "지하철 2호선 placeholder역 3번 출구 도보 5분"
-        },
-        {
-          "id": "factory1",
-          "label": "1공장",
-          "mapKey": "factory1",
-          "address": "경기도 placeholder 1공장",
-          "directions": "경부고속도로 placeholder IC에서 10분"
-        },
-        {
-          "id": "factory2",
-          "label": "2공장",
-          "mapKey": "factory2",
-          "address": "경기도 placeholder 2공장",
-          "directions": "경부고속도로 placeholder IC에서 15분"
-        },
-        {
-          "id": "lab",
-          "label": "연구소",
-          "mapKey": "lab",
-          "address": "경기도 placeholder 연구단지",
-          "directions": "placeholder 연구단지 정문 이용"
-        },
-        {
-          "id": "overseas",
-          "label": "해외",
-          "mapKey": "overseas",
-          "address": "Overseas Office placeholder",
-          "directions": "Contact HQ for visit arrangements"
-        }
-      ]
+      "desc": "본사 위치 안내입니다.",
+      "office": {
+        "mapKey": "hq",
+        "address": "서울특별시 placeholder (우)00000",
+        "directions": "지하철 2호선 placeholder역 3번 출구 도보 5분"
+      }
     }
   }
 }

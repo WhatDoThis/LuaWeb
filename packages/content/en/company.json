@@ -12,8 +12,7 @@
     "address": "Address",
     "tel": "Tel",
     "fax": "Fax",
-    "directions": "Directions",
-    "tabsAria": "Location tabs"
+    "directions": "Directions"
   },
   "pages": {
     "greeting": {
@@ -36,13 +35,8 @@
           { "label": "Company", "value": "Lua Co., Ltd." },
           { "label": "Founded", "value": "January 2000" },
           { "label": "CEO", "value": "John Doe" },
-          { "label": "Headquarters", "value": "Seoul, Korea (placeholder)" }
-        ],
-        [
-          { "label": "Main Business", "value": "Industrial control systems, IoT platform, smart factory solutions" },
-          { "label": "Employees", "value": "500 (as of 2025)" },
-          { "label": "Revenue", "value": "KRW 100B (2024)" },
-          { "label": "Overseas Offices", "value": "USA, Europe, Southeast Asia" }
+          { "label": "Headquarters", "value": "Seoul, Korea (placeholder)" },
+          { "label": "Main Business", "value": "Industrial control systems, IoT platform, smart factory solutions" }
         ]
       ]
     },
@@ -77,44 +71,12 @@
     "location": {
       "tag": "LOCATION",
       "title": "Location",
-      "desc": "Headquarters and office locations.",
-      "tabs": [
-        {
-          "id": "hq",
-          "label": "Headquarters",
-          "mapKey": "hq",
-          "address": "Seoul placeholder (Zip 00000)",
-          "directions": "5 min walk from placeholder Station, Exit 3"
-        },
-        {
-          "id": "factory1",
-          "label": "Plant 1",
-          "mapKey": "factory1",
-          "address": "Gyeonggi-do placeholder Plant 1",
-          "directions": "10 min from placeholder IC on Gyeongbu Expressway"
-        },
-        {
-          "id": "factory2",
-          "label": "Plant 2",
-          "mapKey": "factory2",
-          "address": "Gyeonggi-do placeholder Plant 2",
-          "directions": "15 min from placeholder IC on Gyeongbu Expressway"
-        },
-        {
-          "id": "lab",
-          "label": "R&D Center",
-          "mapKey": "lab",
-          "address": "Gyeonggi-do placeholder Research Complex",
-          "directions": "Use main gate of placeholder Research Complex"
-        },
-        {
-          "id": "overseas",
-          "label": "Overseas",
-          "mapKey": "overseas",
-          "address": "Overseas Office placeholder",
-          "directions": "Contact HQ for visit arrangements"
-        }
-      ]
+      "desc": "Headquarters location.",
+      "office": {
+        "mapKey": "hq",
+        "address": "Seoul placeholder (Zip 00000)",
+        "directions": "5 min walk from placeholder Station, Exit 3"
+      }
     }
   }
 }

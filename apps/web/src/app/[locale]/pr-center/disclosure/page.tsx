@@ -15,7 +15,7 @@ export default async function DisclosurePage({ params }: PageProps) {
   const t = await getTranslations('prCenter');
 
   return (
-    <PageContainer>
+    <PageContainer className="pb-[60px]">
       <main>
         <p className="text-lg font-medium text-primary">{t('disclosure.title')}</p>
         <p className="mt-4 text-neutral-600">Coming soon</p>

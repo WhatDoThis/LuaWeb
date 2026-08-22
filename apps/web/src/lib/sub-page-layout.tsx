@@ -1,7 +1,7 @@
 /**
  * lib.sub-page-layout (서브 페이지 골격)
  * ======================================
- * IntroHero + LnbBar + SpHead + PageContainer 조합
+ * IntroHero + LnbBar + SpHead + PageContainer 조합 (본문 하단 pb-[60px])
  *
  * [Main Functions]
  * - SubPageLayout
@@ -58,7 +58,7 @@ export async function SubPageLayout({
         locale={locale}
         staticMode={staticMode}
       />
-      <PageContainer>
+      <PageContainer className="pb-[60px]">
         <SpHead tag={tag} title={title} desc={descText} />
         {children}
       </PageContainer>

@@ -1,7 +1,7 @@
 /**
  * sections.cert-grid (인증서 그리드)
  * ===================================
- * 이미지 placeholder + name/issuer — company·career 공용
+ * 이미지 placeholder + name/issuer — company 인증현황
  *
  * [Main Functions]
  * - CertGrid

@@ -23,19 +23,15 @@
     "prCenter": {
       "label": "PR Center",
       "news": "News & Notice"
-    },
-    "career": {
-      "label": "Careers",
-      "recruitment": "Recruitment",
-      "welfare": "Benefits",
-      "certificates": "Certificate Request"
     }
   },
   "footer": {
     "privacy": "Privacy Policy",
+    "contactTitle": "Contact Us",
     "address": "Address",
     "tel": "Tel",
     "fax": "Fax",
+    "email": "Email",
     "copyright": "Copyright © Lua. All rights reserved."
   },
   "privacy": {

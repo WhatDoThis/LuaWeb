@@ -10,7 +10,7 @@
  * - 없음
  */
 
-export type LnbSection = 'company' | 'technology' | 'management' | 'prCenter' | 'career';
+export type LnbSection = 'company' | 'technology' | 'management' | 'prCenter';
 
 export type LnbItemConfig = {
   id: string;
@@ -54,13 +54,5 @@ export const lnbSections: Record<LnbSection, LnbSectionConfig> = {
   prCenter: {
     metaLabelKey: 'meta.sectionTitle',
     items: [{ id: 'news', labelKey: 'lnb.news', href: '/pr-center/news' }],
-  },
-  career: {
-    metaLabelKey: 'meta.sectionTitle',
-    items: [
-      { id: 'recruitment', labelKey: 'lnb.recruitment', href: '/career/recruitment' },
-      { id: 'welfare', labelKey: 'lnb.welfare', href: '/career/welfare' },
-      { id: 'certificates', labelKey: 'lnb.certificates', href: '/career/certificates' },
-    ],
   },
 };

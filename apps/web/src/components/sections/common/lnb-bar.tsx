@@ -18,7 +18,7 @@ import { useTranslations } from '@/lib/i18n';
 import { cn } from '@/lib/cn';
 import { useState } from 'react';
 
-export type ContentNamespace = 'company' | 'technology' | 'management' | 'prCenter' | 'career';
+export type ContentNamespace = 'company' | 'technology' | 'management' | 'prCenter';
 
 export type LnbBarProps = {
   section: LnbSection;

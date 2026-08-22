@@ -2,6 +2,22 @@
 
 ## Log Index
 
+32. 2026-08-23 클릭 요소 전역 cursor:pointer 적용
+31. 2026-08-22 푸터 Contact Us 연락처 섹션 추가
+30. 2026-08-22 콘텐츠 제출서 §0 홈페이지 구조 안내 추가
+29. 2026-08-22 콘텐츠 제출서 항목별 화면 위치 설명 추가
+28. 2026-08-22 콘텐츠 제출서 표→뎁스 목록 형식 전환
+27. 2026-08-22 콘텐츠 제출서 본문·사진 중심으로 대폭 간소화
+26. 2026-08-22 콘텐츠 제출서 파비콘 개발팀 처리로 조정
+25. 2026-08-22 콘텐츠 제출 요청서 비개발자 포맷 전환
+24. 2026-08-22 콘텐츠 인벤토리 담당자 제출용 보완
+23. 2026-08-22 콘텐츠 인벤토리 포맷 수정 (Where·키 분리)
+22. 2026-08-22 서브 페이지 하단 여백 60px 전역 적용
+21. 2026-08-22 회사소개 전체 하단 여백 100px 통일
+20. 2026-08-22 회사개요 정보 테이블 하단 여백 추가
+19. 2026-08-22 회사개요 매출액·해외 법인 테이블 삭제
+18. 2026-08-22 회사개요 주요 사업·종업원 수 정리
+17. 2026-08-22 채용 섹션 제거 및 찾아오시는 길 단일 본사화
 16. 2026-08-22 브랜드명 우리테크 → 루아 변경
 15. 2026-08-22 뉴스 샘플 기사 정리 — 홈페이지 리뉴얼 1건만 유지
 14. 2026-08-22 Phase 7 홈·SEO·CI
@@ -20,6 +36,105 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+32. 2026-08-23 클릭 요소 전역 cursor:pointer 적용
+Purpose: 링크·버튼 등 클릭 가능 요소 호버 시 손가락 커서가 보이도록 전역 base 스타일 추가 Changes:
+
+globals.css: a[href], button, role=button 등 cursor:pointer / disabled not-allowed Changed files: apps/web/src/styles/globals.css
+
+31. 2026-08-22 푸터 Contact Us 연락처 섹션 추가
+Purpose: 푸터 연락처를 기업 사이트 관례에 맞게 Contact Us 섹션으로 정리하고 한/영 i18n·클릭 가능 연락처 반영 Changes:
+
+footer: Contact Us 제목, 아이콘+연락처 목록, tel/mailto 링크, 주소→찾아오시는 길 링크
+common.json(ko/en): footer.contactTitle, footer.email 키 추가 Changed files: apps/web/src/components/layout/footer.tsx, packages/content/ko/common.json, packages/content/en/common.json
+
+30. 2026-08-22 콘텐츠 제출서 §0 홈페이지 구조 안내 추가
+Purpose: 브라우저 미경험·비개발 담당자용 — §1 전 메뉴 트리·공통 레이아웃·스크린샷 첨부 자리 Changes:
+
+10_ContentInventory.md — §0 홈페이지 구조(먼저 읽기), 그림 0-1~0-4 캡처 안내, §1~§14 매핑
+Changed files: docs/report/10_ContentInventory.md, docs/log/log.md
+
+29. 2026-08-22 콘텐츠 제출서 항목별 화면 위치 설명 추가
+Purpose: 비개발 담당자가 히어로·IntroHero 등 용어를 이해할 수 있도록 · 화면: 한 줄 설명 전 항목 부여 Changes:
+
+10_ContentInventory.md — §1~§14 모든 a. 항목에 화면 위치 설명, 보내는 방법 안내 4번 추가
+Changed files: docs/report/10_ContentInventory.md, docs/log/log.md
+
+28. 2026-08-22 콘텐츠 제출서 표→뎁스 목록 형식 전환
+Purpose: Word·한글 이전 용이 — 디웹스·Content Snare 레퍼런스 기반 1) 사진/글 · a. 항목 구조로 재작성 Changes:
+
+10_ContentInventory.md — 마크다운 표 제거, §1~§14 뎁스·회신란 유지
+Changed files: docs/report/10_ContentInventory.md, docs/log/log.md
+
+27. 2026-08-22 콘텐츠 제출서 본문·사진 중심으로 대폭 간소화
+Purpose: 에이전시·국내 제작사 콘텐츠 수집 레퍼런스 기반 — UI/아이콘/파비콘 제거, 페이지별 표 형식으로 재작성 Changes:
+
+10_ContentInventory.md — 778→약 280행, GNB·게시판 UI·개발팀 처리 항목 삭제, 본문·사진·연락처만
+00_ReportIndex — 10번 설명 갱신
+Changed files: docs/report/10_ContentInventory.md, docs/report/00_ReportIndex, docs/log/log.md
+
+26. 2026-08-22 콘텐츠 제출서 파비콘 개발팀 처리로 조정
+Purpose: 회사 담당자 제출 범위에서 파비콘 제외 — 로고 기반 또는 참고 사이트 톤 무료 아이콘으로 개발 처리 Changes:
+
+10_ContentInventory.md — 파비콘 항목을 개발팀 처리로 변경, 체크리스트·우선순위·표기 안내 갱신
+Changed files: docs/report/10_ContentInventory.md, docs/log/log.md
+
+25. 2026-08-22 콘텐츠 제출 요청서 비개발자 포맷 전환
+Purpose: 회사 담당자가 개발 용어 없이 사진·문구를 구분·회신할 수 있도록 문서 재작성 Changes:
+
+10_ContentInventory.md — 사진 넣기/글 고치기 표기, 회신(한국어/영어) 빈칸, 개발 참조는 부록만
+00_ReportIndex — 10번 문서 설명 갱신
+Changed files: docs/report/10_ContentInventory.md, docs/report/00_ReportIndex, docs/log/log.md
+
+24. 2026-08-22 콘텐츠 인벤토리 담당자 제출용 보완
+Purpose: 샘플·미등록 구분, 【입력】【교체】 표기, 제출 체크리스트 추가 Changes:
+
+10_ContentInventory.md — 담당자 안내·상태표·항목별 제출/현재 샘플·§7 체크리스트
+Changed files: docs/report/10_ContentInventory.md, docs/log/log.md
+
+23. 2026-08-22 콘텐츠 인벤토리 포맷 수정 (Where·키 분리)
+
+22. 2026-08-22 서브 페이지 하단 여백 60px 전역 적용
+Purpose: 메인 제외 모든 서브 페이지 본문-푸터 간격 60px로 통일 Changes:
+
+SubPageLayout: company 한정 pb-[100px] → 전체 pb-[60px]
+disclosure 페이지 PageContainer pb-[60px] 추가
+Changed files: apps/web/src/lib/sub-page-layout.tsx, apps/web/src/app/[locale]/pr-center/disclosure/page.tsx, docs/log/log.md
+
+21. 2026-08-22 회사소개 전체 하단 여백 100px 통일
+Purpose: 회사소개 6개 서브 페이지 본문-푸터 간 여백 확보 Changes:
+
+SubPageLayout: section=company 본문 wrapper pb-[100px]
+overview-section: dl 전용 pb-[150px] 제거 (공통 레이아웃으로 이전)
+Changed files: apps/web/src/lib/sub-page-layout.tsx, apps/web/src/components/sections/company/overview-section.tsx, docs/log/log.md
+
+20. 2026-08-22 회사개요 정보 테이블 하단 여백 추가
+Purpose: 회사개요 정보 dl 하단 시각적 여백 확보 Changes:
+
+overview-section: 마지막 dl에 pb-[150px] 적용
+Changed files: apps/web/src/components/sections/company/overview-section.tsx, docs/log/log.md
+
+19. 2026-08-22 회사개요 매출액·해외 법인 테이블 삭제
+Purpose: 회사개요 하단 두 번째 정보 테이블(매출액·해외 법인) 완전 제거 Changes:
+
+pages.overview.tables 두 번째 배열 삭제 (ko/en)
+Changed files: packages/content/ko/company.json, packages/content/en/company.json, docs/log/log.md
+
+18. 2026-08-22 회사개요 주요 사업·종업원 수 정리
+Purpose: 회사개요 정보 테이블을 루아 규모에 맞게 조정 Changes:
+
+주요 사업 항목을 상단(첫 번째) 테이블로 이동
+종업원 수 항목 삭제 (ko/en)
+Changed files: packages/content/ko/company.json, packages/content/en/company.json, docs/log/log.md
+
+17. 2026-08-22 채용 섹션 제거 및 찾아오시는 길 단일 본사화
+Purpose: 루아 단일 사업장 구조에 맞게 채용 GNB·라우트 삭제, 위치 페이지 탭 UI 제거 Changes:
+
+career 라우트·컴포넌트·content JSON·images 슬롯·GNB/LNB 항목 삭제
+찾아오시는 길: tabs → office 단일 표시, location-tabs 컴포넌트 삭제
+site.json maps 본사(hq)만 유지
+pnpm typecheck && pnpm build 통과 (35 routes)
+Changed files: apps/web/src/app/[locale]/career/** (삭제), apps/web/src/components/sections/career/** (삭제), apps/web/src/components/sections/company/location-*.tsx, apps/web/src/lib/nav.ts, lnb.ts, packages/content/**, packages/env/site.json, packages/env/images.json, docs/log/log.md
 
 16. 2026-08-22 브랜드명 우리테크 → 루아 변경
 Purpose: 사이트 표시 브랜드명 통일 (ko: 루아, en: Lua) Changes:

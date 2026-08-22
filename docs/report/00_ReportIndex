@@ -11,6 +11,7 @@
 | `07_Phase_5.md` | **Phase 5 실행 가이드** — company/technology/management/career 도메인 섹션 14페이지 |
 | `08_Phase_6.md` | **Phase 6 실행 가이드** — JSON 뉴스 게시판 목록/상세/검색/페이지네이션 |
 | `09_Phase_7.md` | **Phase 7 실행 가이드** — 홈 슬라이더·SEO·CI 배포 파이프라인 |
+| `10_ContentInventory.md` | **콘텐츠 제출 요청서** — 페이지별 본문·사진·연락처만 (UI·아이콘 제외) |
 | `IMAGE-REQUEST.md` | `pnpm check:images` 실행 시 자동 생성되는 이미지 발주서 |
 
 ## main 폴더 (기반 자료)

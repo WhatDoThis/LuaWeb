@@ -10,14 +10,12 @@
  * - packages/content/{ko,en}/*.json
  */
 
-import koCareer from './ko/career.json';
 import koCommon from './ko/common.json';
 import koCompany from './ko/company.json';
 import koHome from './ko/home.json';
 import koManagement from './ko/management.json';
 import koPrCenter from './ko/prCenter.json';
 import koTechnology from './ko/technology.json';
-import enCareer from './en/career.json';
 import enCommon from './en/common.json';
 import enCompany from './en/company.json';
 import enHome from './en/home.json';
@@ -41,7 +39,6 @@ export type AllMessages = {
   technology: typeof koTechnology;
   management: typeof koManagement;
   prCenter: typeof koPrCenter;
-  career: typeof koCareer;
 };
 
 const koMessages: AllMessages = {
@@ -51,7 +48,6 @@ const koMessages: AllMessages = {
   technology: koTechnology,
   management: koManagement,
   prCenter: koPrCenter,
-  career: koCareer,
 };
 
 const enMessages: AllMessages = {
@@ -61,7 +57,6 @@ const enMessages: AllMessages = {
   technology: enTechnology,
   management: enManagement,
   prCenter: enPrCenter,
-  career: enCareer,
 };
 
 // 1. loadMessages

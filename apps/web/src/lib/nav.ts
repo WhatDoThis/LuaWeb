@@ -62,13 +62,4 @@ export const navItems: NavItem[] = [
       // { id: 'disclosure', labelKey: 'nav.prCenter.disclosure', href: '/pr-center/disclosure' },
     ],
   },
-  {
-    id: 'career',
-    labelKey: 'nav.career.label',
-    children: [
-      { id: 'recruitment', labelKey: 'nav.career.recruitment', href: '/career/recruitment' },
-      { id: 'welfare', labelKey: 'nav.career.welfare', href: '/career/welfare' },
-      { id: 'certificates', labelKey: 'nav.career.certificates', href: '/career/certificates' },
-    ],
-  },
 ];

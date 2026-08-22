@@ -130,36 +130,5 @@
     "disclosure": {
       "hero": { "src": "", "size": "1920x420", "where": "공시정보 IntroHero (미사용)" }
     }
-  },
-  "career": {
-    "hero": { "src": "", "size": "1920x420", "where": "채용정보 IntroHero" },
-    "recruitment": {
-      "diagram": { "src": "", "size": "1000x500", "where": "인재상 다이어그램" },
-      "process": [
-        { "src": "", "size": "200x200", "where": "채용 프로세스 1단계" },
-        { "src": "", "size": "200x200", "where": "채용 프로세스 2단계" },
-        { "src": "", "size": "200x200", "where": "채용 프로세스 3단계" },
-        { "src": "", "size": "200x200", "where": "채용 프로세스 4단계" },
-        { "src": "", "size": "200x200", "where": "채용 프로세스 5단계" }
-      ]
-    },
-    "welfare": {
-      "icons": [
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 1" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 2" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 3" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 4" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 5" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 6" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 7" },
-        { "src": "", "size": "120x120", "where": "복리후생 아이콘 8" }
-      ]
-    },
-    "certificates": {
-      "items": [
-        { "src": "", "size": "400x560", "where": "채용 인증서 1" },
-        { "src": "", "size": "400x560", "where": "채용 인증서 2" }
-      ]
-    }
   }
 }

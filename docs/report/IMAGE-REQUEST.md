@@ -1,26 +1,9 @@
 # IMAGE-REQUEST — 이미지 발주서
 
-> 자동 생성: `pnpm check:images` · 2026-08-22 · **73** 슬롯 미입력
+> 자동 생성: `pnpm check:images` · 2026-08-22 · **56** 슬롯 미입력
 
 | 키 경로 | 필요 사이즈 | 비율 | where | 모바일 별도 |
 | --- | --- | --- | --- | --- |
-| `career.certificates.items.0` | 400x560 | - | 채용 인증서 1 | - |
-| `career.certificates.items.1` | 400x560 | - | 채용 인증서 2 | - |
-| `career.hero` | 1920x420 | - | 채용정보 IntroHero | - |
-| `career.recruitment.diagram` | 1000x500 | - | 인재상 다이어그램 | - |
-| `career.recruitment.process.0` | 200x200 | - | 채용 프로세스 1단계 | - |
-| `career.recruitment.process.1` | 200x200 | - | 채용 프로세스 2단계 | - |
-| `career.recruitment.process.2` | 200x200 | - | 채용 프로세스 3단계 | - |
-| `career.recruitment.process.3` | 200x200 | - | 채용 프로세스 4단계 | - |
-| `career.recruitment.process.4` | 200x200 | - | 채용 프로세스 5단계 | - |
-| `career.welfare.icons.0` | 120x120 | - | 복리후생 아이콘 1 | - |
-| `career.welfare.icons.1` | 120x120 | - | 복리후생 아이콘 2 | - |
-| `career.welfare.icons.2` | 120x120 | - | 복리후생 아이콘 3 | - |
-| `career.welfare.icons.3` | 120x120 | - | 복리후생 아이콘 4 | - |
-| `career.welfare.icons.4` | 120x120 | - | 복리후생 아이콘 5 | - |
-| `career.welfare.icons.5` | 120x120 | - | 복리후생 아이콘 6 | - |
-| `career.welfare.icons.6` | 120x120 | - | 복리후생 아이콘 7 | - |
-| `career.welfare.icons.7` | 120x120 | - | 복리후생 아이콘 8 | - |
 | `common.favicon` | 32x32 | - | favicon.ico 소스 | - |
 | `common.logo` | 180x48 | - | Header 좌측 로고 | - |
 | `common.logoFooter` | 160x44 | - | Footer 로고 | - |

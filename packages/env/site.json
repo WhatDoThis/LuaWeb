@@ -6,11 +6,7 @@
     "hq": { "ko": "서울특별시 placeholder", "en": "Seoul placeholder", "zip": "00000" }
   },
   "maps": {
-    "hq": "https://maps.google.com/maps?q=placeholder&output=embed",
-    "factory1": "https://maps.google.com/maps?q=placeholder&output=embed",
-    "factory2": "https://maps.google.com/maps?q=placeholder&output=embed",
-    "lab": "https://maps.google.com/maps?q=placeholder&output=embed",
-    "overseas": "https://maps.google.com/maps?q=placeholder&output=embed"
+    "hq": "https://maps.google.com/maps?q=placeholder&output=embed"
   },
   "copyright": { "ko": "© 루아. All rights reserved.", "en": "© Lua. All rights reserved." }
 }

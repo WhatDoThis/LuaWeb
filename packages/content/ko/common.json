@@ -23,19 +23,15 @@
     "prCenter": {
       "label": "홍보센터",
       "news": "뉴스&공지"
-    },
-    "career": {
-      "label": "채용정보",
-      "recruitment": "채용안내",
-      "welfare": "복리후생",
-      "certificates": "증명서 발급"
     }
   },
   "footer": {
     "privacy": "개인정보처리방침",
+    "contactTitle": "문의하기",
     "address": "주소",
     "tel": "대표전화",
     "fax": "팩스",
+    "email": "이메일",
     "copyright": "Copyright © 루아. All rights reserved."
   },
   "privacy": {
