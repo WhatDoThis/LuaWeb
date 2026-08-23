@@ -2,6 +2,8 @@
 
 ## Log Index
 
+34. 2026-08-23 런치 가이드 회사명 루아로 정정
+33. 2026-08-23 최종 브라우저 배포·오픈 가이드 문서 추가
 32. 2026-08-23 클릭 요소 전역 cursor:pointer 적용
 31. 2026-08-22 푸터 Contact Us 연락처 섹션 추가
 30. 2026-08-22 콘텐츠 제출서 §0 홈페이지 구조 안내 추가
@@ -36,6 +38,16 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+34. 2026-08-23 런치 가이드 회사명 루아로 정정
+Purpose: 벤치마크 잔재(우리기술·wooritech)를 루아(Lua) 기준으로 교체 Changes:
+
+06-LAUNCH-GUIDE.md: 대상·도메인 예시·서버 경로(/var/www/lua) woori-tech 명칭 제거 Changed files: docs/main/06-LAUNCH-GUIDE.md, docs/log/log.md
+
+33. 2026-08-23 최종 브라우저 배포·오픈 가이드 문서 추가
+Purpose: 콘텐츠 확정 후 iwinv Rocky Linux·nginx·SSL·도메인·검색엔진 등록까지 순서대로 따라 할 수 있는 운영 오픈 종합 가이드 작성 Changes:
+
+docs/main/06-LAUNCH-GUIDE.md — 15단계 흐름, 용어 해설, Google·네이버·Bing 공식 요건 반영 Changed files: docs/main/06-LAUNCH-GUIDE.md, docs/log/log.md
 
 32. 2026-08-23 클릭 요소 전역 cursor:pointer 적용
 Purpose: 링크·버튼 등 클릭 가능 요소 호버 시 손가락 커서가 보이도록 전역 base 스타일 추가 Changes:
