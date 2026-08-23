@@ -15,6 +15,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const OUTPUT = path.join(process.cwd(), 'docs', 'report', 'IMAGE-REQUEST.md');
+const failOnEmpty = process.argv.includes('--fail-on-empty');
 
 function main() {
   try {
@@ -41,6 +42,11 @@ function main() {
     fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
     fs.writeFileSync(OUTPUT, lines.join('\n'), 'utf8');
     console.log(`[check-images] wrote ${slots.length} slots → ${OUTPUT}`);
+
+    if (failOnEmpty && slots.length > 0) {
+      console.error(`[check-images] --fail-on-empty: ${slots.length} empty slot(s) — release blocked`);
+      process.exit(1);
+    }
   } catch (error) {
     console.error('[check-images]', { cause: error });
     process.exit(1);

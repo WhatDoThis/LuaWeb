@@ -2,6 +2,7 @@
 
 ## Log Index
 
+35. 2026-08-23 2차 검수 blocker·SEO·nginx·배포 문서 보강
 34. 2026-08-23 런치 가이드 회사명 루아로 정정
 33. 2026-08-23 최종 브라우저 배포·오픈 가이드 문서 추가
 32. 2026-08-23 클릭 요소 전역 cursor:pointer 적용
@@ -38,6 +39,13 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+35. 2026-08-23 2차 검수 blocker·SEO·nginx·배포 문서 보강
+Purpose: 정적 export 루트/404·운영 도메인 빌드 차단·배포 경로 통일·검색/CI/nginx/문서 2차 검수 반영 Changes:
+
+app/page.tsx meta refresh 루트, not-found.tsx→404.html, lib/seo.ts production domain 가드
+deploy.json·nginx.conf.example /var/www/lua/current, sitemap hreflang, check-images --fail-on-empty, deploy.yml release-gate
+06-LAUNCH-GUIDE SELinux·DNS SSL 게이트·releases 배포, site.json placeholder domain Changed files: apps/web/src/app/**, apps/web/src/lib/seo.ts, deploy/**, packages/env/**, scripts/check-images.ts, .github/workflows/deploy.yml, docs/main/06-LAUNCH-GUIDE.md, docs/log/log.md
 
 34. 2026-08-23 런치 가이드 회사명 루아로 정정
 Purpose: 벤치마크 잔재(우리기술·wooritech)를 루아(Lua) 기준으로 교체 Changes:

@@ -1,25 +1,49 @@
-# Woori Tech — nginx 정적 호스팅 (Rocky Linux / iwinv)
+# Lua(루아) — nginx 정적 호스팅 (Rocky Linux / iwinv)
 #
-# 적용: sudo cp nginx.conf.example /etc/nginx/conf.d/woori-tech.conf
+# 적용: sudo cp nginx.conf.example /etc/nginx/conf.d/lua.conf
 # 수정: server_name, root 경로를 실제 도메인·IP에 맞게 교체
 #
 # Prd placeholder — IP·도메인 확정 후 아래 값 변경:
 #   server_name  YOUR_DOMAIN www.YOUR_DOMAIN;
-#   root         /var/www/woori-tech/out;
+#   root         /var/www/lua/current;
+#
+# [무중단 배포·롤백 — releases/current 심볼릭 링크]
+#   1) 산출물 업로드: /var/www/lua/releases/<타임스탬프>/ (예: 20260823_1430)
+#   2) 전환: ln -sfn /var/www/lua/releases/<타임스탬프> /var/www/lua/current
+#   3) 롤백: ln -sfn /var/www/lua/releases/<이전타임스탬프> /var/www/lua/current && sudo systemctl reload nginx
+#   nginx root 는 /var/www/lua/current 를 가리킴 — 심볼릭만 바꾸면 즉시 전환
+#   disable_symlinks: Rocky Linux 기본 nginx 는 user nginx 가 follow symlinks 가능.
+#   403 발생 시 nginx.conf 에 disable_symlinks off; 필요 여부 확인 (환경별 상이)
 
 server {
     listen 80;
     listen [::]:80;
 
-    # TODO(Prd): 도메인 확정 시 교체 — 예: www.wooritech.com
+    # TODO(Prd): 도메인 확정 시 교체 — 예: www.YOUR-DOMAIN.com
     server_name _;
 
-    root /var/www/woori-tech/out;
+    root /var/www/lua/current;
     index index.html;
+
+    # 루트(/) → 기본 locale — 302 사용(301은 브라우저 영구 캐시, 기본 언어 변경 시 되돌리기 어려움)
+    location = / {
+        return 302 /ko/;
+    }
 
     # trailingSlash: true — /ko/ 형태
     location / {
         try_files $uri $uri/ $uri/index.html =404;
+    }
+
+    # HTML no-cache — 재배포 후 구버전 HTML 방지 (해시 자산은 아래 immutable 유지)
+    location ~* \.html$ {
+        add_header Cache-Control "no-cache, must-revalidate";
+    }
+
+    # 커스텀 404 (Next.js out/404.html)
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
     }
 
     # 정적 자산 캐시
@@ -33,12 +57,15 @@ server {
         add_header Cache-Control "public";
     }
 
-    # 보안 헤더 (기본)
+    # 보안 헤더
     add_header X-Frame-Options "SAMEORIGIN" always;
     add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+    # TODO(Prd): certbot SSL 적용 후 HSTS 추가 — add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
-    access_log /var/log/nginx/woori-tech.access.log;
-    error_log  /var/log/nginx/woori-tech.error.log;
+    access_log /var/log/nginx/lua.access.log;
+    error_log  /var/log/nginx/lua.error.log;
 }
 
 # TODO(Prd): certbot 적용 후 HTTPS server 블록 추가

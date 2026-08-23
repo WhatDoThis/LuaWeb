@@ -6,7 +6,7 @@
   "publicIp": "",
   "domain": "",
   "siteUrl": "",
-  "deployRoot": "/var/www/woori-tech/out",
+  "deployRoot": "/var/www/lua/current",
   "nginxConfig": "deploy/rocky-linux/nginx.conf.example",
   "ssl": {
     "enabled": false,

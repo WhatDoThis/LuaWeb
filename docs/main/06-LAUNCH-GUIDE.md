@@ -187,37 +187,57 @@ sudo firewall-cmd --reload
 ### 3.4 배포 디렉터리 생성
 
 ```bash
-sudo mkdir -p /var/www/lua/out
+sudo mkdir -p /var/www/lua/releases
+sudo ln -sfn /var/www/lua/releases/initial /var/www/lua/current
 sudo chown -R $USER:nginx /var/www/lua
-sudo chmod -R 750 /var/www/lua
+sudo find /var/www/lua -type d -exec chmod 755 {} \;
+sudo find /var/www/lua -type f -exec chmod 644 {} \;
 ```
+
+- nginx `root`는 **`/var/www/lua/current`** 를 가리킵니다(4장 releases 방식).
+- 실제 산출물은 `/var/www/lua/releases/<타임스탬프>/` 에 두고, `current` 심볼릭만 바꿔 전환합니다.
 
 ---
 
 ## 4. 정적 파일 업로드
 
-### 4.1 Dev Windows → Prd 서버
+> **권장: rsync** — `scp -r out/*` 는 `.nojekyll` 등 **dot 파일(`.`으로 시작)** 을 누락할 수 있습니다. rsync는 숨김 파일까지 복사합니다.
 
-PowerShell (프로젝트 루트):
+### 4.1 무중단 배포 — releases / current (1순위)
 
-```powershell
-scp -r apps/web/out/* rocky@YOUR_PUBLIC_IP:/var/www/lua/out/
-```
-
-또는 rsync(WSL·Git Bash 등):
+Dev PC(WSL·Git Bash 등)에서 프로젝트 루트:
 
 ```bash
-rsync -avz --delete apps/web/out/ rocky@YOUR_PUBLIC_IP:/var/www/lua/out/
+RELEASE=$(date +%Y%m%d_%H%M)
+rsync -av --delete apps/web/out/ rocky@YOUR_PUBLIC_IP:/var/www/lua/releases/$RELEASE/
+ssh rocky@YOUR_PUBLIC_IP "ln -sfn /var/www/lua/releases/$RELEASE /var/www/lua/current && sudo systemctl reload nginx"
 ```
 
-- `-r` / `-a`: 폴더 통째로 복사
-- `--delete`: 서버에 남은 옛 파일 삭제(재배포 시 권장)
+| 단계 | 설명 |
+|---|---|
+| 업로드 | `/var/www/lua/releases/20260823_1430/` 등 타임스탬프 폴더에 rsync |
+| 전환 | `ln -sfn <새 릴리스> /var/www/lua/current` — nginx reload |
+| 롤백 | 이전 타임스탬프로 `ln -sfn` 재지정만 하면 **1초 컷** (nginx reload) |
+| 정리 | `/var/www/lua/releases/` 에 **최근 3~5개**만 남기고 오래된 폴더 삭제 |
 
-### 4.2 GitHub Actions 산출물 사용 (CI)
+- `-a`: 권한·타임스탬프 유지, dot 파일 포함
+- `--delete`: 대상 폴더에 남은 옛 파일 삭제
+
+### 4.2 (대안) scp — dot 파일 주의
+
+PowerShell:
+
+```powershell
+scp -r apps/web/out/* rocky@YOUR_PUBLIC_IP:/var/www/lua/releases/MANUAL/
+```
+
+dot 파일이 필요하면 WinSCP 등으로 `.nojekyll` 등을 **별도 업로드**하세요.
+
+### 4.3 GitHub Actions 산출물 사용 (CI)
 
 `.github/workflows/deploy.yml`은 현재 **빌드 아티팩트 업로드**까지 구현되어 있습니다. iwinv SSH 배포는 credentials 설정 후 TODO 구간을 완성하면 자동화할 수 있습니다.
 
-수동 오픈 1회차는 위 `scp`/`rsync`로 충분합니다.
+수동 오픈 1회차는 **4.1 rsync + releases** 방식을 권장합니다.
 
 ---
 
@@ -238,7 +258,7 @@ sudo cp /path/to/nginx.conf.example /etc/nginx/conf.d/lua.conf
 | 항목 | 변경 예 |
 |---|---|
 | `server_name` | `www.YOUR-DOMAIN.com YOUR-DOMAIN.com` |
-| `root` | `/var/www/lua/out` |
+| `root` | `/var/www/lua/current` (→ `releases/<타임스탬프>/` 심볼릭) |
 
 핵심 동작:
 
@@ -267,6 +287,36 @@ curl -I http://YOUR_PUBLIC_IP/ko/
 ```
 
 HTTP 200 또는 301/302 응답이면 nginx·파일 배치는 정상입니다.
+
+### 5.5 SELinux·파일 권한 (Rocky Linux — 403 예방)
+
+Rocky Linux는 **SELinux**(Security-Enhanced Linux, 보안 강화 커널 정책)가 기본 **enforcing**(강제 적용)입니다.  
+`chmod`·`chown`이 맞아도 **파일 컨텍스트**가 nginx(httpd)에 맞지 않으면 **403 Forbidden** 이 납니다. 권한만 반복 조정해도 해결되지 않는 대표 원인입니다.
+
+```bash
+sudo chown -R $USER:nginx /var/www/lua
+sudo find /var/www/lua -type d -exec chmod 755 {} \;
+sudo find /var/www/lua -type f -exec chmod 644 {} \;
+sudo restorecon -Rv /var/www/lua
+sudo setsebool -P httpd_read_user_content 1
+```
+
+- **755(디렉터리) / 644(파일)**: HTML·CSS·JS에는 실행 권한(`750` 일괄 적용)이 불필요합니다.
+- **`restorecon`**: SELinux 컨텍스트를 nginx가 읽을 수 있게 재설정
+- **`httpd_read_user_content`**: nginx가 사용자 홈/웹 디렉터리 콘텐츠를 읽도록 허용
+
+403 발생 시 SELinux 거부 로그 확인:
+
+```bash
+sudo ausearch -m avc -ts recent
+```
+
+---
+
+> **⚠️ certbot 적용 후 nginx conf 덮어쓰기 금지**  
+> `certbot --nginx` 는 `/etc/nginx/conf.d/lua.conf` 에 **HTTPS server 블록을 직접 추가·수정**합니다.  
+> SSL 적용 **이후** `nginx.conf.example` 을 다시 `cp`로 덮어쓰면 **HTTPS 설정이 통째로 사라집니다.**  
+> **재배포 시**: `/var/www/lua/releases/` 의 **정적 파일만** 교환하고, nginx conf는 건드리지 마세요. conf 변경이 필요할 때만 `nginx -t` 후 `reload` 합니다.
 
 ---
 
@@ -323,9 +373,34 @@ server {
 
 ---
 
+> **🛑 SSL(7장) 시작 전 필수 — DNS 전파 완료 확인**  
+> Let's Encrypt **certbot**(HTTP-01 챌린지)은 도메인이 **이미 VM 공인 IP**를 가리켜야 성공합니다. DNS 미전파 상태에서 certbot을 돌리면 실패하며, **실패 횟수 제한(rate limit)** 에 걸리면 **오픈 당일 몇 시간~하루** 발급이 막힐 수 있습니다. **7장으로 넘어가기 전에 반드시 아래를 통과하세요.**
+
+Linux/macOS:
+
+```bash
+dig +short www.YOUR-DOMAIN.com @8.8.8.8
+dig +short YOUR-DOMAIN.com @8.8.8.8
+```
+
+Windows PowerShell:
+
+```powershell
+nslookup www.YOUR-DOMAIN.com 8.8.8.8
+nslookup YOUR-DOMAIN.com 8.8.8.8
+```
+
+- 결과 IP가 **VM 공인 IP와 일치**할 때만 7장 진행
+- 불일치면 6.3 전파 대기 후 재확인 (최대 48시간)
+
+---
+
 ## 7. SSL(HTTPS) 적용 — Let’s Encrypt + certbot
 
-도메인 DNS가 서버 IP를 가리킨 **후** 진행하세요.
+> **⚠️ certbot은 nginx conf를 자동 수정합니다**  
+> 5.5절 경고와 동일 — SSL 적용 후 `nginx.conf.example` 덮어쓰기 금지. 인증서 갱신은 `certbot renew` 가 처리합니다.
+
+도메인 DNS가 서버 IP를 가리킨 **후**(위 DNS 게이트 통과 후) 진행하세요.
 
 ### 7.1 certbot 설치
 
@@ -370,6 +445,10 @@ sudo certbot renew --dry-run
 
 ### 8.1 기능·페이지
 
+- [ ] `packages/env/site.json` 의 `domain` 이 **운영 HTTPS 도메인**인가 (`example.com`·미설정 시 **production 빌드가 실패**하도록 변경됨)
+- [ ] `packages/env/deploy.json` 의 `publicIp` / `domain` / `siteUrl` 갱신 여부
+- [ ] 브라우저에서 **루트(`/`)** 접속 시 `/ko/` 로 이동하는가 (meta refresh + nginx `302 /ko/`)
+- [ ] 없는 주소 접속 시 **커스텀 404**(`404.html`)가 뜨는가
 - [ ] GNB·푸터·언어 전환(ko/en) 정상
 - [ ] 17+ 라우트 주요 페이지 404 없음
 - [ ] 뉴스 목록·상세 링크 동작
@@ -378,6 +457,7 @@ sudo certbot renew --dry-run
 
 ### 8.2 SEO·메타
 
+- [ ] `out/sitemap.xml` · `out/robots.txt` 에 **example.com** 이 남아 있지 않은가
 - [ ] 페이지 `<title>`, `description` 적절
 - [ ] `/sitemap.xml` 에 운영 도메인 URL로 출력
 - [ ] `/robots.txt` 에 `Sitemap: https://.../sitemap.xml` 포함
@@ -392,6 +472,7 @@ sudo certbot renew --dry-run
 
 ### 8.4 성능(권장)
 
+- [ ] 재배포 후 **강력 새로고침 없이** 최신 HTML이 보이는가 (nginx HTML `no-cache` 정책)
 - [ ] Lighthouse Performance ≥ 95 (PRD)
 - [ ] `_next/static/` 캐시 헤더 — `nginx.conf.example`에 1년 캐시 설정됨
 
@@ -613,7 +694,7 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
 ```
 콘텐츠 JSON/이미지 수정
   → pnpm typecheck && pnpm build
-  → apps/web/out/ 서버 동기화 (scp/rsync)
+  → apps/web/out/ → releases/<타임스탬프>/ 동기화 (rsync)
   → (필요 시) Search Console URL 검사 / 네이버 수집 요청
 ```
 
@@ -654,7 +735,7 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
          ↓
 [3] iwinv Rocky Linux VM + nginx + 방화벽
          ↓
-[4] out/ 업로드 → /var/www/lua/out/
+[4] out/ → /var/www/lua/releases/<타임스탬프>/ → current 심볼릭
          ↓
 [5] nginx server_name·root 설정
          ↓
@@ -697,3 +778,7 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
 ---
 
 _문서 버전: 2026-08-23 | 루아(Lua) · LuaWeb 정적 export · iwinv Rocky Linux · nginx · Let’s Encrypt 기준_
+
+**변경 이력**
+
+- 2026-08-23: SELinux·DNS SSL 게이트·certbot 경고·releases/current 무중단 배포·오픈 점검 항목 보강 (2차 검수 반영)
