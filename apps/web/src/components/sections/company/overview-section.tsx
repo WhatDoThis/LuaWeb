@@ -27,7 +27,9 @@ export async function OverviewSection({ locale }: OverviewSectionProps) {
 
   return (
     <div className="space-y-10">
-      <SmartImage path="company.overview.diagram" locale={locale} className="w-full" />
+      <div className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-neutral-200 bg-white p-2 shadow-sm sm:p-4">
+        <SmartImage path="company.overview.diagram" locale={locale} className="w-full [&_img]:mx-auto [&_img]:h-auto [&_img]:w-full" />
+      </div>
       {tables.map((rows, index) => (
         <dl
           key={`table-${index}`}

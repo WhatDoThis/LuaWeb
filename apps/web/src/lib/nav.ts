@@ -31,8 +31,6 @@ export const navItems: NavItem[] = [
     children: [
       { id: 'greeting', labelKey: 'nav.company.greeting', href: '/company/greeting' },
       { id: 'overview', labelKey: 'nav.company.overview', href: '/company/overview' },
-      { id: 'history', labelKey: 'nav.company.history', href: '/company/history' },
-      { id: 'organizations', labelKey: 'nav.company.organizations', href: '/company/organizations' },
       { id: 'certificates', labelKey: 'nav.company.certificates', href: '/company/certificates' },
       { id: 'location', labelKey: 'nav.company.location', href: '/company/location' },
     ],
@@ -48,11 +46,7 @@ export const navItems: NavItem[] = [
   {
     id: 'management',
     labelKey: 'nav.management.label',
-    children: [
-      { id: 'policy', labelKey: 'nav.management.policy', href: '/management/policy' },
-      { id: 'ethics', labelKey: 'nav.management.ethics', href: '/management/ethics' },
-      { id: 'esg', labelKey: 'nav.management.esg', href: '/management/esg' },
-    ],
+    children: [{ id: 'policy', labelKey: 'nav.management.policy', href: '/management/policy' }],
   },
   {
     id: 'prCenter',

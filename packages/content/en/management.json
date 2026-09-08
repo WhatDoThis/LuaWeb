@@ -1,76 +1,15 @@
 {
   "meta": { "sectionTag": "MANAGEMENT", "sectionTitle": "Management" },
-  "lnb": { "policy": "Policy", "ethics": "Ethics", "esg": "ESG" },
+  "lnb": { "policy": "Management Principles" },
   "pages": {
     "policy": {
       "tag": "POLICY",
-      "title": "Management Policy",
-      "desc": "Our management philosophy and direction.",
+      "title": "Management Principles",
+      "desc": "The standards by which LUA works.",
       "body": [
-        "Lua upholds customer value creation, technological innovation, and respect for talent as three core principles.",
-        "All decisions are based on sustainable growth and social responsibility.",
-        "We continue R&D investment and quality management to strengthen competitiveness in global markets."
-      ]
-    },
-    "ethics": {
-      "tag": "ETHICS",
-      "title": "Ethical Management",
-      "desc": "Ethical principles and practices.",
-      "intro": [
-        "Lua builds trust with stakeholders through transparent and fair management.",
-        "All employees comply with the code of ethics, and violations are addressed immediately."
-      ],
-      "principlesTitle": "Four Ethical Principles",
-      "principles": [
-        { "title": "Integrity", "body": "Maintain honesty based on facts in all business activities." },
-        { "title": "Fairness", "body": "Practice fair decision-making and transactions free from conflicts of interest." },
-        { "title": "Responsibility", "body": "Take responsibility for outcomes and meet societal expectations." },
-        { "title": "Respect", "body": "Respect colleagues, customers, and partners to build mutual trust." }
-      ],
-      "reporting": {
-        "title": "Reporting & Consultation",
-        "body": [
-          "Ethical violations can be reported to the ethics office or via ethics@example.com.",
-          "Reporter identity is strictly protected, and appropriate action is taken after verification."
-        ]
-      }
-    },
-    "esg": {
-      "tag": "ESG",
-      "title": "ESG Management",
-      "desc": "Environmental, social, and governance activities.",
-      "intro": [
-        "Lua manages Environment, Social, and Governance in an integrated manner.",
-        "We create long-term value through sustainable management and grow together with stakeholders."
-      ],
-      "pillars": [
-        {
-          "key": "environment",
-          "title": "Environment (E)",
-          "body": [
-            "Carbon emission reduction and energy efficiency improvement",
-            "Adoption of eco-friendly materials and processes",
-            "Compliance with environmental regulations and voluntary targets"
-          ]
-        },
-        {
-          "key": "social",
-          "title": "Social (S)",
-          "body": [
-            "Safe working environment",
-            "Community contribution and education support",
-            "Diversity and inclusion culture"
-          ]
-        },
-        {
-          "key": "governance",
-          "title": "Governance (G)",
-          "body": [
-            "Board independence and transparent decision-making",
-            "Enhanced risk management system",
-            "Shareholder and stakeholder communication"
-          ]
-        }
+        "Proven by technology. We speak through data and patents rather than descriptions.",
+        "We design the whole. We address problems that cannot be solved by fixing parts alone.",
+        "Efficiency is carbon, and safety comes before performance."
       ]
     }
   }

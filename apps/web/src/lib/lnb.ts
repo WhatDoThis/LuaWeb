@@ -30,8 +30,6 @@ export const lnbSections: Record<LnbSection, LnbSectionConfig> = {
     items: [
       { id: 'greeting', labelKey: 'lnb.greeting', href: '/company/greeting' },
       { id: 'overview', labelKey: 'lnb.overview', href: '/company/overview' },
-      { id: 'history', labelKey: 'lnb.history', href: '/company/history' },
-      { id: 'organizations', labelKey: 'lnb.organizations', href: '/company/organizations' },
       { id: 'certificates', labelKey: 'lnb.certificates', href: '/company/certificates' },
       { id: 'location', labelKey: 'lnb.location', href: '/company/location' },
     ],
@@ -45,11 +43,7 @@ export const lnbSections: Record<LnbSection, LnbSectionConfig> = {
   },
   management: {
     metaLabelKey: 'meta.sectionTitle',
-    items: [
-      { id: 'policy', labelKey: 'lnb.policy', href: '/management/policy' },
-      { id: 'ethics', labelKey: 'lnb.ethics', href: '/management/ethics' },
-      { id: 'esg', labelKey: 'lnb.esg', href: '/management/esg' },
-    ],
+    items: [{ id: 'policy', labelKey: 'lnb.policy', href: '/management/policy' }],
   },
   prCenter: {
     metaLabelKey: 'meta.sectionTitle',

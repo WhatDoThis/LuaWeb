@@ -1,7 +1,8 @@
 # Rocky Linux (iwinv) — Prd 서버 세팅 가이드
 
 > **상태**: 서버 미구입 — IP·도메인 확정 후 아래 placeholder를 교체하여 적용  
-> **대상 OS**: Rocky Linux 9.x (iwinv 클라우드 VM)
+> **대상 OS**: Rocky Linux 9.x (iwinv 클라우드 VM)  
+> **사이트**: Lua(루아) 공식 홈페이지 — 벤치마크(우리기술)와 무관
 
 ---
 
@@ -27,8 +28,8 @@
 ```bash
 # packages/env/deploy.json 에 반영할 값
 PUBLIC_IP=""          # 예: 123.456.789.0
-DOMAIN=""             # 예: www.wooritech.com
-DEPLOY_ROOT="/var/www/woori-tech"
+DOMAIN=""             # 예: www.lua.co.kr
+DEPLOY_ROOT="/var/www/lua/current"
 ```
 
 ---
@@ -57,16 +58,17 @@ sudo firewall-cmd --reload
 ## 4. 배포 디렉터리
 
 ```bash
-sudo mkdir -p /var/www/woori-tech/out
-sudo chown -R $USER:nginx /var/www/woori-tech
-sudo chmod -R 750 /var/www/woori-tech
+sudo mkdir -p /var/www/lua/releases /var/www/lua/current
+sudo chown -R $USER:nginx /var/www/lua
+sudo chmod -R 750 /var/www/lua
 ```
 
-Dev/CI에서 빌드한 `apps/web/out/` 내용을 `/var/www/woori-tech/out/`에 동기화:
+Dev/CI에서 빌드한 `apps/web/out/` 내용을 `/var/www/lua/releases/<타임스탬프>/`에 동기화 후 `current` 심볼릭 링크 전환:
 
 ```bash
 # Dev Windows → Prd (IP 확정 후)
-# scp -r apps/web/out/* user@PUBLIC_IP:/var/www/woori-tech/out/
+# scp -r apps/web/out/* user@PUBLIC_IP:/var/www/lua/releases/20260823_1430/
+# ssh user@PUBLIC_IP "ln -sfn /var/www/lua/releases/20260823_1430 /var/www/lua/current"
 ```
 
 ---
@@ -76,7 +78,7 @@ Dev/CI에서 빌드한 `apps/web/out/` 내용을 `/var/www/woori-tech/out/`에 �
 `deploy/rocky-linux/nginx.conf.example` 참고.
 
 ```bash
-sudo cp deploy/rocky-linux/nginx.conf.example /etc/nginx/conf.d/woori-tech.conf
+sudo cp deploy/rocky-linux/nginx.conf.example /etc/nginx/conf.d/lua.conf
 # server_name, root 경로 수정 후
 sudo nginx -t && sudo systemctl reload nginx
 ```
@@ -101,4 +103,4 @@ curl -I https://YOUR_DOMAIN/ko/
 
 ---
 
-_문서 버전: 2026-08-22 | 서버 구입 전 placeholder 단계_
+_문서 버전: 2026-08-23 | Lua(루아) 기준_

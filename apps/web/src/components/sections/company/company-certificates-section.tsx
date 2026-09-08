@@ -17,15 +17,21 @@ type CompanyCertificatesSectionProps = {
   locale: 'ko' | 'en';
 };
 
-type CertItem = { name: string; issuer: string };
+type CertItem = { name: string; issuer: string; documentUrl?: string };
 
 // 1. CompanyCertificatesSection
 export async function CompanyCertificatesSection({ locale }: CompanyCertificatesSectionProps) {
   setRequestLocale(locale);
   const t = await getTranslations('company');
+  const tCommon = await getTranslations('common');
   const items = t.raw('pages.certificates.items') as CertItem[];
 
   return (
-    <CertGrid items={items} imagePathPrefix="company.certificates" locale={locale} />
+    <CertGrid
+      items={items}
+      imagePathPrefix="company.certificates"
+      locale={locale}
+      documentViewLabel={tCommon('board.viewDocument')}
+    />
   );
 }

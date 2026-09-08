@@ -54,7 +54,7 @@ export default async function HomePage({ params }: HomePageProps) {
   const bizFields = t.raw('bizFields') as BizFieldContent[];
   const newsArticles = loadNewsArticles(locale).map(toBoardArticle);
 
-  const linkCardKeys = ['prCenter', 'irCenter', 'location'] as const;
+  const linkCardKeys = ['prCenter', 'location'] as const;
   const linkCards = linkCardKeys.map((key) => {
     const card = t.raw(`linkCards.${key}`) as LinkCardContent;
     return {

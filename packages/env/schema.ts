@@ -41,6 +41,7 @@ export const siteConfigSchema = z.object({
   }),
   maps: z.object({
     hq: z.string(),
+    hqLink: z.string().optional(),
     factory: z.string().optional(),
     factory1: z.string().optional(),
     factory2: z.string().optional(),

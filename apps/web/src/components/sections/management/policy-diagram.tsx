@@ -25,7 +25,9 @@ export async function PolicyDiagram({ locale }: PolicyDiagramProps) {
 
   return (
     <div className="space-y-8">
-      <SmartImage path="management.policy.diagram" locale={locale} className="w-full" />
+      <div className="mx-auto max-w-4xl overflow-hidden rounded-lg border border-neutral-200 bg-white p-2 shadow-sm sm:p-4">
+        <SmartImage path="management.policy.diagram" locale={locale} className="w-full [&_img]:mx-auto [&_img]:h-auto [&_img]:w-full" />
+      </div>
       <div className="space-y-4">
         {body.map((paragraph) => (
           <p key={paragraph.slice(0, 24)} className="leading-relaxed text-neutral-700">

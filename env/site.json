@@ -1,12 +1,20 @@
 {
-  "companyName": { "ko": "루아", "en": "Lua" },
+  "companyName": { "ko": "루아주식회사", "en": "LUA Corporation" },
   "domain": "https://www.lua.co.kr",
-  "contact": { "tel": "02-0000-0000", "fax": "02-0000-0001", "email": "contact@example.com" },
+  "contact": { "tel": "", "fax": "", "email": "" },
   "addresses": {
-    "hq": { "ko": "서울특별시 placeholder", "en": "Seoul placeholder", "zip": "00000" }
+    "hq": {
+      "ko": "경기도 안양시 동안구 관양동 1608-4 동아프라자아케이드 제9층",
+      "en": "9F, Dongah Plaza Arcade, 1608-4 Gwanyang-dong, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea",
+      "zip": "14066"
+    }
   },
   "maps": {
-    "hq": "https://maps.google.com/maps?q=placeholder&output=embed"
+    "hq": "https://maps.google.com/maps?q=37.3905,126.9565&output=embed",
+    "hqLink": "https://naver.me/x5GrhiWM"
   },
-  "copyright": { "ko": "© 루아. All rights reserved.", "en": "© Lua. All rights reserved." }
+  "copyright": {
+    "ko": "© 루아주식회사. All rights reserved.",
+    "en": "© LUA Corporation. All rights reserved."
+  }
 }

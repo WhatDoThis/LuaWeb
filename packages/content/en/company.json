@@ -1,81 +1,73 @@
 {
-  "meta": { "sectionTag": "COMPANY", "sectionTitle": "About Us" },
+  "meta": { "sectionTag": "COMPANY", "sectionTitle": "Company" },
   "lnb": {
     "greeting": "CEO Message",
-    "overview": "Overview",
-    "history": "History",
-    "organizations": "Organization",
-    "certificates": "Certifications",
+    "overview": "Company Overview",
+    "certificates": "Intellectual Property",
     "location": "Location"
   },
   "locationLabels": {
     "address": "Address",
-    "tel": "Tel",
-    "fax": "Fax",
-    "directions": "Directions"
+    "tel": "Phone",
+    "directions": "Directions",
+    "mapLink": "Naver Map"
   },
   "pages": {
     "greeting": {
       "tag": "GREETING",
       "title": "CEO Message",
-      "desc": "Thank you for visiting Lua.",
+      "desc": "Thank you for visiting LUA Corporation.",
       "body": [
-        "Welcome to Lua. I sincerely thank you for visiting our website.",
-        "Lua leads industrial digital transformation through advanced technology solutions. We prioritize trust with our customers and pursue sustainable growth.",
-        "We will continue to invest in innovative R&D and expand global partnerships to build a better future.",
-        "Thank you for your continued support."
+        "Hello. I am Ryu Jina, CEO of LUA Corporation.",
+        "Demand for AI computing is growing rapidly, yet the power and infrastructure to support it remain insufficient. LUA was founded to address this with technology.",
+        "We develop both the facilities required to build a data center and the technology to operate them. The results are secured as patents, and alongside the technology we carry out site development ourselves.",
+        "We will continue to find our answers in technology. We ask you to follow the path LUA takes ahead. Thank you."
       ]
     },
     "overview": {
       "tag": "OVERVIEW",
       "title": "Company Overview",
-      "desc": "Company profile and business areas.",
+      "desc": "An overview of the company and its business areas.",
       "tables": [
         [
-          { "label": "Company", "value": "Lua Co., Ltd." },
-          { "label": "Founded", "value": "January 2000" },
-          { "label": "CEO", "value": "John Doe" },
-          { "label": "Headquarters", "value": "Seoul, Korea (placeholder)" },
-          { "label": "Main Business", "value": "Industrial control systems, IoT platform, smart factory solutions" }
+          { "label": "Company", "value": "LUA Corporation" },
+          { "label": "Founded", "value": "September 2021" },
+          { "label": "CEO", "value": "Ryu Jina" },
+          {
+            "label": "Head Office",
+            "value": "9F, Dongah Plaza Arcade, 1608-4 Gwanyang-dong, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea"
+          },
+          {
+            "label": "Main Business",
+            "value": "Data center infrastructure, data center operations, site development"
+          }
         ]
       ]
     },
-    "history": {
-      "tag": "HISTORY",
-      "title": "History",
-      "desc": "The growth history of Lua.",
-      "events": [
-        { "year": "2000", "items": ["Lua founded", "Industrial control systems business launched"] },
-        { "year": "2005", "items": ["ISO 9001 certified", "R&D center established"] },
-        { "year": "2010", "items": ["Smart factory division created", "Overseas subsidiary established"] },
-        { "year": "2015", "items": ["IoT platform released", "Major domestic enterprise contracts"] },
-        { "year": "2020", "items": ["ESG management declared", "Global R&D center opened"] },
-        { "year": "2025", "items": ["Next-gen control system v2.0 released", "KRW 100B revenue achieved"] }
-      ]
-    },
-    "organizations": {
-      "tag": "ORGANIZATION",
-      "title": "Organization",
-      "desc": "Our organizational structure."
-    },
     "certificates": {
       "tag": "CERTIFICATES",
-      "title": "Certifications",
-      "desc": "Certifications and awards.",
+      "title": "Intellectual Property",
+      "desc": "Patents held by LUA Corporation.",
       "items": [
-        { "name": "ISO 9001", "issuer": "Quality Management System" },
-        { "name": "ISO 14001", "issuer": "Environmental Management System" },
-        { "name": "ISO 45001", "issuer": "Occupational Health & Safety" }
+        {
+          "name": "Registered Patent No. 10-2980502",
+          "issuer": "Registered patent",
+          "documentUrl": "/static/downloads/patent-10-2980502.pdf"
+        },
+        { "name": "Patent Application No. 10-2026-0057532", "issuer": "Patent application" },
+        { "name": "Patent Application No. 10-2026-0091269", "issuer": "Patent application" },
+        { "name": "Patent Application No. 10-2026-0147522", "issuer": "Patent application" },
+        { "name": "One patent application", "issuer": "Number pending" }
       ]
     },
     "location": {
       "tag": "LOCATION",
       "title": "Location",
-      "desc": "Headquarters location.",
+      "desc": "Directions to our head office.",
       "office": {
         "mapKey": "hq",
-        "address": "Seoul placeholder (Zip 00000)",
-        "directions": "5 min walk from placeholder Station, Exit 3"
+        "address": "9F-901, Dongah Plaza Arcade, 1608-4 Gwanyang-dong, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea (14066)",
+        "directions": "Take Seoul Subway Line 4 to Pyeongchon Station and leave via Exit 1. The Dongah Plaza building is directly outside, and our head office is on the 9th floor."
       }
     }
   }

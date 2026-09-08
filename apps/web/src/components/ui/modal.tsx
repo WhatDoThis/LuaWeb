@@ -63,7 +63,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="modal-title"
+        aria-labelledby="lua-modal-title"
         tabIndex={-1}
         className={cn(
           'relative z-10 max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6 shadow-xl',
@@ -71,7 +71,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         )}
       >
         <div className="mb-4 flex items-start justify-between gap-4">
-          <h2 id="modal-title" className="text-lg font-semibold text-primary">
+          <h2 id="lua-modal-title" className="text-lg font-semibold text-primary">
             {title}
           </h2>
           <button

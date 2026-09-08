@@ -1,33 +1,20 @@
 /**
- * company.history.page (연혁)
- * ===========================
- * SubPageLayout + HistoryTimeline
+ * company.history.page (연혁 — 삭제됨)
+ * ===================================
+ * 콘텐츠 인벤토리 확정: 연혁 페이지 미사용 → 404
  *
  * [Main Functions]
  * - HistoryPage
  *
  * [Dependencies]
- * - @/lib/sub-page-layout, sections/company/history-timeline
+ * - next/navigation
  */
 
-import { HistoryTimeline } from '@/components/sections/company/history-timeline';
-import { SubPageLayout } from '@/lib/sub-page-layout';
+import { notFound } from 'next/navigation';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
 
 // 1. HistoryPage
-export default async function HistoryPage({ params }: PageProps) {
-  const { locale } = await params;
-  return (
-    <SubPageLayout
-      locale={locale}
-      section="company"
-      namespace="company"
-      imagePath="company.hero"
-      currentPath="/company/history"
-      pageKey="history"
-    >
-      <HistoryTimeline locale={locale} />
-    </SubPageLayout>
-  );
+export default async function HistoryPage(_props: PageProps) {
+  notFound();
 }

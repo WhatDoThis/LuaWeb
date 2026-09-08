@@ -12,6 +12,8 @@
 
 import { TechImageRow } from '@/components/sections/technology/tech-image-row';
 import { SmartImage } from '@/components/ui/smart-image';
+import { cn } from '@/lib/cn';
+import type { ReactNode } from 'react';
 
 export type NumberedSectionProps = {
   number: string;
@@ -22,6 +24,19 @@ export type NumberedSectionProps = {
   imagePaths?: string[];
 };
 
+function FullWidthFigure({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <figure
+      className={cn(
+        'mt-6 overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50',
+        className,
+      )}
+    >
+      {children}
+    </figure>
+  );
+}
+
 // 1. NumberedSection
 export function NumberedSection({
   number,
@@ -31,7 +46,7 @@ export function NumberedSection({
   layout = 'text',
   imagePaths = [],
 }: NumberedSectionProps) {
-  const paragraphs = Array.isArray(body) ? body : [body];
+  const paragraphs = Array.isArray(body) ? body.filter((p) => p.trim().length > 0) : body.trim() ? [body] : [];
 
   return (
     <section className="border-b border-neutral-200 py-10 last:border-b-0">
@@ -52,7 +67,24 @@ export function NumberedSection({
           </div>
 
           {layout === 'full' && imagePaths[0] ? (
-            <SmartImage path={imagePaths[0]} locale={locale} className="mt-6 w-full" />
+            <FullWidthFigure className="flex max-h-[min(520px,72vh)] items-center justify-center p-2 sm:p-4">
+              <SmartImage
+                path={imagePaths[0]}
+                locale={locale}
+                className="w-full [&_img]:mx-auto [&_img]:max-h-[min(480px,68vh)] [&_img]:w-full [&_img]:object-contain"
+                fit="contain"
+              />
+            </FullWidthFigure>
+          ) : null}
+
+          {layout === 'split' && imagePaths.length === 1 ? (
+            <FullWidthFigure className="p-2 sm:p-4">
+              <SmartImage
+                path={imagePaths[0]}
+                locale={locale}
+                className="w-full [&_img]:mx-auto [&_img]:h-auto [&_img]:w-full"
+              />
+            </FullWidthFigure>
           ) : null}
 
           {layout === 'split' && imagePaths.length >= 2 ? (
@@ -62,7 +94,12 @@ export function NumberedSection({
           {layout === 'gallery' && imagePaths.length > 0 ? (
             <div className="mt-6 grid gap-6 md:grid-cols-3">
               {imagePaths.map((path) => (
-                <SmartImage key={path} path={path} locale={locale} className="w-full" />
+                <div
+                  key={path}
+                  className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 p-2"
+                >
+                  <SmartImage path={path} locale={locale} className="w-full [&_img]:h-auto [&_img]:w-full" />
+                </div>
               ))}
             </div>
           ) : null}

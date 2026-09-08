@@ -79,7 +79,7 @@ export function SitemapOverlay({
           asset={logoAsset}
           locale={locale}
           path="common.logo"
-          className="h-10 w-[140px]"
+          className="[&_img]:max-h-9 [&_img]:w-auto"
         />
         <button
           type="button"

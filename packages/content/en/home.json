@@ -1,29 +1,36 @@
 {
-  "title": "Lua",
+  "title": "LUA Corporation",
   "localeLabel": "Current language",
   "meta": {
-    "description": "Lua — Industrial control systems, IoT platform, smart factory solutions"
+    "description": "LUA Corporation — Data Center Infrastructure and Operations"
   },
   "hero": {
     "slides": [
-      { "title": "Global Leading", "subtitle": "Leading technology innovation worldwide" },
-      { "title": "High-Tech Solution", "subtitle": "Advanced industrial solutions" },
-      { "title": "Everlasting Innovation", "subtitle": "Building a sustainable future" }
+      {
+        "title": "Power and Infrastructure for the AI Era",
+        "subtitle": "We develop the technologies to build and operate data centers."
+      }
     ],
     "prev": "Previous slide",
     "next": "Next slide"
   },
   "techCards": [
-    { "title": "Smart Control System", "href": "/technology/tech-1" },
-    { "title": "IoT Platform", "href": "/technology/tech-2" }
+    { "title": "Data Center Infrastructure", "href": "/technology/tech-1" },
+    { "title": "Data Center Operations", "href": "/technology/tech-2" }
   ],
   "bizFields": [
-    { "title": "Industrial Control", "desc": "Factory automation with PLC & SCADA" },
-    { "title": "IoT Platform", "desc": "Device connectivity and data integration" },
-    { "title": "Smart Factory", "desc": "Digital transformation consulting" },
-    { "title": "Energy Solutions", "desc": "Energy monitoring and optimization" },
-    { "title": "Global Service", "desc": "Overseas offices and partner network" },
-    { "title": "R&D", "desc": "Next-generation technology research" }
+    {
+      "title": "Data Center Infrastructure",
+      "desc": "Power, cooling, and the facilities needed to build a data center"
+    },
+    {
+      "title": "Data Center Operations",
+      "desc": "Operating technology that manages power, cooling, and computing together"
+    },
+    {
+      "title": "Site Development",
+      "desc": "Sourcing and developing sites suitable for infrastructure"
+    }
   ],
   "sections": {
     "technology": { "tag": "TECHNOLOGY", "title": "Core Technology" },
@@ -33,17 +40,12 @@
   "linkCards": {
     "prCenter": {
       "title": "PR Center",
-      "desc": "News and notices",
+      "desc": "Company news and notices",
       "href": "/pr-center/news"
-    },
-    "irCenter": {
-      "title": "IR Center",
-      "desc": "Investor relations (coming soon)",
-      "href": "https://example.com/ir"
     },
     "location": {
       "title": "Location",
-      "desc": "Headquarters and offices",
+      "desc": "Head office directions",
       "href": "/company/location"
     }
   }

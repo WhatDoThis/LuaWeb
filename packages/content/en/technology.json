@@ -1,27 +1,24 @@
 {
   "meta": { "sectionTag": "TECHNOLOGY", "sectionTitle": "Technology" },
-  "lnb": { "tech1": "Technology 1", "tech2": "Technology 2" },
+  "lnb": { "tech1": "Data Center Infrastructure", "tech2": "Data Center Operations" },
   "pages": {
     "tech1": {
       "tag": "TECHNOLOGY 01",
-      "title": "Smart Control System",
-      "desc": "Integrated control solution for industrial sites.",
-      "intro": "Lua's smart control system provides real-time data collection, analysis, and control on a single platform. It can be customized for various industrial environments.",
+      "title": "Data Center Infrastructure",
+      "desc": "The facilities required to build a data center.",
+      "intro": "Servers used for AI computing consume a great deal of power and generate a great deal of heat. LUA develops the facilities that supply that power and handle that heat, designed so that heat is recovered and reused rather than discarded.",
       "sections": [
         {
           "number": "01",
-          "title": "Core Features",
-          "body": [
-            "Supports real-time monitoring and remote control with unified multi-equipment management.",
-            "Edge computing ensures fast response and on-site stability."
-          ],
-          "layout": "split",
-          "images": ["featureA", "featureB"]
+          "title": "Core Capabilities",
+          "body": ["Power supply equipment", "Cooling equipment", "Waste heat recovery and reuse"],
+          "layout": "full",
+          "images": ["featureA"]
         },
         {
           "number": "02",
-          "title": "System Architecture",
-          "body": "Provides an end-to-end architecture connecting sensors, PLC, SCADA, and cloud seamlessly.",
+          "title": "System Diagram",
+          "body": "",
           "layout": "full",
           "images": ["diagram"]
         },
@@ -29,9 +26,8 @@
           "number": "03",
           "title": "Applications",
           "body": [
-            "Manufacturing: semiconductor, display, automotive",
-            "Energy and utility infrastructure monitoring",
-            "Smart building and logistics automation"
+            "Data centers for AI computing",
+            "Small-scale data centers in areas with limited grid capacity"
           ],
           "layout": "text"
         }
@@ -39,23 +35,20 @@
     },
     "tech2": {
       "tag": "TECHNOLOGY 02",
-      "title": "IoT Platform",
-      "desc": "IoT platform for unified device and data management.",
-      "intro": "Lua IoT Platform supports device connectivity, data collection, analysis, and visualization. Built on a scalable microservices architecture.",
+      "title": "Data Center Operations",
+      "desc": "Managing power, cooling, and computing together.",
+      "intro": "In a data center, power, cooling, and computing all affect one another. LUA develops operating technology that evaluates and adjusts them together rather than separately, and records equipment condition and usage history so it can also support asset management.",
       "sections": [
         {
           "number": "01",
           "title": "Platform Overview",
-          "body": "Manage the entire lifecycle from device onboarding to dashboards via web interface. Supports both REST API and MQTT protocols.",
+          "body": [
+            "Integrated operation of power, cooling, and computing",
+            "Recording of equipment condition and usage history",
+            "Energy consumption management"
+          ],
           "layout": "full",
           "images": ["featureMain"]
-        },
-        {
-          "number": "02",
-          "title": "Field Applications",
-          "body": "Deployed and operating at numerous smart factory and energy sites domestically and internationally.",
-          "layout": "gallery",
-          "images": ["gallery.0", "gallery.1", "gallery.2"]
         }
       ]
     }

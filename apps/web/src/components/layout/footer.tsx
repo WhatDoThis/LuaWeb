@@ -59,7 +59,7 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
             asset={footerLogoAsset}
             locale={locale}
             path="common.logoFooter"
-            className="h-11 w-[160px]"
+            className="[&_img]:max-h-10 [&_img]:w-auto"
           />
           <p className="mt-2 text-sm text-neutral-600">{site.companyName[locale]}</p>
         </div>
@@ -96,6 +96,7 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
                 </Link>
               </span>
             </li>
+            {site.contact.tel ? (
             <li className="flex gap-2">
               <ContactIcon>
                 <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4">
@@ -114,6 +115,8 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
                 </a>
               </span>
             </li>
+            ) : null}
+            {site.contact.fax ? (
             <li className="flex gap-2">
               <ContactIcon>
                 <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4">
@@ -130,6 +133,8 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
                 {site.contact.fax}
               </span>
             </li>
+            ) : null}
+            {site.contact.email ? (
             <li className="flex gap-2">
               <ContactIcon>
                 <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4">
@@ -150,6 +155,7 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
                 </a>
               </span>
             </li>
+            ) : null}
           </ul>
         </div>
       </div>

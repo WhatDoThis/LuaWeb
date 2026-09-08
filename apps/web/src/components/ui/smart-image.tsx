@@ -19,10 +19,11 @@ export type SmartImageProps = {
   locale: 'ko' | 'en';
   className?: string;
   priority?: boolean;
+  fit?: 'natural' | 'contain' | 'cover';
 };
 
 // 1. SmartImage
-export function SmartImage({ path, asset, locale, className, priority }: SmartImageProps) {
+export function SmartImage({ path, asset, locale, className, priority, fit }: SmartImageProps) {
   const resolved = asset ?? getImage(path!);
 
   return (
@@ -32,6 +33,7 @@ export function SmartImage({ path, asset, locale, className, priority }: SmartIm
       path={path}
       className={className}
       priority={priority}
+      fit={fit}
     />
   );
 }

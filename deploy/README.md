@@ -10,7 +10,7 @@
 ```
 [Dev Windows]  pnpm build  →  apps/web/out/
                                 ↓ rsync/scp (Phase 7 CI)
-[Prd Rocky]    nginx root  →  /var/www/woori-tech/out/
+[Prd Rocky]    nginx root  →  /var/www/lua/current/
 ```
 
 ## 설정 파일 위치

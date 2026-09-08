@@ -42,13 +42,16 @@ export function BizCardSlider({ cards, locale }: BizCardSliderProps) {
       <div className="flex gap-6">
         {cards.map((card) => (
           <article key={card.title} className="min-w-0 flex-[0_0_80%] sm:flex-[0_0_45%] lg:flex-[0_0_32%]">
-            <Link href={card.href} className="group block overflow-hidden rounded-lg border border-neutral-200">
-              <ImageAssetView
-                asset={card.asset}
-                locale={locale}
-                path={card.imagePath}
-                className="w-full"
-              />
+            <Link href={card.href} className="group block overflow-hidden rounded-lg border border-neutral-200 transition-shadow hover:shadow-md">
+              <div className="aspect-[21/28] w-full overflow-hidden">
+                <ImageAssetView
+                  asset={card.asset}
+                  locale={locale}
+                  path={card.imagePath}
+                  className="h-full w-full"
+                  fit="cover"
+                />
+              </div>
               <div className="p-4">
                 <h3 className="font-semibold text-neutral-800 group-hover:text-primary">{card.title}</h3>
               </div>

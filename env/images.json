@@ -1,33 +1,31 @@
 {
   "common": {
     "logo": {
-      "src": "",
-      "size": "180x48",
+      "src": "/static/images/common/logo.jpg",
+      "size": "1130x487",
       "where": "Header 좌측 로고",
-      "alt": { "ko": "루아 로고", "en": "Lua logo" }
+      "alt": { "ko": "루아주식회사 로고", "en": "LUA Corporation logo" }
     },
     "logoFooter": {
-      "src": "",
-      "size": "160x44",
+      "src": "/static/images/common/logo.jpg",
+      "size": "1130x487",
       "where": "Footer 로고",
-      "alt": { "ko": "루아 로고", "en": "Lua logo" }
+      "alt": { "ko": "루아주식회사 로고", "en": "LUA Corporation logo" }
     },
     "favicon": {
-      "src": "",
+      "src": "/static/images/common/logo.jpg",
       "size": "32x32",
       "where": "favicon.ico 소스"
     },
     "ogDefault": {
-      "src": "",
+      "src": "/static/images/home/hero-1.png",
       "size": "1200x630",
       "where": "OG 기본 이미지"
     }
   },
   "home": {
     "heroSlides": [
-      { "src": "", "size": "1920x1080", "where": "메인 히어로 1 / Global Leading" },
-      { "src": "", "size": "1920x1080", "where": "메인 히어로 2 / High-Tech Solution" },
-      { "src": "", "size": "1920x1080", "where": "메인 히어로 3 / Everlasting Innovation" }
+      { "src": "/static/images/home/hero-1.png", "size": "1536x1024", "where": "메인 히어로 1" }
     ],
     "techCards": [
       { "src": "", "size": "420x560", "where": "기술카드 슬라이더 1" },
@@ -35,7 +33,6 @@
     ],
     "linkCards": {
       "prCenter": { "src": "", "size": "440x300", "where": "하단 링크카드 PR Center" },
-      "irCenter": { "src": "", "size": "440x300", "where": "하단 링크카드 IR Center" },
       "location": { "src": "", "size": "440x300", "where": "하단 링크카드 오시는 길" }
     },
     "bizField": {
@@ -43,13 +40,13 @@
     }
   },
   "company": {
-    "hero": { "src": "", "size": "1920x420", "where": "회사소개 IntroHero 공통" },
+    "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "회사소개 IntroHero 공통" },
     "greeting": {
       "portrait": { "src": "", "size": "560x700", "where": "인사말 대표 사진" },
-      "ceoSign": { "src": "", "size": "260x80", "where": "인사말 서명 PNG" }
+      "ceoSign": { "src": "/static/images/company/ceo-sign.png", "size": "520x160", "where": "인사말 서명 PNG" }
     },
     "overview": {
-      "diagram": { "src": "", "size": "1200x680", "where": "회사개요 조직/사업 다이어그램" }
+      "diagram": { "src": "/static/images/company/overview-diagram.png", "size": "1200x680", "where": "회사개요 사업구조도" }
     },
     "history": {
       "banner": { "src": "", "size": "1200x400", "where": "연혁 상단 배너 (선택)" }
@@ -60,9 +57,11 @@
     },
     "certificates": {
       "items": [
-        { "src": "", "size": "400x560", "where": "인증서 썸네일 1" },
-        { "src": "", "size": "400x560", "where": "인증서 썸네일 2" },
-        { "src": "", "size": "400x560", "where": "인증서 썸네일 3" }
+        { "src": "", "size": "400x560", "where": "특허증 제10-2980502호" },
+        { "src": "", "size": "400x560", "where": "특허출원 10-2026-0057532" },
+        { "src": "", "size": "400x560", "where": "특허출원 10-2026-0091269" },
+        { "src": "", "size": "400x560", "where": "특허출원 10-2026-0147522" },
+        { "src": "", "size": "400x560", "where": "특허출원 (번호 확인 중)" }
       ]
     },
     "location": {
@@ -76,12 +75,12 @@
     }
   },
   "technology": {
-    "hero": { "src": "", "size": "1920x420", "where": "기술소개 IntroHero 공통" },
+    "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "기술소개 IntroHero 공통" },
     "tech1": {
-      "hero": { "src": "", "size": "1920x420", "where": "tech-1 IntroHero" },
-      "featureA": { "src": "", "size": "660x420", "where": "tech-1 01 좌측" },
+      "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "tech-1 IntroHero" },
+      "featureA": { "src": "/static/images/technology/tech1-building.png", "size": "6228x3612", "where": "tech-1 01 건물 조감도" },
       "featureB": { "src": "", "size": "660x420", "where": "tech-1 01 우측" },
-      "diagram": { "src": "", "size": "1200x520", "where": "tech-1 02 시스템 구성도" },
+      "diagram": { "src": "/static/images/technology/tech1-diagram.png", "size": "1200x520", "where": "tech-1 02 인프라 구성도" },
       "process": [
         { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 1 (선택)" },
         { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 2 (선택)" },
@@ -90,8 +89,8 @@
       ]
     },
     "tech2": {
-      "hero": { "src": "", "size": "1920x420", "where": "tech-2 IntroHero" },
-      "featureMain": { "src": "", "size": "1200x520", "where": "tech-2 01 메인" },
+      "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "tech-2 IntroHero" },
+      "featureMain": { "src": "/static/images/technology/tech2-overview.png", "size": "1200x520", "where": "tech-2 01 운영 개요도" },
       "gallery": [
         { "src": "", "size": "580x360", "where": "tech-2 갤러리 1" },
         { "src": "", "size": "580x360", "where": "tech-2 갤러리 2" },
@@ -100,9 +99,9 @@
     }
   },
   "management": {
-    "hero": { "src": "", "size": "1920x420", "where": "경영방침 IntroHero" },
+    "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "경영방침 IntroHero" },
     "policy": {
-      "diagram": { "src": "", "size": "1000x600", "where": "경영방침 다이어그램" }
+      "diagram": { "src": "/static/images/management/policy-diagram.png", "size": "1000x600", "where": "경영방침 다이어그램" }
     },
     "ethics": {
       "banner": { "src": "", "size": "1200x400", "where": "윤리경영 상단" },
@@ -123,9 +122,9 @@
     }
   },
   "prCenter": {
-    "hero": { "src": "", "size": "1920x420", "where": "홍보센터 IntroHero" },
+    "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "홍보센터 IntroHero" },
     "news": {
-      "hero": { "src": "", "size": "1920x420", "where": "뉴스 목록 IntroHero" }
+      "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "뉴스 목록 IntroHero" }
     },
     "disclosure": {
       "hero": { "src": "", "size": "1920x420", "where": "공시정보 IntroHero (미사용)" }

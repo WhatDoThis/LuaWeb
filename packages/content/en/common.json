@@ -3,40 +3,36 @@
     "company": {
       "label": "Company",
       "greeting": "CEO Message",
-      "overview": "Overview",
-      "history": "History",
-      "organizations": "Organization",
-      "certificates": "Certificates",
+      "overview": "Company Overview",
+      "certificates": "Intellectual Property",
       "location": "Location"
     },
     "technology": {
       "label": "Technology",
-      "tech1": "Technology 1",
-      "tech2": "Technology 2"
+      "tech1": "Data Center Infrastructure",
+      "tech2": "Data Center Operations"
     },
     "management": {
       "label": "Management",
-      "policy": "Management Policy",
-      "ethics": "Ethics",
-      "esg": "ESG"
+      "policy": "Management Principles"
     },
     "prCenter": {
       "label": "PR Center",
-      "news": "News & Notice"
+      "news": "News & Notices"
     }
   },
   "footer": {
     "privacy": "Privacy Policy",
     "contactTitle": "Contact Us",
     "address": "Address",
-    "tel": "Tel",
+    "tel": "Phone",
     "fax": "Fax",
     "email": "Email",
-    "copyright": "Copyright © Lua. All rights reserved."
+    "copyright": "Copyright © LUA Corporation. All rights reserved."
   },
   "privacy": {
     "title": "Privacy Policy",
-    "body": "Privacy policy placeholder content. Replace with the official policy before launch."
+    "body": "Article 1 (General) LUA Corporation (\"the Company\") respects users' privacy and complies with the Personal Information Protection Act and related regulations.\n\nArticle 2 (Items and Method of Collection) The Company collects name, contact number, email, and the content of the inquiry in order to respond to inquiries. Collection is limited to email submissions.\n\nArticle 3 (Purpose of Use) Collected personal information is used solely to respond to and consult on inquiries.\n\nArticle 4 (Retention Period) Personal information is destroyed without delay once the purpose is achieved, except where retention is required by law.\n\nArticle 5 (Provision to Third Parties) The Company does not provide users' personal information to third parties, except as required by law.\n\nArticle 6 (Rights of Users) Users may request access, correction, deletion, or suspension of processing of their personal information at any time, and the Company shall act without delay.\n\nArticle 7 (Privacy Officer) Name: Ryu Jinwoo / Phone: ____ / Email: ____\n\nArticle 8 (Duty of Notice) Any change to this policy will be announced on the website at least 7 days before it takes effect. Effective date: __/__/____"
   },
   "lang": {
     "ko": "KOR",
@@ -48,7 +44,7 @@
   "board": {
     "notice": "Notice",
     "news": "News",
-    "searchPlaceholder": "Enter search keyword",
+    "searchPlaceholder": "Search",
     "search": "Search",
     "noResults": "No results found",
     "prev": "Previous",
@@ -57,10 +53,11 @@
     "titleCol": "Title",
     "dateCol": "Date",
     "categoryCol": "Category",
-    "pinned": "PIN",
+    "pinned": "Pinned",
     "backToList": "Back to list",
     "disclosureDart": "DART",
-    "disclosurePdf": "PDF"
+    "disclosurePdf": "PDF",
+    "viewDocument": "View document"
   },
   "layout": {
     "menuOpen": "Open menu",

@@ -20,6 +20,7 @@ import { getSiteBaseUrl } from '@/lib/seo';
 import { getImage, getSite } from '@repo/env';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { LUA_SITE_ID } from '@/lib/site-identity';
 import '@/styles/globals.css';
 
 type LocaleLayoutProps = {
@@ -89,7 +90,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const footerLogoAsset = getImage('common.logoFooter');
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-site={LUA_SITE_ID}>
       <body className="font-sans antialiased">
         <JsonLdOrganization locale={locale as Locale} />
         <NextIntlClientProvider messages={messages}>

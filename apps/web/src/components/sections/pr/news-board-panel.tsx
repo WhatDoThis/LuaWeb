@@ -12,7 +12,7 @@
 
 'use client';
 
-import { BoardRow } from '@/components/sections/pr/board-row';
+import { BoardListRow, BoardTableRow } from '@/components/sections/pr/board-row';
 import type { BoardArticle } from '@/lib/board';
 import { BoardSearch } from '@/components/sections/pr/board-search';
 import { Pagination } from '@/components/ui/pagination';
@@ -97,7 +97,7 @@ export function NewsBoardPanel({
               </thead>
               <tbody>
                 {pageArticles.map((article, index) => (
-                  <BoardRow
+                  <BoardTableRow
                     key={article.slug}
                     article={article}
                     href={`${basePath}/${article.slug}`}
@@ -114,7 +114,7 @@ export function NewsBoardPanel({
 
           <ul className="md:hidden">
             {pageArticles.map((article, index) => (
-              <BoardRow
+              <BoardListRow
                 key={article.slug}
                 article={article}
                 href={`${basePath}/${article.slug}`}

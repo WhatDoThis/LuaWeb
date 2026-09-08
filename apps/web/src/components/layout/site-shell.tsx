@@ -19,6 +19,7 @@ import { TopButton } from '@/components/layout/top-button';
 import { Modal } from '@/components/ui/modal';
 import { navItems } from '@/lib/nav';
 import type { ImageAsset, SiteConfig } from '@repo/env';
+import { LUA_SITE_ID } from '@/lib/site-identity';
 import { useTranslations } from '@/lib/i18n';
 import { useState } from 'react';
 
@@ -43,7 +44,7 @@ export function SiteShell({
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div id={`${LUA_SITE_ID}-site-root`} className="flex min-h-screen flex-col">
       <Header
         locale={locale}
         navItems={navItems}
@@ -66,7 +67,7 @@ export function SiteShell({
       />
       <TopButton />
       <Modal open={privacyOpen} onClose={() => setPrivacyOpen(false)} title={t('privacy.title')}>
-        <p>{t('privacy.body')}</p>
+        <p className="whitespace-pre-line">{t('privacy.body')}</p>
       </Modal>
     </div>
   );

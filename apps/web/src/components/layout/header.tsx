@@ -34,12 +34,12 @@ export function Header({ locale, navItems, logoAsset, onMenuOpen }: HeaderProps)
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4">
-        <Link href="/" className="block shrink-0">
+        <Link href="/" className="block shrink-0 py-0.5">
           <ImageAssetView
             asset={logoAsset}
             locale={locale}
             path="common.logo"
-            className="h-12 w-[180px]"
+            className="[&_img]:max-h-10 [&_img]:w-auto md:[&_img]:max-h-11"
             priority
           />
         </Link>

@@ -1,33 +1,20 @@
 /**
- * company.organizations.page (조직도)
- * ===================================
- * SubPageLayout + OrgChart
+ * company.organizations.page (조직도 — 삭제됨)
+ * =================================================
+ * 콘텐츠 인벤토리 확정: 조직도 페이지 미사용 → 404
  *
  * [Main Functions]
  * - OrganizationsPage
  *
  * [Dependencies]
- * - @/lib/sub-page-layout, sections/company/org-chart
+ * - next/navigation
  */
 
-import { OrgChart } from '@/components/sections/company/org-chart';
-import { SubPageLayout } from '@/lib/sub-page-layout';
+import { notFound } from 'next/navigation';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
 
 // 1. OrganizationsPage
-export default async function OrganizationsPage({ params }: PageProps) {
-  const { locale } = await params;
-  return (
-    <SubPageLayout
-      locale={locale}
-      section="company"
-      namespace="company"
-      imagePath="company.hero"
-      currentPath="/company/organizations"
-      pageKey="organizations"
-    >
-      <OrgChart locale={locale} />
-    </SubPageLayout>
-  );
+export default async function OrganizationsPage(_props: PageProps) {
+  notFound();
 }

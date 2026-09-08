@@ -2,6 +2,10 @@
 
 ## Log Index
 
+39. 2026-09-08 콘텐츠 적용 후 이미지·UI 레이아웃 보정
+38. 2026-09-08 확정 콘텐츠·이미지 패키지 전면 적용
+37. 2026-08-23 벤치마크 회사명 잔재 검수·Lua DOM 식별자 정리
+36. 2026-08-23 뉴스 게시판 BoardRow hydration 오류 수정
 35. 2026-08-23 2차 검수 blocker·SEO·nginx·배포 문서 보강
 34. 2026-08-23 런치 가이드 회사명 루아로 정정
 33. 2026-08-23 최종 브라우저 배포·오픈 가이드 문서 추가
@@ -39,6 +43,30 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+39. 2026-09-08 콘텐츠 적용 후 이미지·UI 레이아웃 보정
+Purpose: 실제 이미지 비율·빈 슬롯·히어로/로고/기술 페이지 등 브라우저 UI 문제 부분 수정 Changes:
+
+ImageAssetView fit(contain/cover)·placeholderMode false 시 그라데이션 처리
+로고 비율·히어로 object-position·서브히어로 반응형 높이·다이어그램 프레임·특허 PDF 카드·링크/기술카드 aspect 고정 Changed files: apps/web/src/components/ui/image-asset-view.tsx, apps/web/src/components/layout/header.tsx, apps/web/src/components/sections/**, packages/env/images.json, docs/log/log.md
+
+38. 2026-09-08 확정 콘텐츠·이미지 패키지 전면 적용
+Purpose: 11_ContentInventorySuccess.md 확정본과 static/external 이미지를 JSON·images.json·정적 자산에 반영 Changes:
+
+external → public/static/images·downloads 정리, site/home/company/technology/management/prCenter/common ko·en 갱신
+GNB/LNB 연혁·조직도·윤리·ESG 제거, IR 카드·팩스·히어로2·3 삭제, 특허 PDF 링크·네이버 지도 링크 추가 Changed files: packages/content/**, packages/env/**, apps/web/public/static/**, apps/web/src/**
+
+37. 2026-08-23 벤치마크 회사명 잔재 검수·Lua DOM 식별자 정리
+Purpose: 우리기술(woori) 잔재 검수 및 HTML class/id/data-site를 Lua 전용 식별자로 통일 Changes:
+
+apps/web: site-identity.ts, data-site=lua, lua-site-root, lua-modal-title, lua-location-info, lua-board-markdown
+package.json lua-web, .env.example·deploy README woori 경로 → /var/www/lua Changed files: apps/web/src/lib/site-identity.ts, apps/web/src/components/**, apps/web/src/app/[locale]/layout.tsx, package.json, .env.example, deploy/**, AGENTS.md
+
+36. 2026-08-23 뉴스 게시판 BoardRow hydration 오류 수정
+Purpose: tbody 안 li 렌더링으로 발생한 HTML/hydration 오류 제거 Changes:
+
+board-row: BoardTableRow(tr), BoardListRow(li) 분리
+news-board-panel: PC tbody·MO ul 각각 전용 컴포넌트 사용 Changed files: apps/web/src/components/sections/pr/board-row.tsx, apps/web/src/components/sections/pr/news-board-panel.tsx
 
 35. 2026-08-23 2차 검수 blocker·SEO·nginx·배포 문서 보강
 Purpose: 정적 export 루트/404·운영 도메인 빌드 차단·배포 경로 통일·검색/CI/nginx/문서 2차 검수 반영 Changes:

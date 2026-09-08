@@ -29,11 +29,18 @@ export type LinkCardsProps = {
 // 1. LinkCards
 export function LinkCards({ cards, locale }: LinkCardsProps) {
   return (
-    <div className="grid gap-6 md:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-2">
       {cards.map((card) => {
         const content = (
           <>
-            <SmartImage path={card.imagePath} locale={locale} className="w-full" />
+            <div className="aspect-[44/30] w-full overflow-hidden">
+              <SmartImage
+                path={card.imagePath}
+                locale={locale}
+                className="h-full w-full"
+                fit="cover"
+              />
+            </div>
             <div className="p-5">
               <h3 className="font-semibold text-neutral-800">{card.title}</h3>
               <p className="mt-2 text-sm text-neutral-600">{card.desc}</p>

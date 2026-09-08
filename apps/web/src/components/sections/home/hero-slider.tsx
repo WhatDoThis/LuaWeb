@@ -78,15 +78,16 @@ export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderP
         <div className="flex">
           {slides.map((slide, index) => (
             <div key={slide.title} className="relative min-w-0 flex-[0_0_100%]">
-              <div className="relative h-[480px] md:h-[640px]">
+              <div className="relative h-[420px] sm:h-[520px] md:h-[640px]">
                 <ImageAssetView
                   asset={slide.asset}
                   locale={locale}
                   path={slide.imagePath}
-                  className="absolute inset-0 h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
+                  className="absolute inset-0 h-full w-full [&_img]:object-[center_42%]"
+                  fit="cover"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/25" />
                 <div
                   className="absolute inset-0 flex items-center"
                   aria-hidden={index !== selectedIndex}

@@ -1,32 +1,17 @@
 {
   "meta": { "sectionTag": "PR CENTER", "sectionTitle": "PR Center" },
-  "lnb": { "news": "News & Notice" },
+  "lnb": { "news": "News & Notices" },
   "pages": {
-    "news": { "tag": "NEWS", "title": "News & Notice", "desc": "Latest news from Lua." }
+    "news": {
+      "tag": "NEWS",
+      "title": "News & Notices",
+      "desc": "News from LUA Corporation."
+    }
   },
   "disclosure": {
     "tag": "DISCLOSURE",
     "title": "Disclosure",
-    "desc": "Disclosure page (not linked in GNB)",
-    "items": [
-      {
-        "date": "2026-08-01",
-        "title": "Q2 2026 Business Results Disclosure",
-        "url": "https://dart.fss.or.kr/",
-        "type": "dart"
-      },
-      {
-        "date": "2026-05-15",
-        "title": "2025 Annual Report",
-        "url": "/static/downloads/annual-report-2025.pdf",
-        "type": "pdf"
-      },
-      {
-        "date": "2026-03-20",
-        "title": "Annual Shareholders Meeting Results",
-        "url": "https://dart.fss.or.kr/",
-        "type": "dart"
-      }
-    ]
+    "desc": "Disclosure page (not linked)",
+    "items": []
   }
 }

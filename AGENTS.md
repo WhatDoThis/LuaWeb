@@ -1,4 +1,4 @@
-# Agent Guide — Woori Tech Site (LuaWeb)
+# Agent Guide — Lua Site (LuaWeb)
 
 ## Project
 

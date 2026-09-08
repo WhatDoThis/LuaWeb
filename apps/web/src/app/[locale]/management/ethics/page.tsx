@@ -1,33 +1,20 @@
 /**
- * management.ethics.page (윤리경영)
- * =================================
- * SubPageLayout + EthicsBlock
+ * management.ethics.page (윤리경영 — 삭제됨)
+ * ===========================================
+ * 콘텐츠 인벤토리 확정: 윤리경영 페이지 미사용 → 404
  *
  * [Main Functions]
  * - EthicsPage
  *
  * [Dependencies]
- * - @/lib/sub-page-layout, sections/management/ethics-block
+ * - next/navigation
  */
 
-import { EthicsBlock } from '@/components/sections/management/ethics-block';
-import { SubPageLayout } from '@/lib/sub-page-layout';
+import { notFound } from 'next/navigation';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
 
 // 1. EthicsPage
-export default async function EthicsPage({ params }: PageProps) {
-  const { locale } = await params;
-  return (
-    <SubPageLayout
-      locale={locale}
-      section="management"
-      namespace="management"
-      imagePath="management.hero"
-      currentPath="/management/ethics"
-      pageKey="ethics"
-    >
-      <EthicsBlock locale={locale} />
-    </SubPageLayout>
-  );
+export default async function EthicsPage(_props: PageProps) {
+  notFound();
 }
