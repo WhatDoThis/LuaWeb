@@ -8,6 +8,7 @@
  * - getFeatures
  * - getDeploy
  * - getImage
+ * - resolveImageSrc
  * - listEmptyImageSlots
  *
  * [Dependencies]
@@ -67,7 +68,15 @@ function resolvePath(root: unknown, segments: string[]): unknown {
   }, root);
 }
 
-// 4. getImage
+// 4. resolveImageSrc
+export function resolveImageSrc(asset: ImageAsset, locale: 'ko' | 'en'): string {
+  if (locale === 'en' && asset.srcEn?.trim()) {
+    return asset.srcEn.trim();
+  }
+  return asset.src?.trim() ?? '';
+}
+
+// 5. getImage
 export function getImage(path: string): ImageAsset {
   const segments = path.split('.');
   const found = resolvePath(images, segments);
@@ -101,7 +110,7 @@ function walkImageSlots(node: unknown, prefix: string, results: { path: string; 
   }
 }
 
-// 5. listEmptyImageSlots
+// 6. listEmptyImageSlots
 export function listEmptyImageSlots(): { path: string; asset: ImageAsset }[] {
   const results: { path: string; asset: ImageAsset }[] = [];
   walkImageSlots(images, '', results);

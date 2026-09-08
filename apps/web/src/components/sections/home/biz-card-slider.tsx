@@ -1,19 +1,20 @@
 /**
- * sections.biz-card-slider (기술 카드 슬라이더)
- * ============================================
- * Embla loop + drag, techCards 2+
+ * sections.biz-card-slider (기술 바로가기)
+ * =======================================
+ * 이미지 없으면 프리미엄 버튼 행, 있으면 Embla 카드
  *
  * [Main Functions]
  * - BizCardSlider
  *
  * [Dependencies]
- * - embla-carousel-react, ui/image-asset-view, @/i18n/navigation
+ * - embla-carousel-react, ui/image-asset-view, @repo/env, @/i18n/navigation
  */
 
 'use client';
 
 import { Link } from '@/i18n/navigation';
 import { ImageAssetView } from '@/components/ui/image-asset-view';
+import { resolveImageSrc } from '@repo/env';
 import type { ImageAsset } from '@repo/env';
 import useEmblaCarousel from 'embla-carousel-react';
 
@@ -32,9 +33,34 @@ export type BizCardSliderProps = {
 // 1. BizCardSlider
 export function BizCardSlider({ cards, locale }: BizCardSliderProps) {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' });
+  const hasAnyImage = cards.some((card) => Boolean(resolveImageSrc(card.asset, locale)));
 
   if (cards.length === 0) {
     return null;
+  }
+
+  if (!hasAnyImage) {
+    return (
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        {cards.map((card) => (
+          <Link
+            key={card.title}
+            href={card.href}
+            className="group inline-flex min-w-[220px] flex-1 items-center justify-between rounded-xl border border-neutral-200/90 bg-white px-6 py-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+          >
+            <span className="text-base font-semibold text-neutral-800 group-hover:text-primary">
+              {card.title}
+            </span>
+            <span
+              className="ml-4 text-lg text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary"
+              aria-hidden="true"
+            >
+              →
+            </span>
+          </Link>
+        ))}
+      </div>
+    );
   }
 
   return (
@@ -42,7 +68,7 @@ export function BizCardSlider({ cards, locale }: BizCardSliderProps) {
       <div className="flex gap-6">
         {cards.map((card) => (
           <article key={card.title} className="min-w-0 flex-[0_0_80%] sm:flex-[0_0_45%] lg:flex-[0_0_32%]">
-            <Link href={card.href} className="group block overflow-hidden rounded-lg border border-neutral-200 transition-shadow hover:shadow-md">
+            <Link href={card.href} className="group block overflow-hidden rounded-xl border border-neutral-200">
               <div className="aspect-[21/28] w-full overflow-hidden">
                 <ImageAssetView
                   asset={card.asset}

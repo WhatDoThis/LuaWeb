@@ -6,10 +6,18 @@
       "tag": "POLICY",
       "title": "Management Principles",
       "desc": "The standards by which LUA works.",
-      "body": [
-        "Proven by technology. We speak through data and patents rather than descriptions.",
-        "We design the whole. We address problems that cannot be solved by fixing parts alone.",
-        "Efficiency is carbon, and safety comes before performance."
+      "principles": [
+        {
+          "emphasis": "Proven by technology.",
+          "detail": "We speak through data and patents rather than descriptions."
+        },
+        {
+          "emphasis": "We design the whole.",
+          "detail": "We address problems that cannot be solved by fixing parts alone."
+        },
+        {
+          "luxury": "Efficiency is carbon, and safety comes before performance."
+        }
       ]
     }
   }

@@ -2,6 +2,11 @@
 
 ## Log Index
 
+45. 2026-09-08 푸터 로고 220px·Google Maps embed
+44. 2026-09-08 찾아오시는 길 OSM iframe 제거·브랜드 지도 카드
+42. 2026-09-08 Pretendard 무료 웹폰트 CDN 연결
+41. 2026-09-08 Tester subagent a11y 후속 (Critical/High)
+40. 2026-09-08 UI 오케스트레이터·프리미엄 UI 전면 보강
 39. 2026-09-08 콘텐츠 적용 후 이미지·UI 레이아웃 보정
 38. 2026-09-08 확정 콘텐츠·이미지 패키지 전면 적용
 37. 2026-08-23 벤치마크 회사명 잔재 검수·Lua DOM 식별자 정리
@@ -43,6 +48,36 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+45. 2026-09-08 푸터 로고 220px·Google Maps embed
+Purpose: 푸터 로고 너비 220px 축소, 찾아오시는 길 Google Maps iframe + 네이버 지도 링크 유지 Changes:
+
+footer logo max-w 220px, site.json maps.hq Google embed, LocationSection iframe 복원 Changed files: apps/web/src/components/layout/footer.tsx, apps/web/src/components/sections/company/location-section.tsx, packages/env/site.json, env/site.json, docs/log/log.md
+
+44. 2026-09-08 찾아오시는 길 OSM iframe 제거·브랜드 지도 카드
+Purpose: OSM iframe 속성 UI 제거, 기업 사이트 톤에 맞는 미리보기 카드 + 네이버 지도 CTA Changes:
+
+location-map-preview.svg, LocationSection iframe 제거, mapCta ko/en, site.json maps.hq 비움 Changed files: apps/web/public/static/images/company/location-map-preview.svg, apps/web/src/components/sections/company/location-section.tsx, packages/env/images.json, packages/env/site.json, packages/content/ko|en/company.json, docs/log/log.md
+
+43. 2026-09-08 푸터 레이아웃·영문 SVG·지도 embed 수정
+Purpose: 푸터 180px/패딩 30·로고 확대·개인정보 중앙·문의 우측 정렬, 영문 다이어그램 SVG 깨짐·지도 iframe 복구 Changes:
+
+footer h180 py30 3열 그리드, overview/tech1/tech2 EN SVG UTF-8 정리, site.json maps OSM embed + naver.me 링크 Changed files: apps/web/src/components/layout/footer.tsx, apps/web/public/static/images/**/*.en.svg, packages/env/site.json, env/site.json, apps/web/src/components/sections/company/location-section.tsx, docs/log/log.md
+
+42. 2026-09-08 Pretendard 무료 웹폰트 CDN 연결
+Purpose: 방문자 PC 설치 여부와 무관하게 OFL Pretendard 적용 Changed:
+
+lib/pretendard-font.ts, [locale]/layout·page·not-found head link Changed files: apps/web/src/lib/pretendard-font.ts, apps/web/src/app/**/layout.tsx, apps/web/src/app/page.tsx, apps/web/src/app/not-found.tsx, docs/log/log.md
+
+41. 2026-09-08 Tester subagent a11y 후속 (Critical/High)
+Purpose: Tester·검수 subagent 완료 후 잔여 Critical/High UX·a11y 이슈 반영 Changes:
+
+focus-trap, modal/sitemap 포커스 트랩·복원, top-button tabIndex, hero a11y, lnb Escape, cert-grid PDF 링크, tel: href, global focus-visible Changed files: apps/web/src/lib/focus-trap.ts, apps/web/src/components/ui/modal.tsx, apps/web/src/components/layout/*, apps/web/src/components/sections/**, apps/web/src/styles/globals.css, docs/log/log.md
+
+40. 2026-09-08 UI 오케스트레이터·프리미엄 UI 전면 보강
+Purpose: UI/UX Master·Tester·검수 subagent 루프 및 페이지별 고급화·콘텐츠 반영 Changes:
+
+lua-ui-orchestrator 스킬, srcEn locale 이미지, 로고 PNG, 헤더/푸터·경영방침 타이포, 메인 버튼 UI, 특허 썸네일·진행중, 네이버 지도 Changed files: .cursor/skills/lua-ui-orchestrator/SKILL.md, AGENTS.md, packages/**, apps/web/src/**, apps/web/public/static/images/**, docs/log/log.md
 
 39. 2026-09-08 콘텐츠 적용 후 이미지·UI 레이아웃 보정
 Purpose: 실제 이미지 비율·빈 슬롯·히어로/로고/기술 페이지 등 브라우저 UI 문제 부분 수정 Changes:

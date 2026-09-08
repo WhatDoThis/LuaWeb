@@ -1,7 +1,7 @@
 /**
  * sections.hero-slider (메인 히어로 슬라이더)
  * ===========================================
- * Embla 3 slides, autoplay 5s, reduced-motion off
+ * Embla autoplay, a11y region, 키보드·터치 타깃
  *
  * [Main Functions]
  * - HeroSlider
@@ -17,7 +17,7 @@ import { cn } from '@/lib/cn';
 import type { ImageAsset } from '@repo/env';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export type HeroSlideData = {
   title: string;
@@ -35,19 +35,23 @@ export type HeroSliderProps = {
 
 // 1. HeroSlider
 export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderProps) {
-  const [reducedMotion, setReducedMotion] = useState(true);
+  const regionRef = useRef<HTMLElement>(null);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [motionReady, setMotionReady] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(media.matches);
+    setMotionReady(true);
     const handler = () => setReducedMotion(media.matches);
     media.addEventListener('change', handler);
     return () => media.removeEventListener('change', handler);
   }, []);
 
-  const plugins = reducedMotion
-    ? []
-    : [Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })];
+  const plugins =
+    motionReady && !reducedMotion
+      ? [Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: true })]
+      : [];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, plugins);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -68,16 +72,49 @@ export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderP
     };
   }, [emblaApi]);
 
+  useEffect(() => {
+    const region = regionRef.current;
+    if (!region) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        scrollPrev();
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        scrollNext();
+      }
+    };
+
+    region.addEventListener('keydown', handleKeyDown);
+    return () => region.removeEventListener('keydown', handleKeyDown);
+  }, [scrollPrev, scrollNext]);
+
   if (slides.length === 0) {
     return null;
   }
 
+  const activeSlide = slides[selectedIndex];
+
   return (
-    <section className="relative overflow-hidden bg-neutral-900" aria-roledescription="carousel">
+    <section
+      ref={regionRef}
+      className="relative overflow-hidden bg-neutral-900 outline-none"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={activeSlide?.title ?? 'Hero'}
+      tabIndex={0}
+    >
+      <div className="sr-only" aria-live="polite">
+        {activeSlide ? `${activeSlide.title}${activeSlide.subtitle ? ` — ${activeSlide.subtitle}` : ''}` : ''}
+      </div>
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
           {slides.map((slide, index) => (
-            <div key={slide.title} className="relative min-w-0 flex-[0_0_100%]">
+            <div key={`${slide.title}-${index}`} className="relative min-w-0 flex-[0_0_100%]">
               <div className="relative h-[420px] sm:h-[520px] md:h-[640px]">
                 <ImageAssetView
                   asset={slide.asset}
@@ -94,9 +131,9 @@ export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderP
                 >
                   <div className="mx-auto w-full max-w-[1200px] px-4 text-white">
                     {index === selectedIndex ? (
-                      <h1 className="text-3xl font-bold md:text-5xl">{slide.title}</h1>
+                      <h1 className="text-3xl font-bold tracking-tight md:text-5xl">{slide.title}</h1>
                     ) : (
-                      <p className="text-3xl font-bold md:text-5xl">{slide.title}</p>
+                      <p className="text-3xl font-bold tracking-tight md:text-5xl">{slide.title}</p>
                     )}
                     {slide.subtitle ? (
                       <p className="mt-4 text-lg text-white/90 md:text-xl">{slide.subtitle}</p>
@@ -111,7 +148,7 @@ export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderP
 
       <button
         type="button"
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+        className="absolute left-4 top-1/2 z-10 flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 px-3 text-white hover:bg-black/60 focus-visible:ring-2 focus-visible:ring-white"
         onClick={scrollPrev}
         aria-label={prevLabel}
       >
@@ -119,7 +156,7 @@ export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderP
       </button>
       <button
         type="button"
-        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/40 px-3 py-2 text-white hover:bg-black/60"
+        className="absolute right-4 top-1/2 z-10 flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 px-3 text-white hover:bg-black/60 focus-visible:ring-2 focus-visible:ring-white"
         onClick={scrollNext}
         aria-label={nextLabel}
       >
@@ -129,15 +166,22 @@ export function HeroSlider({ slides, locale, prevLabel, nextLabel }: HeroSliderP
       <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         {slides.map((slide, index) => (
           <button
-            key={`dot-${slide.title}`}
+            key={`dot-${slide.title}-${index}`}
             type="button"
             aria-label={`${slide.title} (${index + 1}/${slides.length})`}
+            aria-current={index === selectedIndex ? 'true' : undefined}
             className={cn(
-              'h-2.5 w-2.5 rounded-full transition-colors',
-              index === selectedIndex ? 'bg-white' : 'bg-white/40',
+              'flex h-11 w-11 items-center justify-center rounded-full focus-visible:ring-2 focus-visible:ring-white',
             )}
             onClick={() => scrollTo(index)}
-          />
+          >
+            <span
+              className={cn(
+                'h-2.5 w-2.5 rounded-full transition-colors',
+                index === selectedIndex ? 'bg-white' : 'bg-white/40',
+              )}
+            />
+          </button>
         ))}
       </div>
     </section>

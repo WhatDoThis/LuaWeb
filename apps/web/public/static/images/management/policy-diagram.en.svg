@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-label="Management principles diagram">
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="56" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">Management Principles</text>
+  <text x="500" y="92" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#6b7280">The standards by which LUA works.</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="60" y="130" width="880" height="96" rx="14" fill="#fff" stroke="#dbeafe" stroke-width="2"/>
+    <rect x="60" y="130" width="8" height="96" rx="4" fill="#003876"/>
+    <circle cx="110" cy="178" r="18" fill="#003876"/><text x="110" y="184" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">01</text>
+    <text x="150" y="168" font-size="20" font-weight="700" fill="#003876">Proven by technology.</text>
+    <text x="150" y="198" font-size="16" fill="#6b7280">We speak through data and patents rather than descriptions.</text>
+
+    <rect x="60" y="250" width="880" height="96" rx="14" fill="#fff" stroke="#dbeafe" stroke-width="2"/>
+    <rect x="60" y="250" width="8" height="96" rx="4" fill="#003876"/>
+    <circle cx="110" cy="298" r="18" fill="#003876"/><text x="110" y="304" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">02</text>
+    <text x="150" y="288" font-size="20" font-weight="700" fill="#003876">We design the whole.</text>
+    <text x="150" y="318" font-size="16" fill="#6b7280">We address problems that cannot be solved by fixing parts alone.</text>
+
+    <rect x="60" y="390" width="880" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="60" y="390" width="8" height="120" rx="4" fill="#c9a962"/>
+    <text x="500" y="450" text-anchor="middle" font-size="22" font-weight="600" fill="#1f2937">Efficiency is carbon,</text>
+    <text x="500" y="482" text-anchor="middle" font-size="22" font-weight="600" fill="#1f2937">and safety comes before performance.</text>
+  </g>
+</svg>

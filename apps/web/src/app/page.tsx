@@ -12,6 +12,7 @@
  */
 
 import type { Metadata } from 'next';
+import { PRETENDARD_FONT_PRECONNECT, PRETENDARD_FONT_URL } from '@/lib/pretendard-font';
 
 export const metadata: Metadata = {
   robots: {
@@ -25,10 +26,12 @@ export default function RootPage() {
   return (
     <html lang="ko">
       <head>
+        <link rel="preconnect" href={PRETENDARD_FONT_PRECONNECT} crossOrigin="anonymous" />
+        <link rel="stylesheet" href={PRETENDARD_FONT_URL} crossOrigin="anonymous" />
         <meta httpEquiv="refresh" content="0; url=/ko/" />
         <link rel="canonical" href="/ko/" />
       </head>
-      <body>
+      <body className="font-sans antialiased">
         <p>
           <a href="/ko/">한국어</a>
           {' · '}

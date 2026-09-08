@@ -47,6 +47,8 @@ export function NumberedSection({
   imagePaths = [],
 }: NumberedSectionProps) {
   const paragraphs = Array.isArray(body) ? body.filter((p) => p.trim().length > 0) : body.trim() ? [body] : [];
+  const isKeywordList =
+    paragraphs.length >= 2 && paragraphs.every((item) => item.length <= 32 && !item.includes('.'));
 
   return (
     <section className="border-b border-neutral-200 py-10 last:border-b-0">
@@ -58,13 +60,27 @@ export function NumberedSection({
         ) : null}
         <div className="flex-1">
           <h2 className="text-xl font-bold text-primary md:text-2xl">{title}</h2>
-          <div className="mt-4 space-y-3">
-            {paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)} className="leading-relaxed text-neutral-700">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          {isKeywordList ? (
+            <ul className="mt-5 space-y-3">
+              {paragraphs.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-base text-neutral-700">
+                  <span
+                    className="mt-[0.55rem] h-2 w-2 shrink-0 rounded-full bg-secondary ring-2 ring-secondary/20"
+                    aria-hidden="true"
+                  />
+                  <span className="leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="mt-4 space-y-3">
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)} className="leading-relaxed text-neutral-700">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          )}
 
           {layout === 'full' && imagePaths[0] ? (
             <FullWidthFigure className="flex max-h-[min(520px,72vh)] items-center justify-center p-2 sm:p-4">

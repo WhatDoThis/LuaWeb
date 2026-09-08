@@ -43,4 +43,7 @@ Do not ask user to confirm code changes. Ask only whether to proceed to the next
 
 ## Skill
 
-`.cursor/skills/woori-phase-dev/SKILL.md` — full Phase + agent loop.
+| Skill | Path | Use when |
+|---|---|---|
+| Phase dev | `.cursor/skills/woori-phase-dev/SKILL.md` | Phase 0~7 checklist implementation |
+| UI orchestrator | `.cursor/skills/lua-ui-orchestrator/SKILL.md` | UI/UX Master·Tester·검수 loop, premium UI polish |

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="Data center infrastructure diagram">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#003876">Data Center Infrastructure System</text>
+  <rect x="80" y="90" width="240" height="120" rx="12" fill="#003876"/>
+  <text x="200" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#fff">Power Supply</text>
+  <text x="200" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#dbeafe">Grid - UPS - Distribution</text>
+  <rect x="480" y="90" width="240" height="120" rx="12" fill="#0066cc"/>
+  <text x="600" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#fff">Cooling</text>
+  <text x="600" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#dbeafe">Liquid - Air - Heat exchange</text>
+  <rect x="880" y="90" width="240" height="120" rx="12" fill="#003876"/>
+  <text x="1000" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#fff">Heat Recovery</text>
+  <text x="1000" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#dbeafe">Reuse - Re-circulation</text>
+  <path d="M320 150 H480 M760 150 H880" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="180" y="280" width="840" height="160" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="600" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#111827">AI Compute Data Center</text>
+  <text x="600" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#4b5563">Integrated operation of power, cooling, and heat recovery</text>
+  <text x="600" y="405" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#6b7280">Designed for sites with limited grid capacity</text>
+</svg>

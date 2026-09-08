@@ -36,9 +36,9 @@ export async function OverviewSection({ locale }: OverviewSectionProps) {
           className="grid grid-cols-1 gap-4 border-t border-neutral-200 pt-6 md:grid-cols-2"
         >
           {rows.map((row) => (
-            <div key={row.label} className="grid grid-cols-1 gap-1 sm:grid-cols-3">
+            <div key={row.label} className="grid grid-cols-1 gap-1 sm:grid-cols-[7rem_1fr] sm:gap-3">
               <dt className="text-sm font-semibold text-neutral-800">{row.label}</dt>
-              <dd className="text-sm text-neutral-600 sm:col-span-2">{row.value}</dd>
+              <dd className="text-sm text-neutral-600">{row.value}</dd>
             </div>
           ))}
         </dl>

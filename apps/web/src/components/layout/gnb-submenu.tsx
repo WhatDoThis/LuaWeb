@@ -27,15 +27,16 @@ export function GnbSubmenu({ items, labels, visible }: GnbSubmenuProps) {
   return (
     <ul
       className={cn(
-        'absolute left-0 top-full min-w-[200px] border border-neutral-200 bg-white py-2 shadow-lg transition-opacity',
-        visible ? 'visible opacity-100' : 'invisible opacity-0',
+        'absolute left-0 top-full min-w-[220px] border border-neutral-200/90 bg-white py-2 shadow-xl transition-all duration-200',
+        visible ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0 pointer-events-none',
       )}
+      aria-hidden={!visible}
     >
       {items.map((item) => (
         <li key={item.id}>
           <Link
             href={item.href}
-            className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-primary"
+            className="block px-5 py-2.5 text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-primary"
           >
             {labels[item.labelKey] ?? item.id}
           </Link>

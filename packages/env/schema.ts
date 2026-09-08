@@ -14,6 +14,7 @@ import { z } from 'zod';
 
 export const imageAssetSchema = z.object({
   src: z.string(),
+  srcEn: z.string().optional(),
   srcMobile: z.string().optional(),
   size: z.string(),
   ratio: z.string().optional(),

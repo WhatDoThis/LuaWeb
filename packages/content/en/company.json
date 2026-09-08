@@ -10,7 +10,8 @@
     "address": "Address",
     "tel": "Phone",
     "directions": "Directions",
-    "mapLink": "Naver Map"
+    "mapLink": "Naver Map",
+    "mapCta": "Open in Naver Map"
   },
   "pages": {
     "greeting": {
@@ -48,6 +49,7 @@
       "tag": "CERTIFICATES",
       "title": "Intellectual Property",
       "desc": "Patents held by LUA Corporation.",
+      "pendingLabel": "In progress",
       "items": [
         {
           "name": "Registered Patent No. 10-2980502",
@@ -67,7 +69,7 @@
       "office": {
         "mapKey": "hq",
         "address": "9F-901, Dongah Plaza Arcade, 1608-4 Gwanyang-dong, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea (14066)",
-        "directions": "Take Seoul Subway Line 4 to Pyeongchon Station and leave via Exit 1. The Dongah Plaza building is directly outside, and our head office is on the 9th floor."
+        "directions": "We are located on the 9th floor of the Dongah Plaza building in front of Exit 1 of Pyeongchon Station (Seoul Subway Line 4)."
       }
     }
   }

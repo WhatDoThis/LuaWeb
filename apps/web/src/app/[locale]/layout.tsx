@@ -9,7 +9,7 @@
  * - LocaleLayout
  *
  * [Dependencies]
- * - @/i18n/routing, @/lib/i18n, @/lib/seo, @/components/layout/site-shell, @/components/seo/json-ld-organization
+ * - @/i18n/routing, @/lib/i18n, @/lib/seo, @/lib/pretendard-font, layout/site-shell
  */
 
 import { JsonLdOrganization } from '@/components/seo/json-ld-organization';
@@ -20,6 +20,7 @@ import { getSiteBaseUrl } from '@/lib/seo';
 import { getImage, getSite } from '@repo/env';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { PRETENDARD_FONT_PRECONNECT, PRETENDARD_FONT_URL } from '@/lib/pretendard-font';
 import { LUA_SITE_ID } from '@/lib/site-identity';
 import '@/styles/globals.css';
 
@@ -91,6 +92,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} data-site={LUA_SITE_ID}>
+      <head>
+        <link rel="preconnect" href={PRETENDARD_FONT_PRECONNECT} crossOrigin="anonymous" />
+        <link rel="stylesheet" href={PRETENDARD_FONT_URL} crossOrigin="anonymous" />
+      </head>
       <body className="font-sans antialiased">
         <JsonLdOrganization locale={locale as Locale} />
         <NextIntlClientProvider messages={messages}>

@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #003876;
+  --color-primary: #002b5c;
+  --color-primary-light: #003876;
   --color-secondary: #0066cc;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-500: #737373;
-  --font-sans: "Pretendard", system-ui, sans-serif;
+  --color-accent: #c9a962;
+  --color-neutral-200: #e8e8e8;
+  --color-neutral-500: #6b7280;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --font-sans: "Pretendard", "Segoe UI", system-ui, sans-serif;
   --breakpoint-sm: 375px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
@@ -13,6 +17,10 @@
 }
 
 @layer base {
+  body {
+    @apply text-neutral-800 antialiased;
+  }
+
   a[href],
   button:not(:disabled),
   [role='button']:not([aria-disabled='true']),
@@ -25,5 +33,29 @@
   button:disabled,
   [aria-disabled='true'] {
     cursor: not-allowed;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-surface, #fff), 0 0 0 4px var(--color-primary);
+  }
+}
+
+@layer components {
+  .lua-nav-link {
+    @apply relative text-[13px] font-semibold uppercase tracking-[0.12em] text-neutral-700 transition-colors hover:text-primary;
+  }
+
+  .lua-nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300;
+  }
+
+  .lua-nav-link:hover::after,
+  .lua-nav-link:focus-visible::after {
+    @apply w-full;
   }
 }

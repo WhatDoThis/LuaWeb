@@ -28,6 +28,7 @@
     "tel": "대표전화",
     "fax": "팩스",
     "email": "이메일",
+    "emailPending": "준비 중",
     "copyright": "Copyright © 루아주식회사. All rights reserved."
   },
   "privacy": {

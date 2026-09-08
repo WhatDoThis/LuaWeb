@@ -4,13 +4,13 @@
   "contact": { "tel": "", "fax": "", "email": "" },
   "addresses": {
     "hq": {
-      "ko": "경기도 안양시 동안구 관양동 1608-4 동아프라자아케이드 제9층",
+      "ko": "경기도 안양시 동안구 관양동 1608-4\n동아프라자아케이드 제9층",
       "en": "9F, Dongah Plaza Arcade, 1608-4 Gwanyang-dong, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea",
       "zip": "14066"
     }
   },
   "maps": {
-    "hq": "https://maps.google.com/maps?q=37.3905,126.9565&output=embed",
+    "hq": "https://maps.google.com/maps?q=37.3941481,126.9644551&z=17&output=embed",
     "hqLink": "https://naver.me/x5GrhiWM"
   },
   "copyright": {

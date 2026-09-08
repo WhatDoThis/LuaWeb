@@ -15,7 +15,7 @@
 import { GnbSubmenu } from '@/components/layout/gnb-submenu';
 import type { NavItem } from '@/lib/nav';
 import { useTranslations } from '@/lib/i18n';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export type GnbProps = {
   items: NavItem[];
@@ -34,6 +34,17 @@ export function Gnb({ items }: GnbProps) {
     return acc;
   }, {});
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveId(null);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <nav className="hidden lg:block" aria-label="Main navigation">
       <ul className="flex items-center gap-8">
@@ -50,9 +61,19 @@ export function Gnb({ items }: GnbProps) {
               }
             }}
           >
-            <span className="cursor-default py-4 text-sm font-medium text-neutral-800 hover:text-primary">
-              {labelMap[item.labelKey]}
-            </span>
+            {item.children ? (
+              <button
+                type="button"
+                className="lua-nav-link block py-5"
+                aria-expanded={activeId === item.id}
+                aria-haspopup="true"
+                onFocus={() => setActiveId(item.id)}
+              >
+                {labelMap[item.labelKey]}
+              </button>
+            ) : (
+              <span className="lua-nav-link block py-5">{labelMap[item.labelKey]}</span>
+            )}
             {item.children ? (
               <GnbSubmenu
                 items={item.children}

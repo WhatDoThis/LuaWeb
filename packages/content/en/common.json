@@ -28,6 +28,7 @@
     "tel": "Phone",
     "fax": "Fax",
     "email": "Email",
+    "emailPending": "Coming soon",
     "copyright": "Copyright © LUA Corporation. All rights reserved."
   },
   "privacy": {

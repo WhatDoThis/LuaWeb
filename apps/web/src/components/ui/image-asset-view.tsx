@@ -10,7 +10,7 @@
  * - @repo/env ImageAsset, getFeatures, @/lib/cn
  */
 
-import { getFeatures, type ImageAsset } from '@repo/env';
+import { getFeatures, resolveImageSrc, type ImageAsset } from '@repo/env';
 import { cn } from '@/lib/cn';
 
 export type ImageFit = 'natural' | 'contain' | 'cover';
@@ -52,7 +52,9 @@ export function ImageAssetView({
   const alt = asset.alt?.[locale] ?? '';
   const placeholderMode = getFeatures().placeholderMode;
 
-  if (!asset.src?.trim()) {
+  const src = resolveImageSrc(asset, locale);
+
+  if (!src) {
     const fillContainer = className?.includes('h-full');
 
     if (!placeholderMode) {
@@ -99,7 +101,7 @@ export function ImageAssetView({
         <source media="(max-width:767px)" srcSet={asset.srcMobile} />
       ) : null}
       <img
-        src={asset.src}
+        src={src}
         alt={alt}
         width={width}
         height={height}

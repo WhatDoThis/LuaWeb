@@ -32,6 +32,7 @@ export async function CompanyCertificatesSection({ locale }: CompanyCertificates
       imagePathPrefix="company.certificates"
       locale={locale}
       documentViewLabel={tCommon('board.viewDocument')}
+      pendingLabel={t('pages.certificates.pendingLabel')}
     />
   );
 }

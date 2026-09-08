@@ -1,19 +1,19 @@
 {
   "common": {
     "logo": {
-      "src": "/static/images/common/logo.jpg",
+      "src": "/static/images/common/logo.png",
       "size": "1130x487",
       "where": "Header 좌측 로고",
       "alt": { "ko": "루아주식회사 로고", "en": "LUA Corporation logo" }
     },
     "logoFooter": {
-      "src": "/static/images/common/logo.jpg",
+      "src": "/static/images/common/logo.png",
       "size": "1130x487",
       "where": "Footer 로고",
       "alt": { "ko": "루아주식회사 로고", "en": "LUA Corporation logo" }
     },
     "favicon": {
-      "src": "/static/images/common/logo.jpg",
+      "src": "/static/images/common/logo.png",
       "size": "32x32",
       "where": "favicon.ico 소스"
     },
@@ -46,7 +46,12 @@
       "ceoSign": { "src": "/static/images/company/ceo-sign.png", "size": "520x160", "where": "인사말 서명 PNG" }
     },
     "overview": {
-      "diagram": { "src": "/static/images/company/overview-diagram.png", "size": "1200x680", "where": "회사개요 사업구조도" }
+      "diagram": {
+        "src": "/static/images/company/overview-diagram.png",
+        "srcEn": "/static/images/company/overview-diagram.en.svg",
+        "size": "1200x680",
+        "where": "회사개요 사업구조도"
+      }
     },
     "history": {
       "banner": { "src": "", "size": "1200x400", "where": "연혁 상단 배너 (선택)" }
@@ -57,7 +62,11 @@
     },
     "certificates": {
       "items": [
-        { "src": "", "size": "400x560", "where": "특허증 제10-2980502호" },
+        {
+          "src": "/static/images/company/patent-10-2980502-thumb.png",
+          "size": "400x560",
+          "where": "특허증 제10-2980502호"
+        },
         { "src": "", "size": "400x560", "where": "특허출원 10-2026-0057532" },
         { "src": "", "size": "400x560", "where": "특허출원 10-2026-0091269" },
         { "src": "", "size": "400x560", "where": "특허출원 10-2026-0147522" },
@@ -65,6 +74,15 @@
       ]
     },
     "location": {
+      "mapPreview": {
+        "src": "/static/images/company/location-map-preview.svg",
+        "size": "1200x675",
+        "where": "찾아오시는 길 지도 미리보기",
+        "alt": {
+          "ko": "루아주식회사 본사 위치 지도",
+          "en": "LUA Corporation headquarters location map"
+        }
+      },
       "tabs": [
         { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭1 사진 (선택)" } },
         { "photo": { "src": "", "size": "800x450", "where": "찾아오시는 길 탭2 사진 (선택)" } },
@@ -80,7 +98,12 @@
       "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "tech-1 IntroHero" },
       "featureA": { "src": "/static/images/technology/tech1-building.png", "size": "6228x3612", "where": "tech-1 01 건물 조감도" },
       "featureB": { "src": "", "size": "660x420", "where": "tech-1 01 우측" },
-      "diagram": { "src": "/static/images/technology/tech1-diagram.png", "size": "1200x520", "where": "tech-1 02 인프라 구성도" },
+      "diagram": {
+        "src": "/static/images/technology/tech1-diagram.png",
+        "srcEn": "/static/images/technology/tech1-diagram.en.svg",
+        "size": "1200x520",
+        "where": "tech-1 02 인프라 구성도"
+      },
       "process": [
         { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 1 (선택)" },
         { "src": "", "size": "280x200", "where": "tech-1 프로세스 아이콘 2 (선택)" },
@@ -90,7 +113,12 @@
     },
     "tech2": {
       "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "tech-2 IntroHero" },
-      "featureMain": { "src": "/static/images/technology/tech2-overview.png", "size": "1200x520", "where": "tech-2 01 운영 개요도" },
+      "featureMain": {
+        "src": "/static/images/technology/tech2-overview.png",
+        "srcEn": "/static/images/technology/tech2-overview.en.svg",
+        "size": "1200x520",
+        "where": "tech-2 01 운영 개요도"
+      },
       "gallery": [
         { "src": "", "size": "580x360", "where": "tech-2 갤러리 1" },
         { "src": "", "size": "580x360", "where": "tech-2 갤러리 2" },
@@ -101,7 +129,12 @@
   "management": {
     "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "경영방침 IntroHero" },
     "policy": {
-      "diagram": { "src": "/static/images/management/policy-diagram.png", "size": "1000x600", "where": "경영방침 다이어그램" }
+      "diagram": {
+        "src": "/static/images/management/policy-diagram.png",
+        "srcEn": "/static/images/management/policy-diagram.en.svg",
+        "size": "1000x600",
+        "where": "경영방침 다이어그램"
+      }
     },
     "ethics": {
       "banner": { "src": "", "size": "1200x400", "where": "윤리경영 상단" },
