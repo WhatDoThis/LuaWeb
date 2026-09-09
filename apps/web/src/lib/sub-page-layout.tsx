@@ -1,7 +1,7 @@
 /**
  * lib.sub-page-layout (서브 페이지 골격)
  * ======================================
- * IntroHero + LnbBar + SpHead + PageContainer 조합 (본문 하단 pb-[60px])
+ * IntroHero(section overlay) + LnbBar + SpHead + PageContainer
  *
  * [Main Functions]
  * - SubPageLayout
@@ -50,7 +50,7 @@ export async function SubPageLayout({
 
   return (
     <>
-      <IntroHero imagePath={imagePath} locale={locale} />
+      <IntroHero imagePath={imagePath} locale={locale} section={section} />
       <LnbBar
         section={section}
         namespace={namespace}

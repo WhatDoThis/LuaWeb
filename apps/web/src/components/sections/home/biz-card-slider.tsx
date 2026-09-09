@@ -1,7 +1,7 @@
 /**
  * sections.biz-card-slider (기술 바로가기)
  * =======================================
- * 이미지 없으면 프리미엄 버튼 행, 있으면 Embla 카드
+ * 이미지 없으면 번호·그라데이션 버튼 행, 있으면 Embla 카드
  *
  * [Main Functions]
  * - BizCardSlider
@@ -42,20 +42,25 @@ export function BizCardSlider({ cards, locale }: BizCardSliderProps) {
   if (!hasAnyImage) {
     return (
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <Link
             key={card.title}
             href={card.href}
-            className="group inline-flex min-w-[220px] flex-1 items-center justify-between rounded-xl border border-neutral-200/90 bg-white px-6 py-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+            className="group inline-flex min-w-[220px] flex-1 items-center gap-4 rounded-xl border border-primary/10 bg-gradient-to-br from-primary/[0.06] via-white to-accent/[0.08] px-6 py-5 shadow-sm transition-all hover:border-primary/25 hover:shadow-md"
           >
-            <span className="text-base font-semibold text-neutral-800 group-hover:text-primary">
-              {card.title}
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+              {String(index + 1).padStart(2, '0')}
             </span>
-            <span
-              className="ml-4 text-lg text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary"
-              aria-hidden="true"
-            >
-              →
+            <span className="flex flex-1 items-center justify-between gap-3">
+              <span className="text-base font-semibold text-neutral-800 group-hover:text-primary">
+                {card.title}
+              </span>
+              <span
+                className="text-lg text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary"
+                aria-hidden="true"
+              >
+                →
+              </span>
             </span>
           </Link>
         ))}

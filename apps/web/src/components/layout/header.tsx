@@ -1,10 +1,11 @@
 /**
  * layout.header (헤더)
  * ====================
- * Logo, GNB, LangSwitcher — 프리미엄 네비 + 모바일 메뉴 a11y
+ * Logo, GNB, LangSwitcher — SVG 햄버거·모바일 메뉴 a11y
  *
  * [Main Functions]
  * - Header
+ * - MenuIcon
  *
  * [Dependencies]
  * - layout/gnb, layout/lang-switcher, @/lib/nav
@@ -30,7 +31,25 @@ export type HeaderProps = {
   onMenuOpen: () => void;
 };
 
-// 1. Header
+type MenuIconProps = {
+  open: boolean;
+};
+
+// 1. MenuIcon
+function MenuIcon({ open }: MenuIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+      <path
+        d={open ? 'M6 6l12 12M18 6 6 18' : 'M4 7h16M4 12h16M4 17h16'}
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+// 2. Header
 export function Header({
   locale,
   navItems,
@@ -68,7 +87,7 @@ export function Header({
             aria-controls="sitemap-overlay"
             onClick={onMenuOpen}
           >
-            ☰
+            <MenuIcon open={menuOpen} />
           </button>
         </div>
       </div>

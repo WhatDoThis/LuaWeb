@@ -43,7 +43,13 @@
     "hero": { "src": "/static/images/common/page-hero-bg.png", "size": "1920x420", "where": "회사소개 IntroHero 공통" },
     "greeting": {
       "portrait": { "src": "", "size": "560x700", "where": "인사말 대표 사진" },
-      "ceoSign": { "src": "/static/images/company/ceo-sign.png", "size": "520x160", "where": "인사말 서명 PNG" }
+      "ceoSign": {
+        "src": "/static/images/company/ceo-sign.png",
+        "srcEn": "/static/images/company/ceo-sign.en.svg",
+        "size": "520x160",
+        "where": "인사말 서명 PNG",
+        "alt": { "ko": "대표이사 유지나 서명", "en": "Ryu Jina, CEO signature" }
+      }
     },
     "overview": {
       "diagram": {

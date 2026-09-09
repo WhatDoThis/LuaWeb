@@ -47,3 +47,4 @@ Do not ask user to confirm code changes. Ask only whether to proceed to the next
 |---|---|---|
 | Phase dev | `.cursor/skills/woori-phase-dev/SKILL.md` | Phase 0~7 checklist implementation |
 | UI orchestrator | `.cursor/skills/lua-ui-orchestrator/SKILL.md` | UI/UX Master·Tester·검수 loop, premium UI polish |
+| **iwinv deploy** | `.cursor/skills/iwinv-deploy-orchestrator/SKILL.md` | iwinv VM·ELCAP·보안·nginx·HTTPS·DNS·메일 단계별 Prd 배포 (Phase D0~D6) |

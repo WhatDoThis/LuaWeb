@@ -2,8 +2,9 @@
 
 ## Log Index
 
-45. 2026-09-08 푸터 로고 220px·Google Maps embed
-44. 2026-09-08 찾아오시는 길 OSM iframe 제거·브랜드 지도 카드
+48. 2026-09-09 iwinv 배포 오케스트레이터 스킬·로드맵·서버 스크립트
+47. 2026-09-09 CEO 인사말 서명 EN·중복 직함 제거
+46. 2026-09-08 UI/UX Master 우선수정 P0~P1 전면 반영
 42. 2026-09-08 Pretendard 무료 웹폰트 CDN 연결
 41. 2026-09-08 Tester subagent a11y 후속 (Critical/High)
 40. 2026-09-08 UI 오케스트레이터·프리미엄 UI 전면 보강
@@ -48,6 +49,21 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+48. 2026-09-09 iwinv 배포 오케스트레이터 스킬·로드맵·서버 스크립트
+Purpose: iwinv 클라우드 Prd 배포를 Phase D0~D6로 분리하고, 콘솔·SSH 복붙형 에이전트 스킬·하드ening 스크립트 제공 Changes:
+
+iwinv-deploy-orchestrator SKILL (reference-iwinv, phases), 12_iwinvDeployRoadmap, rocky-linux scripts 00~04, woori-iwinv-deploy rule, AGENTS/deploy README 갱신 Changed files: .cursor/skills/iwinv-deploy-orchestrator/**, .cursor/rules/woori-iwinv-deploy.mdc, deploy/rocky-linux/scripts/**, docs/report/12_iwinvDeployRoadmap.md, docs/report/00_ReportIndex, deploy/README.md, deploy/rocky-linux/README.md, AGENTS.md, docs/log/log.md
+
+47. 2026-09-09 CEO 인사말 서명 EN·중복 직함 제거
+Purpose: 인용 블록 하단 CEO 텍스트 중복 제거, EN 페이지 ceo-sign.en.svg 적용 Changes:
+
+greeting-section blockquote footer 삭제, ceo-sign.en.svg, images.json srcEn Changed files: apps/web/src/components/sections/company/greeting-section.tsx, apps/web/public/static/images/company/ceo-sign.en.svg, packages/env/images.json, env/images.json, docs/log/log.md
+
+46. 2026-09-08 UI/UX Master 우선수정 P0~P1 전면 반영
+Purpose: Master 감사 P0~P1·P2 코드 개선 — 히어로·카드·특허·GNB·액센트·인사말·푸터·공시 Changes:
+
+hero static 1장, biz/link cards gradient, cert pending list, GNB parent link, SVG menu, accent color, greeting quote, intro-hero overlay, footer quick nav, disclosure SubPageLayout Changed files: apps/web/src/components/**, apps/web/src/styles/globals.css, packages/content/**, docs/log/log.md
 
 45. 2026-09-08 푸터 로고 220px·Google Maps embed
 Purpose: 푸터 로고 너비 220px 축소, 찾아오시는 길 Google Maps iframe + 네이버 지도 링크 유지 Changes:

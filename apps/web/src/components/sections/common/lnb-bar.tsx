@@ -112,9 +112,9 @@ export function LnbBar({ section, namespace, currentPath, staticMode = false }: 
                   className={cn(
                     'block rounded px-3 py-2 text-sm whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-primary',
                     !staticMode && isActive
-                      ? 'bg-primary text-white'
+                      ? 'border-b-2 border-accent bg-primary/[0.06] font-semibold text-primary'
                       : 'text-neutral-600 hover:bg-neutral-100 hover:text-primary',
-                    staticMode && isActive && 'font-semibold text-primary',
+                    staticMode && isActive && 'border-b-2 border-accent font-semibold text-primary',
                   )}
                   aria-current={isActive ? 'page' : undefined}
                 >

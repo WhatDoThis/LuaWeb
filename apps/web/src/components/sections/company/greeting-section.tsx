@@ -1,7 +1,7 @@
 /**
  * sections.greeting-section (CEO 인사말)
  * =====================================
- * body 문단 + ceoSign (portrait 미제공 시 단일 컬럼, KO 1~3문단 마침표 줄바꿈)
+ * accent 인용 블록 + body + locale별 ceoSign
  *
  * [Main Functions]
  * - GreetingSection
@@ -38,6 +38,7 @@ export async function GreetingSection({ locale }: GreetingSectionProps) {
   const body = t.raw('pages.greeting.body') as string[];
   const portrait = getImage('company.greeting.portrait');
   const hasPortrait = Boolean(portrait.src?.trim());
+  const openingParagraph = body[0] ?? '';
 
   return (
     <div
@@ -48,7 +49,17 @@ export async function GreetingSection({ locale }: GreetingSectionProps) {
       }
     >
       <div className={hasPortrait ? 'order-2 space-y-5 lg:order-1' : 'space-y-5'}>
+        {!hasPortrait && openingParagraph ? (
+          <blockquote className="border-l-4 border-accent bg-gradient-to-r from-accent/10 to-transparent px-6 py-5">
+            <p className="text-lg font-medium leading-relaxed text-neutral-800">{openingParagraph}</p>
+          </blockquote>
+        ) : null}
+
         {body.map((paragraph, index) => {
+          if (!hasPortrait && index === 0) {
+            return null;
+          }
+
           const formatted = formatKoGreetingParagraph(paragraph, index, locale);
           const key = paragraph.slice(0, 24);
 
@@ -76,7 +87,8 @@ export async function GreetingSection({ locale }: GreetingSectionProps) {
             </p>
           );
         })}
-        <div className="flex justify-end pt-6">
+
+        <div className="flex justify-end border-t border-neutral-200/80 pt-6">
           <SmartImage
             path="company.greeting.ceoSign"
             locale={locale}

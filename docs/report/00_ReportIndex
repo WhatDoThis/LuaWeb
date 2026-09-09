@@ -13,6 +13,7 @@
 | `09_Phase_7.md` | **Phase 7 실행 가이드** — 홈 슬라이더·SEO·CI 배포 파이프라인 |
 | `10_ContentInventory.md` | **콘텐츠 제출 요청서** — 페이지별 본문·사진·연락처만 (UI·아이콘 제외) |
 | `IMAGE-REQUEST.md` | `pnpm check:images` 실행 시 자동 생성되는 이미지 발주서 |
+| `12_iwinvDeployRoadmap.md` | **iwinv Prd 배포 로드맵** — Phase D0~D6 (VM·ELCAP·보안·nginx·DNS·HTTPS·메일) |
 
 ## main 폴더 (기반 자료)
 

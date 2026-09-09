@@ -1,0 +1,30 @@
+---
+description: iwinv 클라우드 Prd 배포 — Phase D0~D6 단계별 진행, ELCAP·보안·nginx·HTTPS·DNS·메일
+globs:
+  - deploy/**
+  - packages/env/**
+  - docs/report/12_iwinvDeployRoadmap.md
+alwaysApply: false
+---
+
+# iwinv Deploy Workflow
+
+## Skill (필수)
+
+배포·서버·DNS·HTTPS·메일·ELCAP·iwinv 요청 시 **먼저** 읽기:
+
+`.cursor/skills/iwinv-deploy-orchestrator/SKILL.md`
+
+## 진행 규칙
+
+1. **한 Phase씩** — D0→D1→…→D6, 게이트 통과 후 다음만
+2. 사용자는 서버 직접 조작 불가 → **콘솔 경로 + SSH/Dev 복붙 명령** 제공
+3. **ELCAP(D1) 후** OS hardening(D2)
+4. **DNS 전파 후** certbot(D5)
+5. SSL 후 `nginx.conf.example` **덮어쓰기 금지**
+
+## LuaWeb Prd
+
+- 정적 export: `apps/web/out/` → nginx `/var/www/lua/current`
+- 스크립트: `deploy/rocky-linux/scripts/`
+- 로드맵: `docs/report/12_iwinvDeployRoadmap.md`

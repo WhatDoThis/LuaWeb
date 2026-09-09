@@ -1,7 +1,7 @@
 /**
  * sections.section-head (홈 섹션 타이틀)
  * =====================================
- * tag + title — 홈 전용
+ * accent bar + tag + title — 홈 전용
  *
  * [Main Functions]
  * - SectionHead
@@ -22,6 +22,7 @@ export type SectionHeadProps = {
 export function SectionHead({ tag, title, className }: SectionHeadProps) {
   return (
     <div className={cn('mb-8', className)}>
+      <div className="lua-accent-bar mb-3" aria-hidden="true" />
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">{tag}</p>
       <h2 className="mt-2 text-2xl font-bold text-primary md:text-3xl">{title}</h2>
     </div>

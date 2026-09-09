@@ -58,4 +58,8 @@
   .lua-nav-link:focus-visible::after {
     @apply w-full;
   }
+
+  .lua-accent-bar {
+    @apply h-1 w-12 rounded-sm bg-accent;
+  }
 }

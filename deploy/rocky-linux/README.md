@@ -103,4 +103,18 @@ curl -I https://YOUR_DOMAIN/ko/
 
 ---
 
-_문서 버전: 2026-08-23 | Lua(루아) 기준_
+## 8. 자동화 스크립트 (Phase D1~D3)
+
+| 스크립트 | 실행 | Phase |
+|---|---|---|
+| `scripts/00-preflight.sh` | `bash 00-preflight.sh` | D1 — OS·IP 확인 |
+| `scripts/01-initial-hardening.sh` | `sudo bash 01-initial-hardening.sh` | D2 — nano·nginx·firewalld·fail2ban |
+| `scripts/02-nginx-setup.sh` | `sudo bash 02-nginx-setup.sh` | D2/D3 — lua.conf |
+| `scripts/04-server-build.sh` | `bash 04-server-build.sh <git-url>` | D3 — 서버 빌드(대안) |
+
+**로드맵**: `docs/report/12_iwinvDeployRoadmap.md`  
+**에이전트 스킬**: `.cursor/skills/iwinv-deploy-orchestrator/SKILL.md`
+
+---
+
+_문서 버전: 2026-09-09 | Lua(루아) · iwinv Phase D0~D6_

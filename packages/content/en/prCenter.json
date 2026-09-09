@@ -6,6 +6,14 @@
       "tag": "NEWS",
       "title": "News & Notices",
       "desc": "News from LUA Corporation."
+    },
+    "disclosure": {
+      "tag": "DISCLOSURE",
+      "title": "Disclosure",
+      "desc": "Disclosure service is being prepared.",
+      "emptyMessage": "The disclosure page is being prepared.",
+      "dartLink": "Open DART",
+      "dartUrl": "https://dart.fss.or.kr"
     }
   },
   "disclosure": {

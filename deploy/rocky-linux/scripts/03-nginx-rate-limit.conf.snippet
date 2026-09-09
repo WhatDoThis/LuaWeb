@@ -1,0 +1,12 @@
+# LuaWeb — nginx rate limiting (수비적 트래픽 대응)
+# 02-nginx-setup.sh 가 lua.conf 끝에 append. 또는 server {} 내부에 수동 merge.
+#
+# http {} 블록에 limit_req_zone이 없으면 /etc/nginx/nginx.conf 의 http { } 안에
+# 아래 두 줄을 추가한 뒤 nginx -t && reload:
+#
+#   limit_req_zone $binary_remote_addr zone=lua_general:10m rate=10r/s;
+#   limit_conn_zone $binary_remote_addr zone=lua_conn:10m;
+
+# --- server block 내부 예시 (location / 위에) ---
+# limit_req zone=lua_general burst=20 nodelay;
+# limit_conn lua_conn 20;

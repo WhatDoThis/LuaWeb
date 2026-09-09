@@ -18,6 +18,10 @@
       "tag": "GREETING",
       "title": "CEO Message",
       "desc": "Thank you for visiting LUA Corporation.",
+      "ceo": {
+        "name": "Ryu Jina",
+        "title": "CEO"
+      },
       "body": [
         "Hello. I am Ryu Jina, CEO of LUA Corporation.",
         "Demand for AI computing is growing rapidly, yet the power and infrastructure to support it remain insufficient. LUA was founded to address this with technology.",

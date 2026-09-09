@@ -22,6 +22,9 @@
 | `.env.example` | 빌드·배포 환경변수 템플릿 (주석 설명) |
 | `deploy/rocky-linux/README.md` | Rocky Linux 초기 세팅 절차 |
 | `deploy/rocky-linux/nginx.conf.example` | nginx 정적 호스팅 설정 템플릿 |
+| `deploy/rocky-linux/scripts/` | preflight·hardening·nginx·server-build 스크립트 |
+| `docs/report/12_iwinvDeployRoadmap.md` | **iwinv Phase D0~D6** 배포 로드맵 |
+| `.cursor/skills/iwinv-deploy-orchestrator/` | 배포 오케스트레이터 에이전트 스킬 |
 
 ## Prd 적용 시점 (미확정 항목)
 

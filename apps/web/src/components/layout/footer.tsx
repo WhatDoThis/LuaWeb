@@ -1,7 +1,7 @@
 /**
  * layout.footer (푸터)
  * ====================
- * 로고·개인정보·문의(주소·이메일 placeholder) — h180 / py30 3열 그리드
+ * 로고·퀵링크·문의+개인정보 — h180 / py30 3열 그리드
  *
  * [Main Functions]
  * - Footer
@@ -28,6 +28,12 @@ export type FooterProps = {
 type ContactIconProps = {
   children: React.ReactNode;
 };
+
+const footerQuickLinks = [
+  { href: '/company/overview', labelKey: 'nav.company.overview' },
+  { href: '/technology/tech-1', labelKey: 'nav.technology.tech1' },
+  { href: '/pr-center/news', labelKey: 'nav.prCenter.news' },
+] as const;
 
 // 1. ContactIcon
 function ContactIcon({ children }: ContactIconProps) {
@@ -61,17 +67,24 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
             </div>
           </div>
           <div className="flex h-full items-center justify-center">
-            <button
-              type="button"
-              className="text-sm font-medium text-primary underline-offset-4 hover:underline"
-              onClick={onPrivacyClick}
-            >
-              {t('footer.privacy')}
-            </button>
+            <nav aria-label="Footer navigation">
+              <ul className="space-y-2 text-sm">
+                {footerQuickLinks.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="font-medium text-neutral-700 transition-colors hover:text-primary"
+                    >
+                      {t(item.labelKey as never)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           <div className="flex h-full items-center md:justify-end">
             <div className="w-full max-w-sm text-left">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-900">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
                 {t('footer.contactTitle')}
               </h2>
               <ul className="mt-2 space-y-2 text-sm text-neutral-600">
@@ -143,6 +156,13 @@ export function Footer({ locale, site, footerLogoAsset, onPrivacyClick }: Footer
                   </li>
                 ) : null}
               </ul>
+              <button
+                type="button"
+                className="mt-3 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                onClick={onPrivacyClick}
+              >
+                {t('footer.privacy')}
+              </button>
             </div>
           </div>
         </div>

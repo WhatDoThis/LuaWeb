@@ -1,10 +1,11 @@
 /**
  * sections.link-cards (홈 바로가기)
  * ==================================
- * 이미지 없으면 프리미엄 버튼 링크, 있으면 카드
+ * 이미지 없으면 그라데이션·아이콘 버튼, 있으면 카드
  *
  * [Main Functions]
  * - LinkCards
+ * - LinkButton
  *
  * [Dependencies]
  * - ui/smart-image, @repo/env, @/i18n/navigation, @/lib/cn
@@ -28,6 +29,35 @@ export type LinkCardsProps = {
   locale: 'ko' | 'en';
 };
 
+function LinkCardIcon({ imagePath }: { imagePath: string }) {
+  const isLocation = imagePath.includes('location');
+
+  if (isLocation) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-primary" aria-hidden="true">
+        <path
+          d="M12 2.5a5.25 5.25 0 0 0-5.25 5.25c0 3.94 5.25 10.25 5.25 10.25s5.25-6.31 5.25-10.25A5.25 5.25 0 0 0 12 2.5Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <circle cx="12" cy="7.75" r="1.5" fill="currentColor" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-primary" aria-hidden="true">
+      <path
+        d="M4 6.5h16M4 12h10M4 17.5h14"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 function LinkButton({
   card,
   className,
@@ -37,23 +67,26 @@ function LinkButton({
 }) {
   const inner = (
     <>
-      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">
-        {card.desc}
-      </span>
-      <span className="mt-2 block text-lg font-semibold text-primary group-hover:text-secondary">
-        {card.title}
-      </span>
-      <span
-        className="mt-4 inline-flex items-center text-sm font-medium text-neutral-500 transition-transform group-hover:translate-x-1 group-hover:text-primary"
-        aria-hidden="true"
-      >
-        →
-      </span>
+      <div className="flex items-start justify-between gap-4">
+        <LinkCardIcon imagePath={card.imagePath} />
+        <span
+          className="text-lg text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary"
+          aria-hidden="true"
+        >
+          →
+        </span>
+      </div>
+      <div className="mt-4">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{card.desc}</span>
+        <span className="mt-2 block text-lg font-semibold text-primary group-hover:text-secondary">
+          {card.title}
+        </span>
+      </div>
     </>
   );
 
   const baseClass = cn(
-    'group flex min-h-[120px] flex-col justify-between rounded-xl border border-neutral-200/90 bg-white p-6 shadow-sm transition-all hover:border-primary/25 hover:shadow-md',
+    'group flex min-h-[140px] flex-col justify-between rounded-xl border border-primary/10 bg-gradient-to-br from-white via-primary/[0.03] to-accent/[0.08] p-6 shadow-sm transition-all hover:border-primary/25 hover:shadow-md',
     className,
   );
 
