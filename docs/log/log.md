@@ -2,6 +2,7 @@
 
 ## Log Index
 
+72. 2026-09-11 07-SERVER-PRODUCTION D0~D6 완료 반영·Prd 재배포
 71. 2026-09-11 GNB 서브메뉴 EN 한줄(w-max·nowrap)
 70. 2026-09-11 EN 푸터 주소 줄바꿈·열 침범 방지
 69. 2026-09-11 푸터 모바일 좌측 정렬 통일
@@ -71,6 +72,11 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+72. 2026-09-11 07-SERVER-PRODUCTION D0~D6 완료 반영·Prd 재배포
+Purpose: iwinv Prd 최종 현황 문서 갱신(D0~D6·DNS·HTTPS·테라웹메일), deploy.json ssl.enabled, site.json contact.email 반영 빌드·배포 Changes:
+
+07-SERVER-PRODUCTION.md 전면 갱신, deploy.json ssl.enabled true, releases/20260911_0105 배포 Changed files: docs/main/07-SERVER-PRODUCTION.md, packages/env/deploy.json, env/deploy.json, docs/log/log.md
 
 71. 2026-09-11 GNB 서브메뉴 EN 한줄(w-max·nowrap)
 Purpose: EN 기술소개 2depth "Data Center Infrastructure" 두줄 → 박스 가로 확장 Changes:

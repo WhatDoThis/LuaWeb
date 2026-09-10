@@ -13,8 +13,8 @@
   "deployRoot": "/var/www/lua/current",
   "nginxConfig": "deploy/rocky-linux/nginx.conf.example",
   "ssl": {
-    "enabled": false,
+    "enabled": true,
     "provider": "letsencrypt",
-    "_note": "도메인 확정 후 certbot --nginx 적용"
+    "_note": "certbot --nginx 적용 완료 (2026-09-10)"
   }
 }
