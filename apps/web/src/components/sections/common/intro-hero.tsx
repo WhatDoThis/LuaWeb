@@ -33,7 +33,7 @@ export function IntroHero({ imagePath, locale, section, className }: IntroHeroPr
   return (
     <div
       className={cn(
-        'relative h-[240px] w-full overflow-hidden bg-neutral-900 sm:h-[320px] lg:h-[420px]',
+        'relative h-[240px] w-full overflow-hidden bg-neutral-900 sm:h-[320px] lg:h-[420px] xl:h-[480px] 2xl:h-[520px]',
         className,
       )}
     >

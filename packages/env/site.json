@@ -1,7 +1,7 @@
 {
   "companyName": { "ko": "루아주식회사", "en": "LUA Corporation" },
-  "domain": "https://www.lua.co.kr",
-  "contact": { "tel": "", "fax": "", "email": "" },
+  "domain": "https://www.luacorp.co.kr",
+  "contact": { "tel": "", "fax": "", "email": "ryu.jinwoo@luacorp.co.kr" },
   "addresses": {
     "hq": {
       "ko": "경기도 안양시 동안구 관양동 1608-4\n동아프라자아케이드 제9층",

@@ -2,8 +2,30 @@
 
 ## Log Index
 
+71. 2026-09-11 GNB 서브메뉴 EN 한줄(w-max·nowrap)
+70. 2026-09-11 EN 푸터 주소 줄바꿈·열 침범 방지
+69. 2026-09-11 푸터 모바일 좌측 정렬 통일
+68. 2026-09-11 푸터 legal 동일 크기·로고 확대·GNB 글자·간격
+67. 2026-09-11 사용자 목업형 푸터 2단 레이아웃 구현
+66. 2026-09-11 푸터 로고 확대·4-에이전트 전체 검증 PASS
+65. 2026-09-11 헤더 입력바(lang-switcher)·푸터 주소중앙·연락처우측
+64. 2026-09-11 헤더 로고·여백·푸터 flex 밀착 레이아웃
+63. 2026-09-11 lua-type-* 타이포 정책·푸터 로고 복원·헤더/푸터 통일
+62. 2026-09-11 푸터 grid 3열(200|1fr|300) Layout Architect 파이프라인 적용
+61. 2026-09-11 UI 4-에이전트 파이프라인·rules·skills 체계
+60. 2026-09-10 corp-site-design-master 스킬·푸터 justify-between
+59. 2026-09-10 푸터 wooritg 비율 타이포 통일(16px)
+58. 2026-09-10 푸터 w-fit 좌측 그룹·모바일 로고 축소
+57. 2026-09-10 wooritg형 푸터 flex 3열·GNB xl 글자 확대
+56. 2026-09-10 헤더·푸터 스타일 원복, 레이아웃만 유지
+55. 2026-09-10 GNB 붕괴·푸터 이메일 줄바꿈 수정·verify-routes 스크립트
+54. 2026-09-10 헤더 3열·GNB 중앙·푸터 gap 정렬 보정
+53. 2026-09-10 wooritg 벤치마크 푸터·fluid typography·컨테이너 1400px
+52. 2026-09-10 와이드 해상도 레이아웃·푸터 정리·문의 이메일 반영
+51. 2026-09-10 D4 luacorp.co.kr DNS·도메인 배포
+50. 2026-09-09 Prd 서버 현황 문서 07-SERVER-PRODUCTION·fail2ban 증가형 밴
+49. 2026-09-09 프로젝트 루트 README·REQUIREMENTS.txt 추가
 48. 2026-09-09 iwinv 배포 오케스트레이터 스킬·로드맵·서버 스크립트
-47. 2026-09-09 CEO 인사말 서명 EN·중복 직함 제거
 46. 2026-09-08 UI/UX Master 우선수정 P0~P1 전면 반영
 42. 2026-09-08 Pretendard 무료 웹폰트 CDN 연결
 41. 2026-09-08 Tester subagent a11y 후속 (Critical/High)
@@ -49,6 +71,151 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+71. 2026-09-11 GNB 서브메뉴 EN 한줄(w-max·nowrap)
+Purpose: EN 기술소개 2depth "Data Center Infrastructure" 두줄 → 박스 가로 확장 Changes:
+
+gnb-submenu: w-max min-w-[220px], link whitespace-nowrap Changed files: apps/web/src/components/layout/gnb-submenu.tsx, docs/log/log.md
+
+70. 2026-09-11 EN 푸터 주소 줄바꿈·열 침범 방지
+Purpose: 영문 주소 nowrap으로 로고·연락처 열 침범 Changes:
+
+ko만 lg:whitespace-nowrap, en break-words+max-w-md/lg, contact min-w 220~260px Changed files: apps/web/src/components/layout/footer.tsx, docs/log/log.md
+
+69. 2026-09-11 푸터 모바일 좌측 정렬 통일
+Purpose: 반응형 푸터 정렬 제각각(로고 좌·주소 중앙·legal 중앙) → mobile 전부 좌측 Changes:
+
+address justify-start, legal text-left lg:text-center, contact text-left lg:text-right Changed files: apps/web/src/components/layout/footer.tsx, docs/log/log.md
+
+68. 2026-09-11 푸터 legal 동일 크기·로고 확대·GNB 글자·간격
+Purpose: copyright/privacy 크기 통일·축소, 푸터 로고 확대, GNB 1depth만 키우기 Changes:
+
+lua-type-footer-legal(12~13px), logo clamp→16rem, --lua-fs-nav 확대, GNB gap-9~14
+nav-sub 유지 Changed files: globals.css, footer.tsx, gnb.tsx, docs/log/log.md
+
+67. 2026-09-11 사용자 목업형 푸터 2단 레이아웃 구현
+Purpose: 그림판 목업 기준 compact footer — 로고|주소1줄|문의하기+이메일, copyright/privacy 하단 중앙 Changes:
+
+footer 2-row 구조, lua-type-footer-address/contact-title, py 축소
+corp-site-design-master mockup recipe 추가, Regression PASS Changed files: footer.tsx, globals.css, corp-site-design-master/SKILL.md, docs/log/log.md
+
+66. 2026-09-11 푸터 로고 확대·4-에이전트 전체 검증 PASS
+Purpose: 푸터 로고 키우기+반응형, 마스터 기준 전체 UI 검증 Changes:
+
+--lua-logo-footer-w clamp(7.5rem→14rem), max-h cap 제거(너비 기준 스케일)
+header GNB min-w-0 제거, footer pt-7/pt-4 정렬
+Layout/Typo/Visual QA/Regression Guard 검증 PASS Changed files: globals.css, footer.tsx, header.tsx, typography-scaler.md, docs/log/log.md
+
+65. 2026-09-11 헤더 입력바(lang-switcher)·푸터 주소중앙·연락처우측
+Purpose: lang-switcher border box가 입력창처럼 보임, 푸터 주소 중앙·이메일 우측 요청 Changes:
+
+lang-switcher: border/bg 제거, 텍스트+밑줄 pill
+header: GNB flex-1 중앙 정렬 래퍼, ml-auto 유틸
+footer: grid 200|1fr|auto, address justify-center, contact justify-self-end Changed files: header.tsx, gnb.tsx, lang-switcher.tsx, footer.tsx, packages/content/*/common.json, docs/log/log.md
+
+64. 2026-09-11 헤더 로고·여백·푸터 flex 밀착 레이아웃
+Purpose: 헤더 로고 작음·요소 밀착·좌우 여백 부족·푸터 1fr dead zone Changes:
+
+site-container xl:px-20 2xl:px-24, header h-5rem gap-12 logo ~52px
+footer grid→flex 좌측 밀착(gap-x-12/16), address max-w-md, contact 280-300px
+Visual QA PASS, typecheck/build PASS Changed files: site-container.ts, header.tsx, footer.tsx, gnb.tsx, globals.css, docs/log/log.md
+
+63. 2026-09-11 lua-type-* 타이포 정책·푸터 로고 복원·헤더/푸터 통일
+Purpose: 글씨 크기 제각각·푸터 로고 축소 반복 → 사이트 전역 타이포 토큰 + chrome 통일 Changes:
+
+globals.css: --lua-fs-* + lua-type-hero~label, lua-logo-header/footer
+footer/header/gnb-submenu/lang-switcher/section-head/sp-head 토큰 적용
+typography-scaler.md·corp-site-design-master 정책표 갱신 Changed files: apps/web/src/styles/globals.css, apps/web/src/components/layout/*, apps/web/src/components/sections/common/*, .cursor/**, docs/log/log.md
+
+62. 2026-09-11 푸터 grid 3열(200|1fr|300) Layout Architect 파이프라인 적용
+Purpose: justify-between 좌측 클러스터·연락처 우측 고정 증상 → wooritg grid 리듬 Changes:
+
+footer: flex justify-between → lg:grid-cols-[200px_minmax(0,1fr)_300px] xl:gap-x-[124px]
+모바일 로고 w-[100px] max-h-8, contact items-baseline
+Visual QA PASS, Regression Guard PASS, typecheck PASS Changed files: apps/web/src/components/layout/footer.tsx, docs/log/log.md
+
+61. 2026-09-11 UI 4-에이전트 파이프라인·rules·skills 체계
+Purpose: 스킬만으로 UI 악화 반복 → 전용 에이전트 4종+오케스트레이터+rule Changes:
+
+.cursor/agents: layout-architect, typography-scaler, visual-qa-reviewer, regression-guard, orchestrator-pipeline
+skills: visual-qa-reviewer, layout-regression-guard, lua-ui-orchestrator 갱신
+rule: lua-ui-agent-pipeline.mdc, AGENTS.md agent roster Changed files: .cursor/agents/**, .cursor/skills/**, .cursor/rules/lua-ui-agent-pipeline.mdc, AGENTS.md, docs/log/log.md
+
+60. 2026-09-10 corp-site-design-master 스킬·푸터 justify-between
+Purpose: 반복 레이아웃 악화 방지용 Human-eye 디자이너 스킬, wooritg형 footer justify-between 3열 Changes:
+
+.cursor/skills/corp-site-design-master (SKILL, anti-patterns)
+footer flex justify-between (w-fit/flex-1 제거), lua-ui-orchestrator·AGENTS.md 연동 Changed files: .cursor/skills/corp-site-design-master/**, apps/web/src/components/layout/footer.tsx, .cursor/skills/lua-ui-orchestrator/SKILL.md, AGENTS.md, docs/log/log.md
+
+59. 2026-09-10 푸터 wooritg 비율 타이포 통일(16px)
+Purpose: 푸터 글씨 과대·주소/이메일 비율 불균형 wooritg 기준 조정 Changes:
+
+lua-footer-body/meta/tag (14~16px), 주소·연락처 동일 크기
+xl 22px 제거, 로고 lg 200px, 열 gap 14/20/24 Changed files: apps/web/src/components/layout/footer.tsx, apps/web/src/styles/globals.css, docs/log/log.md
+
+58. 2026-09-10 푸터 w-fit 좌측 그룹·모바일 로고 축소
+Purpose: flex-1로 이메일 우측 밀림·모바일 로고 과대 수정, UI Master 검수 Changes:
+
+푸터 inner w-fit flex, flex-1/ml-auto 제거, 로고 128px~230px·max-h 모바일
+연락처 태그 72px, 열 pt 정렬 Changed files: apps/web/src/components/layout/footer.tsx, docs/log/log.md
+
+57. 2026-09-10 wooritg형 푸터 flex 3열·GNB xl 글자 확대
+Purpose: 푸터 wooritg 배치(로고|주소+copyright|연락처 행), 헤더 GNB xl/2xl 글자 확대 Changes:
+
+푸터 flex 3열, 아이콘·문의하기 제목 제거, TEL/E-mail 라벨+값 행, copyright 중앙열
+GNB lg:text-sm xl:15px 2xl:base Changed files: apps/web/src/components/layout/footer.tsx, gnb.tsx, apps/web/src/styles/globals.css, docs/log/log.md
+
+56. 2026-09-10 헤더·푸터 스타일 원복, 레이아웃만 유지
+Purpose: wooritg 색감·다크푸터·invert 로고 등 불필요 변경 롤백, 넓은 화면 레이아웃만 유지 Changes:
+
+헤더/GNB/서브메뉴/언어스위처 P0-1 원본 호버·색감 복원 + siteContainerClass
+푸터 밝은 배경·컬러 로고 복원, 퀵링크 제거 3열(로고|주소|문의), copyright 하단바
+lua-nav-link 13px 원복, fluid typography·container 유지 Changed files: apps/web/src/components/layout/header.tsx, gnb.tsx, gnb-submenu.tsx, lang-switcher.tsx, footer.tsx, apps/web/src/styles/globals.css, docs/log/log.md
+
+55. 2026-09-10 GNB 붕괴·푸터 이메일 줄바꿈 수정·verify-routes 스크립트
+Purpose: grid min-w-0로 GNB 세로 깨짐·footer break-all 이메일 줄바꿈 회귀 수정, 전 라우트 스모크 검증 Changes:
+
+헤더 grid auto|1fr|auto (min-w-0 제거), GNB flex-nowrap·whitespace-nowrap
+푸터 flex 3열, email whitespace-nowrap, break-all 제거
+scripts/verify-routes.ps1 22 UI 라우트 HTTP·HTML 검증
+home-news-list min-w-0 overflow 보정 Changed files: apps/web/src/components/layout/header.tsx, footer.tsx, gnb.tsx, apps/web/src/styles/globals.css, apps/web/src/components/sections/home/home-news-list.tsx, scripts/verify-routes.ps1, docs/log/log.md
+
+54. 2026-09-10 헤더 3열·GNB 중앙·푸터 gap 정렬 보정
+Purpose: 푸터 ml-auto 과격 분리·헤더 GNB 미중앙 wooritg 대비 개선 Changes:
+
+헤더 grid 340|1fr|340, xl h100px, GNB 중앙·16px uppercase, 다크 서브메뉴, KOR|ENG 텍스트 스위처
+푸터 xl grid 230|1fr|340 고정 gap, 연락처 행 grid 유지 Changed files: apps/web/src/components/layout/header.tsx, gnb.tsx, gnb-submenu.tsx, lang-switcher.tsx, footer.tsx, apps/web/src/styles/globals.css, docs/log/log.md
+
+53. 2026-09-10 wooritg 벤치마크 푸터·fluid typography·컨테이너 1400px
+Purpose: wooritg.com 대비 좁은 레이아웃·작은 글씨·난잡한 푸터 개선 Changes:
+
+siteContainerClass 1400→1600→1720px, xl px-60
+html clamp·hero/page/section/card fluid typography, GNB xl 확대
+푸터 wooritg 3열 다크(#272727) 로고|주소+copyright|연락처 테이블형
+홈 카드·뉴스·사업분야 xl/2xl 스케일 Changed files: apps/web/src/lib/site-container.ts, apps/web/src/styles/globals.css, apps/web/src/components/layout/footer.tsx, apps/web/src/components/layout/header.tsx, apps/web/src/components/sections/home/*.tsx, docs/log/log.md
+
+52. 2026-09-10 와이드 해상도 레이아웃·푸터 정리·문의 이메일 반영
+Purpose: 2560×1440+ 화면 여백 완화, wooritg 벤치마크형 푸터 단순화, 문의 이메일 등록 Changes:
+
+siteContainerClass(xl 1380 / 2xl 1580) 헤더·푸터·LNB·히어로·PageContainer 적용
+fluid typography(hero/page/section title, body) xl/2xl 스케일
+푸터 2열(로고+주소 | 이메일·전화·개인정보) 재구성, 퀵링크·아이콘 제거
+site.json email ryu.jinwoo@luacorp.co.kr Changed files: apps/web/src/lib/site-container.ts, apps/web/src/styles/globals.css, apps/web/src/components/layout/header.tsx, apps/web/src/components/layout/footer.tsx, apps/web/src/components/sections/common/page-container.tsx, apps/web/src/components/sections/common/lnb-bar.tsx, apps/web/src/components/sections/common/sp-head.tsx, apps/web/src/components/sections/common/section-head.tsx, apps/web/src/components/sections/common/intro-hero.tsx, apps/web/src/components/sections/home/hero-slider.tsx, apps/web/src/components/sections/company/greeting-section.tsx, packages/env/site.json, env/site.json, docs/log/log.md
+
+51. 2026-09-10 D4 luacorp.co.kr DNS·도메인 배포
+Purpose: iwinv DNS A 레코드 전파 후 도메인 연결·재빌드·Prd 배포 완료 Changes:
+
+site.json·deploy.json domain luacorp.co.kr, pnpm build, releases/20260910_2230 업로드, nginx server_name luacorp.co.kr www.luacorp.co.kr Changed files: packages/env/site.json, env/site.json, packages/env/deploy.json, env/deploy.json, docs/log/log.md
+
+50. 2026-09-09 Prd 서버 현황 문서 07-SERVER-PRODUCTION·fail2ban 증가형 밴
+Purpose: iwinv Lite VM 실제 적용 스펙·명령·Phase 현황 문서화, fail2ban OOM·increment bantime 반영 Changes:
+
+07-SERVER-PRODUCTION.md, deploy.json publicIp·Lite flags, 01-initial-hardening.sh Lite·swap·increment bantime, AGENTS.md Changed files: docs/main/07-SERVER-PRODUCTION.md, packages/env/deploy.json, deploy/rocky-linux/scripts/01-initial-hardening.sh, AGENTS.md, docs/log/log.md
+
+49. 2026-09-09 프로젝트 루트 README·REQUIREMENTS.txt 추가
+Purpose: 서버 패키지 설치·Dev/Prd 빌드 안내용 최상위 문서 추가 Changes:
+
+README.md (구조·Dev 명령·Prd 배포 요약), REQUIREMENTS.txt (Rocky Linux dnf 패키지 목록) Changed files: README.md, REQUIREMENTS.txt, docs/log/log.md
 
 48. 2026-09-09 iwinv 배포 오케스트레이터 스킬·로드맵·서버 스크립트
 Purpose: iwinv 클라우드 Prd 배포를 Phase D0~D6로 분리하고, 콘솔·SSH 복붙형 에이전트 스킬·하드ening 스크립트 제공 Changes:

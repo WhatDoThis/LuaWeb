@@ -1,0 +1,36 @@
+# LuaWeb — Server & build requirements
+# =====================================
+# Prd (Rocky Linux 9 / iwinv): nginx static hosting
+# Dev (Windows): Node.js 20+ only (see README.md)
+#
+# Install on Rocky Linux (required packages only):
+#   sudo dnf install -y $(grep -v '^#' REQUIREMENTS.txt | grep -v '^$' | tr '\n' ' ')
+#
+# Optional SSL (after domain is ready):
+#   sudo dnf install -y certbot python3-certbot-nginx
+#   sudo certbot --nginx -d YOUR_DOMAIN
+
+# --- Prd: required (Rocky Linux 9, dnf package names) ---
+nginx
+firewalld
+rsync
+tar
+gzip
+curl
+openssh-clients
+
+# --- Prd: optional — SSL (uncomment after domain setup) ---
+# certbot
+# python3-certbot-nginx
+
+# --- Prd: optional — build on server instead of Dev/CI (uncomment if needed) ---
+# git
+# nodejs
+# Note: after nodejs, run on server:
+#   corepack enable
+#   corepack prepare pnpm@9.15.9 --activate
+
+# --- Dev: Windows (manual install, not dnf) ---
+# Node.js >= 20 LTS  https://nodejs.org/
+# pnpm 9.15.9        npm exec --yes pnpm@9.15.9 install
+# Git                https://git-scm.com/

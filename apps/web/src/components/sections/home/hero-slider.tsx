@@ -16,6 +16,7 @@
 import { ImageAssetView } from '@/components/ui/image-asset-view';
 import { cn } from '@/lib/cn';
 import type { ImageAsset } from '@repo/env';
+import { siteContainerClass } from '@/lib/site-container';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -48,7 +49,7 @@ function HeroSlideFrame({ slide, locale, index, selectedIndex, priority = false 
 
   return (
     <div className="relative min-w-0 flex-[0_0_100%]">
-      <div className="relative h-[420px] sm:h-[520px] md:h-[640px]">
+      <div className="relative h-[420px] sm:h-[520px] md:h-[640px] xl:h-[720px] 2xl:h-[780px]">
         <ImageAssetView
           asset={slide.asset}
           locale={locale}
@@ -59,14 +60,14 @@ function HeroSlideFrame({ slide, locale, index, selectedIndex, priority = false 
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/25" />
         <div className="absolute inset-0 flex items-center" aria-hidden={!isActive}>
-          <div className="mx-auto w-full max-w-[1200px] px-4 text-white">
+          <div className={cn(siteContainerClass, 'text-white')}>
             {isActive ? (
-              <h1 className="text-3xl font-bold tracking-tight md:text-5xl">{slide.title}</h1>
+              <h1 className="lua-fluid-hero-title">{slide.title}</h1>
             ) : (
-              <p className="text-3xl font-bold tracking-tight md:text-5xl">{slide.title}</p>
+              <p className="lua-fluid-hero-title">{slide.title}</p>
             )}
             {slide.subtitle ? (
-              <p className="mt-4 text-lg text-white/90 md:text-xl">{slide.subtitle}</p>
+              <p className="lua-fluid-hero-subtitle">{slide.subtitle}</p>
             ) : null}
           </div>
         </div>

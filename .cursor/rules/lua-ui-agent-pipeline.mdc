@@ -1,0 +1,18 @@
+---
+description: UI/푸터/헤더/레이아웃 수정 시 4-에이전트 파이프라인 필수 (Layout→Typo→Visual QA→Regression)
+globs: apps/web/src/components/layout/**,apps/web/src/styles/globals.css,apps/web/src/lib/site-container.ts
+alwaysApply: false
+---
+
+# UI Agent Pipeline (mandatory)
+
+레이아웃·푸터·헤더·와ide 화면 UI 요청 시:
+
+1. Read `.cursor/agents/orchestrator-pipeline.md`
+2. **Do not** single-shot edit without agents
+3. Sequence: Layout Architect → (Typography Scaler) → Visual QA → Regression Guard
+4. Visual QA or Regression **FAIL** → user에게 완료 보고 금지
+5. 한 번에 한 축: layout OR typography OR color (color는 사용자 요청 시만)
+
+스킬: `corp-site-design-master`, `visual-qa-reviewer`, `layout-regression-guard`  
+로스터: `.cursor/agents/README.md`

@@ -9,6 +9,7 @@ Static corporate site: Next.js 16 App Router, `output: 'export'`, ko/en, 17+ rou
 | Path | Role |
 |---|---|
 | `docs/main/` | PRD, architecture, schema (reference) |
+| `docs/main/07-SERVER-PRODUCTION.md` | **Prd iwinv 서버 현황** (Lite·firewalld·명령어) |
 | `docs/report/01_ImplementationRoadmap.md` | Full roadmap |
 | `docs/report/0N_Phase_N.md` | **Active execution checklist** |
 | `deploy/` | Dev(Windows) → Prd(Rocky Linux iwinv) |
@@ -37,6 +38,21 @@ Main implement → Review subagent (explore)
 
 Do not ask user to confirm code changes. Ask only whether to proceed to the next Phase.
 
+## UI agent pipeline (footer/header/layout — mandatory)
+
+**Skills alone are not enough.** Use `.cursor/agents/` roster:
+
+| Step | Agent | subagent_type |
+|---|---|---|
+| 1 | [Layout Architect](.cursor/agents/layout-architect.md) | `generalPurpose` |
+| 2 | [Typography Scaler](.cursor/agents/typography-scaler.md) | `generalPurpose` |
+| 3 | [Visual QA Reviewer](.cursor/agents/visual-qa-reviewer.md) | `explore` (very thorough) |
+| 4 | [Regression Guard](.cursor/agents/regression-guard.md) | `explore` (very thorough) |
+
+Orchestrator: [orchestrator-pipeline.md](.cursor/agents/orchestrator-pipeline.md) · Rule: `.cursor/rules/lua-ui-agent-pipeline.mdc`
+
+Visual QA **FAIL** or Regression **BLOCK** → do not report UI task complete to user.
+
 ## Cursor rules
 
 `.cursor/rules/woori-*.mdc` — phase workflow, monorepo static export, code file headers.
@@ -46,5 +62,9 @@ Do not ask user to confirm code changes. Ask only whether to proceed to the next
 | Skill | Path | Use when |
 |---|---|---|
 | Phase dev | `.cursor/skills/woori-phase-dev/SKILL.md` | Phase 0~7 checklist implementation |
-| UI orchestrator | `.cursor/skills/lua-ui-orchestrator/SKILL.md` | UI/UX Master·Tester·검수 loop, premium UI polish |
+| UI orchestrator | `.cursor/skills/lua-ui-orchestrator/SKILL.md` | 4-agent pipeline 진입점 |
+| Corp design master | `.cursor/skills/corp-site-design-master/SKILL.md` | Layout/Typography agent 공통 벤치마크 |
+| Visual QA reviewer | `.cursor/skills/visual-qa-reviewer/SKILL.md` | 사람 눈 QA agent |
+| Layout regression guard | `.cursor/skills/layout-regression-guard/SKILL.md` | anti-pattern BLOCK agent |
+| **Agent roster** | `.cursor/agents/README.md` | 에이전트 정의·Task prompt |
 | **iwinv deploy** | `.cursor/skills/iwinv-deploy-orchestrator/SKILL.md` | iwinv VM·ELCAP·보안·nginx·HTTPS·DNS·메일 단계별 Prd 배포 (Phase D0~D6) |

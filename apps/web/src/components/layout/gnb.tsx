@@ -56,8 +56,8 @@ export function Gnb({ items }: GnbProps) {
   }, []);
 
   return (
-    <nav className="hidden lg:block" aria-label="Main navigation">
-      <ul className="flex items-center gap-8">
+    <nav aria-label="Main navigation">
+      <ul className="flex items-center gap-9 xl:gap-11 2xl:gap-14">
         {items.map((item) => {
           const sectionActive = isSectionActive(pathname, item);
           const parentHref = item.href ?? item.children?.[0]?.href;

@@ -37,7 +37,8 @@
   },
   "lang": {
     "ko": "KOR",
-    "en": "ENG"
+    "en": "ENG",
+    "groupLabel": "Language selection"
   },
   "breadcrumb": {
     "home": "Home"

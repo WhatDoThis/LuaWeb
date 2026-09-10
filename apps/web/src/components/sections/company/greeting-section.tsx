@@ -45,13 +45,13 @@ export async function GreetingSection({ locale }: GreetingSectionProps) {
       className={
         hasPortrait
           ? 'flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-12'
-          : 'mx-auto max-w-3xl'
+          : 'mx-auto max-w-3xl xl:max-w-4xl 2xl:max-w-5xl'
       }
     >
       <div className={hasPortrait ? 'order-2 space-y-5 lg:order-1' : 'space-y-5'}>
         {!hasPortrait && openingParagraph ? (
           <blockquote className="border-l-4 border-accent bg-gradient-to-r from-accent/10 to-transparent px-6 py-5">
-            <p className="text-lg font-medium leading-relaxed text-neutral-800">{openingParagraph}</p>
+            <p className="lua-fluid-body text-lg font-medium text-neutral-800 xl:text-xl">{openingParagraph}</p>
           </blockquote>
         ) : null}
 
@@ -65,7 +65,7 @@ export async function GreetingSection({ locale }: GreetingSectionProps) {
 
           if (Array.isArray(formatted)) {
             return (
-              <p key={key} className="leading-[1.9] text-neutral-700">
+              <p key={key} className="lua-fluid-body leading-[1.9] text-neutral-700">
                 {formatted.map((sentence, sentenceIndex) => (
                   <span key={`${key}-${sentenceIndex}`}>
                     {sentence}
@@ -82,7 +82,7 @@ export async function GreetingSection({ locale }: GreetingSectionProps) {
           }
 
           return (
-            <p key={key} className="leading-[1.9] text-neutral-700">
+            <p key={key} className="lua-fluid-body leading-[1.9] text-neutral-700">
               {formatted}
             </p>
           );

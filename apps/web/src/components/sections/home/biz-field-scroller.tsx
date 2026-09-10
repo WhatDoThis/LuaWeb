@@ -33,12 +33,12 @@ export function BizFieldScroller({ items }: BizFieldScrollerProps) {
             key={item.title}
             className={cn(
               'relative w-[260px] shrink-0 snap-start overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 shadow-sm',
-              'md:w-[280px]',
+              'md:w-[300px] xl:w-[340px] 2xl:w-[380px] xl:p-7',
             )}
           >
             <span className="absolute inset-x-0 top-0 h-1 bg-accent" aria-hidden="true" />
-            <h3 className="font-semibold text-primary">{item.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-600">{item.desc}</p>
+            <h3 className="lua-fluid-card-title text-primary">{item.title}</h3>
+            <p className="lua-fluid-card-desc mt-2">{item.desc}</p>
           </li>
         ))}
       </ul>

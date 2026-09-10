@@ -78,7 +78,7 @@ function LinkButton({
       </div>
       <div className="mt-4">
         <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{card.desc}</span>
-        <span className="mt-2 block text-lg font-semibold text-primary group-hover:text-secondary">
+        <span className="lua-fluid-card-title mt-2 block text-primary group-hover:text-secondary">
           {card.title}
         </span>
       </div>
@@ -128,8 +128,8 @@ export function LinkCards({ cards, locale }: LinkCardsProps) {
               <SmartImage path={card.imagePath} locale={locale} className="h-full w-full" fit="cover" />
             </div>
             <div className="p-5">
-              <h3 className="font-semibold text-neutral-800">{card.title}</h3>
-              <p className="mt-2 text-sm text-neutral-600">{card.desc}</p>
+              <h3 className="lua-fluid-card-title text-neutral-800">{card.title}</h3>
+              <p className="lua-fluid-card-desc mt-2">{card.desc}</p>
             </div>
           </>
         );

@@ -16,7 +16,34 @@
   --breakpoint-xl: 1440px;
 }
 
+/*
+ * LuaWeb Typography Policy (lua-type-*)
+ * ====================================
+ * hero > page-title > section-title > subtitle > body > body-sm > caption > label
+ * nav / nav-sub — header chrome
+ * Responsive: clamp anchors 375 → 1440 → 2560
+ */
+
+:root {
+  --lua-fs-hero: clamp(1.875rem, 2.2vw + 1rem, 4rem);
+  --lua-fs-page-title: clamp(1.875rem, 1.4vw + 1.25rem, 3rem);
+  --lua-fs-section-title: clamp(1.5rem, 1vw + 1.1rem, 2.5rem);
+  --lua-fs-subtitle: clamp(1.125rem, 0.6vw + 0.95rem, 1.65rem);
+  --lua-fs-body: clamp(1rem, 0.22vw + 0.94rem, 1.125rem);
+  --lua-fs-body-sm: clamp(0.875rem, 0.15vw + 0.82rem, 1rem);
+  --lua-fs-caption: clamp(0.8125rem, 0.08vw + 0.78rem, 0.875rem);
+  --lua-fs-label: clamp(0.75rem, 0.06vw + 0.72rem, 0.8125rem);
+  --lua-fs-nav: clamp(0.875rem, 0.2vw + 0.8rem, 1.125rem);
+  --lua-fs-nav-sub: clamp(0.8125rem, 0.08vw + 0.78rem, 0.9375rem);
+  --lua-logo-footer-w: clamp(8.5rem, 7.5vw + 4rem, 16rem);
+  --lua-logo-header-h: clamp(2.875rem, 0.65vw + 2.35rem, 3.5rem);
+}
+
 @layer base {
+  html {
+    font-size: var(--lua-fs-body);
+  }
+
   body {
     @apply text-neutral-800 antialiased;
   }
@@ -45,8 +72,71 @@
 }
 
 @layer components {
+  /* —— Type scale (source of truth) —— */
+  .lua-type-hero {
+    font-size: var(--lua-fs-hero);
+    @apply font-bold leading-tight tracking-tight;
+  }
+
+  .lua-type-page-title {
+    font-size: var(--lua-fs-page-title);
+    @apply font-bold text-primary;
+  }
+
+  .lua-type-section-title {
+    font-size: var(--lua-fs-section-title);
+    @apply font-bold text-primary;
+  }
+
+  .lua-type-subtitle {
+    font-size: var(--lua-fs-subtitle);
+    @apply leading-snug;
+  }
+
+  .lua-type-body {
+    font-size: var(--lua-fs-body);
+    @apply leading-relaxed;
+  }
+
+  .lua-type-body-sm {
+    font-size: var(--lua-fs-body-sm);
+    @apply font-medium leading-relaxed text-neutral-700;
+  }
+
+  .lua-type-caption {
+    font-size: var(--lua-fs-caption);
+    @apply font-medium text-neutral-500;
+  }
+
+  .lua-type-label {
+    font-size: var(--lua-fs-label);
+    @apply font-bold uppercase tracking-wide text-secondary;
+  }
+
+  .lua-type-footer-address {
+    font-size: clamp(0.9375rem, 0.22vw + 0.84rem, 1.125rem);
+    @apply font-medium leading-snug text-neutral-800;
+  }
+
+  .lua-type-footer-contact-title {
+    font-size: clamp(0.9375rem, 0.15vw + 0.86rem, 1rem);
+    @apply font-bold text-neutral-900;
+  }
+
+  .lua-type-footer-legal {
+    font-size: clamp(0.75rem, 0.05vw + 0.7rem, 0.8125rem);
+    @apply font-medium leading-snug;
+  }
+
+  .lua-type-nav-sub {
+    font-size: var(--lua-fs-nav-sub);
+    @apply font-medium;
+  }
+
+  /* —— Header / footer chrome —— */
   .lua-nav-link {
-    @apply relative text-[13px] font-semibold uppercase tracking-[0.12em] text-neutral-700 transition-colors hover:text-primary;
+    font-size: var(--lua-fs-nav);
+    @apply relative whitespace-nowrap font-semibold uppercase tracking-[0.12em] text-neutral-700 transition-colors hover:text-primary;
   }
 
   .lua-nav-link::after {
@@ -57,6 +147,79 @@
   .lua-nav-link:hover::after,
   .lua-nav-link:focus-visible::after {
     @apply w-full;
+  }
+
+  .lua-logo-header {
+    @apply block w-auto;
+  }
+
+  .lua-logo-header img {
+    height: auto;
+    max-height: var(--lua-logo-header-h);
+    width: auto;
+  }
+
+  .lua-logo-footer {
+    display: block;
+    width: 100%;
+    max-width: var(--lua-logo-footer-w);
+  }
+
+  .lua-logo-footer img {
+    height: auto;
+    width: 100%;
+    @apply object-contain object-left;
+  }
+
+  /* —— Back-compat aliases (migrate gradually) —— */
+  .lua-footer-body {
+    font-size: var(--lua-fs-body-sm);
+    @apply font-medium leading-relaxed text-neutral-700;
+  }
+
+  .lua-footer-meta {
+    font-size: var(--lua-fs-caption);
+    @apply font-medium text-neutral-500;
+  }
+
+  .lua-footer-tag {
+    font-size: var(--lua-fs-label);
+    @apply font-bold uppercase tracking-wide text-secondary;
+  }
+
+  .lua-fluid-hero-title {
+    font-size: var(--lua-fs-hero);
+    @apply font-bold leading-tight tracking-tight;
+  }
+
+  .lua-fluid-hero-subtitle {
+    font-size: var(--lua-fs-subtitle);
+    @apply mt-4 text-white/90;
+  }
+
+  .lua-fluid-page-title {
+    font-size: var(--lua-fs-page-title);
+    @apply font-bold text-primary;
+  }
+
+  .lua-fluid-section-title {
+    font-size: var(--lua-fs-section-title);
+    @apply font-bold text-primary;
+  }
+
+  .lua-fluid-body {
+    font-size: var(--lua-fs-body);
+    @apply leading-relaxed;
+  }
+
+  .lua-fluid-card-title {
+    font-size: var(--lua-fs-subtitle);
+    @apply font-semibold;
+  }
+
+  .lua-fluid-card-desc {
+    font-size: var(--lua-fs-body-sm);
+    @apply font-medium leading-relaxed text-neutral-700;
   }
 
   .lua-accent-bar {

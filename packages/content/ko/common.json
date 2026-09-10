@@ -37,7 +37,8 @@
   },
   "lang": {
     "ko": "KOR",
-    "en": "ENG"
+    "en": "ENG",
+    "groupLabel": "언어 선택"
   },
   "breadcrumb": {
     "home": "홈"

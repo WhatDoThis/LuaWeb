@@ -8,7 +8,7 @@
  * - MenuIcon
  *
  * [Dependencies]
- * - layout/gnb, layout/lang-switcher, @/lib/nav
+ * - layout/gnb, layout/lang-switcher, @/lib/nav, @/lib/site-container
  */
 
 'use client';
@@ -17,8 +17,10 @@ import { Gnb } from '@/components/layout/gnb';
 import { LangSwitcher } from '@/components/layout/lang-switcher';
 import { ImageAssetView } from '@/components/ui/image-asset-view';
 import { Link } from '@/i18n/navigation';
+import { cn } from '@/lib/cn';
 import type { ImageAsset } from '@repo/env';
 import type { NavItem } from '@/lib/nav';
+import { siteContainerClass } from '@/lib/site-container';
 import { useTranslations } from '@/lib/i18n';
 import type { RefObject } from 'react';
 
@@ -62,7 +64,12 @@ export function Header({
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200/80 bg-white/95 shadow-sm backdrop-blur-sm">
-      <div className="mx-auto flex h-[4.25rem] max-w-[1200px] items-center justify-between px-4 md:h-[4.75rem]">
+      <div
+        className={cn(
+          siteContainerClass,
+          'flex h-[4.5rem] items-center md:h-[5rem]',
+        )}
+      >
         <Link
           href="/"
           className="block shrink-0 rounded-md py-1 focus-visible:ring-2 focus-visible:ring-primary"
@@ -71,12 +78,14 @@ export function Header({
             asset={logoAsset}
             locale={locale}
             path="common.logo"
-            className="[&_img]:max-h-10 [&_img]:w-auto md:[&_img]:max-h-12"
+            className="lua-logo-header"
             priority
           />
         </Link>
-        <Gnb items={navItems} />
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="hidden flex-1 justify-center px-6 lg:flex xl:px-10">
+          <Gnb items={navItems} />
+        </div>
+        <div className="ml-auto flex shrink-0 items-center gap-3 md:gap-5">
           <LangSwitcher locale={locale} />
           <button
             ref={menuButtonRef}

@@ -43,7 +43,7 @@ export function HomeNewsList({
               href={`/pr-center/news/${article.slug}`}
               className="flex flex-col gap-2 py-4 transition-colors hover:bg-neutral-50 sm:flex-row sm:items-center sm:justify-between"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex min-w-0 flex-1 items-center gap-3">
                 <span
                   className={cn(
                     'shrink-0 rounded px-2 py-1 text-xs font-medium',
@@ -54,9 +54,9 @@ export function HomeNewsList({
                 >
                   {article.category === 'notice' ? noticeLabel : newsLabel}
                 </span>
-                <span className="font-medium text-neutral-800">{article.title}</span>
+                <span className="lua-fluid-card-title min-w-0 flex-1 font-medium text-neutral-800">{article.title}</span>
               </div>
-              <time className="shrink-0 text-sm text-neutral-500">{article.date}</time>
+              <time className="lua-fluid-card-desc shrink-0 text-neutral-500">{article.date}</time>
             </Link>
           </li>
         ))}

@@ -33,3 +33,5 @@ coverage/
 # Misc
 *.tsbuildinfo
 tmp/
+build-out.txt
+build-routes.txt

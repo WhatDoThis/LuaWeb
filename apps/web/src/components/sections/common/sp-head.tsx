@@ -23,9 +23,9 @@ export type SpHeadProps = {
 export function SpHead({ tag, title, desc, className }: SpHeadProps) {
   return (
     <header className={cn('mb-10', className)}>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">{tag}</p>
-      <h1 className="mt-3 text-3xl font-bold text-primary md:text-4xl">{title}</h1>
-      {desc ? <p className="mt-4 text-base text-neutral-600">{desc}</p> : null}
+      <p className="lua-type-label tracking-[0.2em]">{tag}</p>
+      <h1 className="lua-fluid-page-title mt-3">{title}</h1>
+      {desc ? <p className="lua-fluid-body mt-4 text-neutral-600">{desc}</p> : null}
     </header>
   );
 }

@@ -46,13 +46,13 @@ export function BizCardSlider({ cards, locale }: BizCardSliderProps) {
           <Link
             key={card.title}
             href={card.href}
-            className="group inline-flex min-w-[220px] flex-1 items-center gap-4 rounded-xl border border-primary/10 bg-gradient-to-br from-primary/[0.06] via-white to-accent/[0.08] px-6 py-5 shadow-sm transition-all hover:border-primary/25 hover:shadow-md"
+            className="group inline-flex min-w-[240px] flex-1 items-center gap-4 rounded-xl border border-primary/10 bg-gradient-to-br from-primary/[0.06] via-white to-accent/[0.08] px-6 py-5 shadow-sm transition-all hover:border-primary/25 hover:shadow-md xl:min-w-[280px] xl:px-7 xl:py-6"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white xl:h-11 xl:w-11 xl:text-base">
               {String(index + 1).padStart(2, '0')}
             </span>
             <span className="flex flex-1 items-center justify-between gap-3">
-              <span className="text-base font-semibold text-neutral-800 group-hover:text-primary">
+              <span className="lua-fluid-card-title text-neutral-800 group-hover:text-primary">
                 {card.title}
               </span>
               <span
@@ -72,7 +72,7 @@ export function BizCardSlider({ cards, locale }: BizCardSliderProps) {
     <div ref={emblaRef} className="overflow-hidden">
       <div className="flex gap-6">
         {cards.map((card) => (
-          <article key={card.title} className="min-w-0 flex-[0_0_80%] sm:flex-[0_0_45%] lg:flex-[0_0_32%]">
+          <article key={card.title} className="min-w-0 flex-[0_0_80%] sm:flex-[0_0_45%] lg:flex-[0_0_32%] xl:flex-[0_0_28%]">
             <Link href={card.href} className="group block overflow-hidden rounded-xl border border-neutral-200">
               <div className="aspect-[21/28] w-full overflow-hidden">
                 <ImageAssetView

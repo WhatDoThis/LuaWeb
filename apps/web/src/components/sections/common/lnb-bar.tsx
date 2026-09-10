@@ -16,6 +16,7 @@ import { Link } from '@/i18n/navigation';
 import { lnbSections, type LnbSection } from '@/lib/lnb';
 import { useTranslations } from '@/lib/i18n';
 import { cn } from '@/lib/cn';
+import { siteContainerClass } from '@/lib/site-container';
 import { useEffect, useRef, useState } from 'react';
 
 export type ContentNamespace = 'company' | 'technology' | 'management' | 'prCenter';
@@ -62,7 +63,7 @@ export function LnbBar({ section, namespace, currentPath, staticMode = false }: 
 
   return (
     <nav className="border-b border-neutral-200 bg-white" aria-label="Local navigation">
-      <div className="mx-auto flex max-w-[1200px] items-center gap-4 px-4 py-3">
+      <div className={cn(siteContainerClass, 'flex items-center gap-4 py-3 xl:py-4')}>
         <Link
           href="/"
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded border border-neutral-200 text-sm text-primary hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-primary"
