@@ -1,5 +1,5 @@
 ---
-description: Woori Tech 모노레포·정적 export·import·i18n 금지 목록
+description: LuaWeb 모노레포·정적 export·import·i18n 금지 목록
 globs: apps/**/*.{ts,tsx},packages/**/*.{ts,tsx}
 alwaysApply: false
 ---

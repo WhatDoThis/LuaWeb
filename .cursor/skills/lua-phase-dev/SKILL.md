@@ -1,9 +1,9 @@
 ---
-name: woori-phase-dev
-description: Woori Tech LuaWeb Phase 0~7 개발. Phase report 체크리스트 구현 → 검토 subagent → 필요 시 리팩토링 subagent 루프. Woori Tech, LuaWeb, Phase N 작업 시 사용.
+name: lua-phase-dev
+description: LuaWeb Phase 0~7 개발. Phase report 체크리스트 구현 → 검토 subagent → 필요 시 리팩토링 subagent 루프. LuaWeb, Phase N 작업 시 사용.
 ---
 
-# Woori Tech Phase Development
+# LuaWeb Phase Development
 
 ## Before coding
 

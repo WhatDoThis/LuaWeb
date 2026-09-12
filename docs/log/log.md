@@ -2,6 +2,7 @@
 
 ## Log Index
 
+76. 2026-09-12 legacy brand 잔재 전면 제거
 75. 2026-09-12 문서 인덱스·README·AGENTS 최신 동기화
 74. 2026-09-11 organic SEO·페이지별 metadata·06 가이드 Prd 반영
 73. 2026-09-11 검색엔진 등록 S0~S4 오케스트레이터·로드맵·06 가이드 보강
@@ -18,13 +19,13 @@
 62. 2026-09-11 푸터 grid 3열(200|1fr|300) Layout Architect 파이프라인 적용
 61. 2026-09-11 UI 4-에이전트 파이프라인·rules·skills 체계
 60. 2026-09-10 corp-site-design-master 스킬·푸터 justify-between
-59. 2026-09-10 푸터 wooritg 비율 타이포 통일(16px)
+59. 2026-09-10 푸터 비율 타이포 통일(16px)
 58. 2026-09-10 푸터 w-fit 좌측 그룹·모바일 로고 축소
-57. 2026-09-10 wooritg형 푸터 flex 3열·GNB xl 글자 확대
+57. 2026-09-10 푸터 flex 3열·GNB xl 글자 확대
 56. 2026-09-10 헤더·푸터 스타일 원복, 레이아웃만 유지
 55. 2026-09-10 GNB 붕괴·푸터 이메일 줄바꿈 수정·verify-routes 스크립트
 54. 2026-09-10 헤더 3열·GNB 중앙·푸터 gap 정렬 보정
-53. 2026-09-10 wooritg 벤치마크 푸터·fluid typography·컨테이너 1400px
+53. 2026-09-10 푸터·fluid typography·컨테이너 1400px
 52. 2026-09-10 와이드 해상도 레이아웃·푸터 정리·문의 이메일 반영
 51. 2026-09-10 D4 luacorp.co.kr DNS·도메인 배포
 50. 2026-09-09 Prd 서버 현황 문서 07-SERVER-PRODUCTION·fail2ban 증가형 밴
@@ -36,7 +37,7 @@
 40. 2026-09-08 UI 오케스트레이터·프리미엄 UI 전면 보강
 39. 2026-09-08 콘텐츠 적용 후 이미지·UI 레이아웃 보정
 38. 2026-09-08 확정 콘텐츠·이미지 패키지 전면 적용
-37. 2026-08-23 벤치마크 회사명 잔재 검수·Lua DOM 식별자 정리
+37. 2026-08-23 legacy brand 잔재 검수·Lua DOM 식별자 정리
 36. 2026-08-23 뉴스 게시판 BoardRow hydration 오류 수정
 35. 2026-08-23 2차 검수 blocker·SEO·nginx·배포 문서 보강
 34. 2026-08-23 런치 가이드 회사명 루아로 정정
@@ -57,7 +58,7 @@
 19. 2026-08-22 회사개요 매출액·해외 법인 테이블 삭제
 18. 2026-08-22 회사개요 주요 사업·종업원 수 정리
 17. 2026-08-22 채용 섹션 제거 및 찾아오시는 길 단일 본사화
-16. 2026-08-22 브랜드명 우리테크 → 루아 변경
+16. 2026-08-22 브랜드명 legacy brand → 루아 변경
 15. 2026-08-22 뉴스 샘플 기사 정리 — 홈페이지 리뉴얼 1건만 유지
 14. 2026-08-22 Phase 7 홈·SEO·CI
 13. 2026-08-22 Phase 6 JSON 뉴스 게시판
@@ -75,6 +76,14 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+76. 2026-09-12 legacy brand 잔재 전면 제거
+Purpose: legacy brand·벤치마크 URL·타사 명칭을 저장소 전역에서 삭제하고 Lua(루아) 브랜드로 통일 Changes:
+
+docs/main/00-PRD·01-ARCHITECTURE·06-LAUNCH-GUIDE, docs/report/01·02, deploy README
+.cursor/rules·skills legacy prefix → lua-* rename, agent·design skill 정리
+apps/web lib 주석, docs/log historical entries sanitize
+Changed files: docs/**, .cursor/**, AGENTS.md, apps/web/src/lib/**, deploy/**
 
 75. 2026-09-12 문서 인덱스·README·AGENTS 최신 동기화
 Purpose: report/main 신규 문서(11·13·06·07)가 인덱스·루트 README·AGENTS에 빠짐없이 반영되도록 갱신 Changes:
@@ -160,7 +169,7 @@ footer/header/gnb-submenu/lang-switcher/section-head/sp-head 토큰 적용
 typography-scaler.md·corp-site-design-master 정책표 갱신 Changed files: apps/web/src/styles/globals.css, apps/web/src/components/layout/*, apps/web/src/components/sections/common/*, .cursor/**, docs/log/log.md
 
 62. 2026-09-11 푸터 grid 3열(200|1fr|300) Layout Architect 파이프라인 적용
-Purpose: justify-between 좌측 클러스터·연락처 우측 고정 증상 → wooritg grid 리듬 Changes:
+Purpose: justify-between 좌측 클러스터·연락처 우측 고정 증상 → grid 리듬 Changes:
 
 footer: flex justify-between → lg:grid-cols-[200px_minmax(0,1fr)_300px] xl:gap-x-[124px]
 모바일 로고 w-[100px] max-h-8, contact items-baseline
@@ -174,13 +183,13 @@ skills: visual-qa-reviewer, layout-regression-guard, lua-ui-orchestrator 갱신
 rule: lua-ui-agent-pipeline.mdc, AGENTS.md agent roster Changed files: .cursor/agents/**, .cursor/skills/**, .cursor/rules/lua-ui-agent-pipeline.mdc, AGENTS.md, docs/log/log.md
 
 60. 2026-09-10 corp-site-design-master 스킬·푸터 justify-between
-Purpose: 반복 레이아웃 악화 방지용 Human-eye 디자이너 스킬, wooritg형 footer justify-between 3열 Changes:
+Purpose: 반복 레이아웃 악화 방지용 Human-eye 디자이너 스킬, footer justify-between 3열 Changes:
 
 .cursor/skills/corp-site-design-master (SKILL, anti-patterns)
 footer flex justify-between (w-fit/flex-1 제거), lua-ui-orchestrator·AGENTS.md 연동 Changed files: .cursor/skills/corp-site-design-master/**, apps/web/src/components/layout/footer.tsx, .cursor/skills/lua-ui-orchestrator/SKILL.md, AGENTS.md, docs/log/log.md
 
-59. 2026-09-10 푸터 wooritg 비율 타이포 통일(16px)
-Purpose: 푸터 글씨 과대·주소/이메일 비율 불균형 wooritg 기준 조정 Changes:
+59. 2026-09-10 푸터 비율 타이포 통일(16px)
+Purpose: 푸터 글씨 과대·주소/이메일 비율 불균형 기준 조정 Changes:
 
 lua-footer-body/meta/tag (14~16px), 주소·연락처 동일 크기
 xl 22px 제거, 로고 lg 200px, 열 gap 14/20/24 Changed files: apps/web/src/components/layout/footer.tsx, apps/web/src/styles/globals.css, docs/log/log.md
@@ -191,14 +200,14 @@ Purpose: flex-1로 이메일 우측 밀림·모바일 로고 과대 수정, UI M
 푸터 inner w-fit flex, flex-1/ml-auto 제거, 로고 128px~230px·max-h 모바일
 연락처 태그 72px, 열 pt 정렬 Changed files: apps/web/src/components/layout/footer.tsx, docs/log/log.md
 
-57. 2026-09-10 wooritg형 푸터 flex 3열·GNB xl 글자 확대
-Purpose: 푸터 wooritg 배치(로고|주소+copyright|연락처 행), 헤더 GNB xl/2xl 글자 확대 Changes:
+57. 2026-09-10 푸터 flex 3열·GNB xl 글자 확대
+Purpose: 푸터 배치(로고|주소+copyright|연락처 행), 헤더 GNB xl/2xl 글자 확대 Changes:
 
 푸터 flex 3열, 아이콘·문의하기 제목 제거, TEL/E-mail 라벨+값 행, copyright 중앙열
 GNB lg:text-sm xl:15px 2xl:base Changed files: apps/web/src/components/layout/footer.tsx, gnb.tsx, apps/web/src/styles/globals.css, docs/log/log.md
 
 56. 2026-09-10 헤더·푸터 스타일 원복, 레이아웃만 유지
-Purpose: wooritg 색감·다크푸터·invert 로고 등 불필요 변경 롤백, 넓은 화면 레이아웃만 유지 Changes:
+Purpose: 색감·다크푸터·invert 로고 등 불필요 변경 롤백, 넓은 화면 레이아웃만 유지 Changes:
 
 헤더/GNB/서브메뉴/언어스위처 P0-1 원본 호버·색감 복원 + siteContainerClass
 푸터 밝은 배경·컬러 로고 복원, 퀵링크 제거 3열(로고|주소|문의), copyright 하단바
@@ -213,21 +222,21 @@ scripts/verify-routes.ps1 22 UI 라우트 HTTP·HTML 검증
 home-news-list min-w-0 overflow 보정 Changed files: apps/web/src/components/layout/header.tsx, footer.tsx, gnb.tsx, apps/web/src/styles/globals.css, apps/web/src/components/sections/home/home-news-list.tsx, scripts/verify-routes.ps1, docs/log/log.md
 
 54. 2026-09-10 헤더 3열·GNB 중앙·푸터 gap 정렬 보정
-Purpose: 푸터 ml-auto 과격 분리·헤더 GNB 미중앙 wooritg 대비 개선 Changes:
+Purpose: 푸터 ml-auto 과격 분리·헤더 GNB 미중앙 대비 개선 Changes:
 
 헤더 grid 340|1fr|340, xl h100px, GNB 중앙·16px uppercase, 다크 서브메뉴, KOR|ENG 텍스트 스위처
 푸터 xl grid 230|1fr|340 고정 gap, 연락처 행 grid 유지 Changed files: apps/web/src/components/layout/header.tsx, gnb.tsx, gnb-submenu.tsx, lang-switcher.tsx, footer.tsx, apps/web/src/styles/globals.css, docs/log/log.md
 
-53. 2026-09-10 wooritg 벤치마크 푸터·fluid typography·컨테이너 1400px
-Purpose: wooritg.com 대비 좁은 레이아웃·작은 글씨·난잡한 푸터 개선 Changes:
+53. 2026-09-10 푸터·fluid typography·컨테이너 1400px
+Purpose: luacorp.co.kr 대비 좁은 레이아웃·작은 글씨·난잡한 푸터 개선 Changes:
 
 siteContainerClass 1400→1600→1720px, xl px-60
 html clamp·hero/page/section/card fluid typography, GNB xl 확대
-푸터 wooritg 3열 다크(#272727) 로고|주소+copyright|연락처 테이블형
+푸터 3열 다크(#272727) 로고|주소+copyright|연락처 테이블형
 홈 카드·뉴스·사업분야 xl/2xl 스케일 Changed files: apps/web/src/lib/site-container.ts, apps/web/src/styles/globals.css, apps/web/src/components/layout/footer.tsx, apps/web/src/components/layout/header.tsx, apps/web/src/components/sections/home/*.tsx, docs/log/log.md
 
 52. 2026-09-10 와이드 해상도 레이아웃·푸터 정리·문의 이메일 반영
-Purpose: 2560×1440+ 화면 여백 완화, wooritg 벤치마크형 푸터 단순화, 문의 이메일 등록 Changes:
+Purpose: 2560×1440+ 화면 여백 완화,형 푸터 단순화, 문의 이메일 등록 Changes:
 
 siteContainerClass(xl 1380 / 2xl 1580) 헤더·푸터·LNB·히어로·PageContainer 적용
 fluid typography(hero/page/section title, body) xl/2xl 스케일
@@ -252,7 +261,7 @@ README.md (구조·Dev 명령·Prd 배포 요약), REQUIREMENTS.txt (Rocky Linux
 48. 2026-09-09 iwinv 배포 오케스트레이터 스킬·로드맵·서버 스크립트
 Purpose: iwinv 클라우드 Prd 배포를 Phase D0~D6로 분리하고, 콘솔·SSH 복붙형 에이전트 스킬·하드ening 스크립트 제공 Changes:
 
-iwinv-deploy-orchestrator SKILL (reference-iwinv, phases), 12_iwinvDeployRoadmap, rocky-linux scripts 00~04, woori-iwinv-deploy rule, AGENTS/deploy README 갱신 Changed files: .cursor/skills/iwinv-deploy-orchestrator/**, .cursor/rules/woori-iwinv-deploy.mdc, deploy/rocky-linux/scripts/**, docs/report/12_iwinvDeployRoadmap.md, docs/report/00_ReportIndex, deploy/README.md, deploy/rocky-linux/README.md, AGENTS.md, docs/log/log.md
+iwinv-deploy-orchestrator SKILL (reference-iwinv, phases), 12_iwinvDeployRoadmap, rocky-linux scripts 00~04, lua-iwinv-deploy rule, AGENTS/deploy README 갱신 Changed files: .cursor/skills/iwinv-deploy-orchestrator/**, .cursor/rules/lua-iwinv-deploy.mdc, deploy/rocky-linux/scripts/**, docs/report/12_iwinvDeployRoadmap.md, docs/report/00_ReportIndex, deploy/README.md, deploy/rocky-linux/README.md, AGENTS.md, docs/log/log.md
 
 47. 2026-09-09 CEO 인사말 서명 EN·중복 직함 제거
 Purpose: 인용 블록 하단 CEO 텍스트 중복 제거, EN 페이지 ceo-sign.en.svg 적용 Changes:
@@ -306,11 +315,11 @@ Purpose: 11_ContentInventorySuccess.md 확정본과 static/external 이미지를
 external → public/static/images·downloads 정리, site/home/company/technology/management/prCenter/common ko·en 갱신
 GNB/LNB 연혁·조직도·윤리·ESG 제거, IR 카드·팩스·히어로2·3 삭제, 특허 PDF 링크·네이버 지도 링크 추가 Changed files: packages/content/**, packages/env/**, apps/web/public/static/**, apps/web/src/**
 
-37. 2026-08-23 벤치마크 회사명 잔재 검수·Lua DOM 식별자 정리
-Purpose: 우리기술(woori) 잔재 검수 및 HTML class/id/data-site를 Lua 전용 식별자로 통일 Changes:
+37. 2026-08-23 legacy brand 잔재 검수·Lua DOM 식별자 정리
+Purpose: 잔재 검수 및 HTML class/id/data-site를 Lua 전용 식별자로 통일 Changes:
 
 apps/web: site-identity.ts, data-site=lua, lua-site-root, lua-modal-title, lua-location-info, lua-board-markdown
-package.json lua-web, .env.example·deploy README woori 경로 → /var/www/lua Changed files: apps/web/src/lib/site-identity.ts, apps/web/src/components/**, apps/web/src/app/[locale]/layout.tsx, package.json, .env.example, deploy/**, AGENTS.md
+package.json lua-web, .env.example·deploy README legacy 경로 → /var/www/lua Changed files: apps/web/src/lib/site-identity.ts, apps/web/src/components/**, apps/web/src/app/[locale]/layout.tsx, package.json, .env.example, deploy/**, AGENTS.md
 
 36. 2026-08-23 뉴스 게시판 BoardRow hydration 오류 수정
 Purpose: tbody 안 li 렌더링으로 발생한 HTML/hydration 오류 제거 Changes:
@@ -326,9 +335,9 @@ deploy.json·nginx.conf.example /var/www/lua/current, sitemap hreflang, check-im
 06-LAUNCH-GUIDE SELinux·DNS SSL 게이트·releases 배포, site.json placeholder domain Changed files: apps/web/src/app/**, apps/web/src/lib/seo.ts, deploy/**, packages/env/**, scripts/check-images.ts, .github/workflows/deploy.yml, docs/main/06-LAUNCH-GUIDE.md, docs/log/log.md
 
 34. 2026-08-23 런치 가이드 회사명 루아로 정정
-Purpose: 벤치마크 잔재(우리기술·wooritech)를 루아(Lua) 기준으로 교체 Changes:
+Purpose: legacy brand 잔재(·)를 루아(Lua) 기준으로 교체 Changes:
 
-06-LAUNCH-GUIDE.md: 대상·도메인 예시·서버 경로(/var/www/lua) woori-tech 명칭 제거 Changed files: docs/main/06-LAUNCH-GUIDE.md, docs/log/log.md
+06-LAUNCH-GUIDE.md: 대상·도메인 예시·서버 경로(/var/www/lua) lua-web 명칭 제거 Changed files: docs/main/06-LAUNCH-GUIDE.md, docs/log/log.md
 
 33. 2026-08-23 최종 브라우저 배포·오픈 가이드 문서 추가
 Purpose: 콘텐츠 확정 후 iwinv Rocky Linux·nginx·SSL·도메인·검색엔진 등록까지 순서대로 따라 할 수 있는 운영 오픈 종합 가이드 작성 Changes:
@@ -434,7 +443,7 @@ site.json maps 본사(hq)만 유지
 pnpm typecheck && pnpm build 통과 (35 routes)
 Changed files: apps/web/src/app/[locale]/career/** (삭제), apps/web/src/components/sections/career/** (삭제), apps/web/src/components/sections/company/location-*.tsx, apps/web/src/lib/nav.ts, lnb.ts, packages/content/**, packages/env/site.json, packages/env/images.json, docs/log/log.md
 
-16. 2026-08-22 브랜드명 우리테크 → 루아 변경
+16. 2026-08-22 브랜드명 legacy brand → 루아 변경
 Purpose: 사이트 표시 브랜드명 통일 (ko: 루아, en: Lua) Changes:
 
 packages/content ko/en JSON, board/news, site.json, images.json alt
@@ -485,10 +494,10 @@ Changed files: apps/web/src/components/**, apps/web/src/app/[locale]/**, package
 11. 2026-08-22 코드 생성·검수 에이전트 워크플로 규칙 반영
 Purpose: 메인 구현 → 검토 subagent → 리팩토링 subagent 루프 및 완료 보고 형식 표준화 Changes:
 
-.cursor/rules/woori-phase-workflow.mdc: 에이전트 검수 루프·완료 보고 규칙
-.cursor/skills/woori-phase-dev/SKILL.md: Step 1~4 워크플로
+.cursor/rules/lua-phase-workflow.mdc: 에이전트 검수 루프·완료 보고 규칙
+.cursor/skills/lua-phase-dev/SKILL.md: Step 1~4 워크플로
 AGENTS.md: subagent 역할 매핑
-Changed files: .cursor/rules/woori-phase-workflow.mdc, .cursor/skills/woori-phase-dev/SKILL.md, AGENTS.md, docs/log/log.md
+Changed files: .cursor/rules/lua-phase-workflow.mdc, .cursor/skills/lua-phase-dev/SKILL.md, AGENTS.md, docs/log/log.md
 
 10. 2026-08-22 Phase 4 서브 페이지 골격
 Purpose: 서브 16페이지 IntroHero/LnbBar/SpHead/PageContainer 공통 골격 및 domain JSON skeleton Changes:
@@ -517,8 +526,8 @@ Purpose: Header/GNB/Footer/Sitemap/Modal 공통 레이아웃 구현 및 Cursor r
 layout: header, gnb, gnb-submenu, lang-switcher, sitemap-overlay, footer, top-button, site-shell
 ui: modal, accordion / lib: cn, nav
 common.json: nav nested tree, layout strings / home.json: title, localeLabel 분리
-.cursor/rules: woori-phase-workflow, woori-monorepo-static, woori-code-files
-.cursor/skills/woori-phase-dev/SKILL.md, AGENTS.md
+.cursor/rules: lua-phase-workflow, lua-monorepo-static, lua-code-files
+.cursor/skills/lua-phase-dev/SKILL.md, AGENTS.md
 docs/report/04_Phase_2.md (완료)
 Changed files: apps/web/src/components/**, apps/web/src/lib/**, packages/content/**, .cursor/**, AGENTS.md, docs/report/04_Phase_2.md, docs/log/log.md
 
@@ -576,7 +585,7 @@ docs/main/: 00~05 기획 문서 이동, 04-PHASE-PLAN 요약 축소
 Changed files: docs/report/01_ImplementationRoadmap.md, docs/report/00_ReportIndex, docs/main/00-PRD.md ~ 05-CONVENTIONS.md, docs/main/04-PHASE-PLAN.md, docs/log/log.md
 
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
-Purpose: Woori Tech 기업 홍보 사이트 확정 아키텍처를 문서화. 코드 없이 PRD·아키텍처·컴포넌트·스키마·Phase·컨벤션 정의 Changes:
+Purpose: LuaWeb 기업 홍보 사이트 확정 아키텍처를 문서화. 코드 없이 PRD·아키텍처·컴포넌트·스키마·Phase·컨벤션 정의 Changes:
 
 docs/00-PRD.md: KPI, FR/NFR, 사이트맵, 스코프 아웃
 docs/01-ARCHITECTURE.md: 디렉터리 트리, 데이터 흐름, JSON 뉴스 설계

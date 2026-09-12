@@ -58,15 +58,15 @@ Visual QA **FAIL** or Regression **BLOCK** → do not report UI task complete to
 
 ## Cursor rules
 
-`.cursor/rules/woori-*.mdc` — phase workflow, monorepo static export, code file headers.
+`.cursor/rules/lua-*.mdc` — phase workflow, monorepo static export, code file headers.
 
 ## Skill
 
 | Skill | Path | Use when |
 |---|---|---|
-| Phase dev | `.cursor/skills/woori-phase-dev/SKILL.md` | Phase 0~7 checklist implementation |
+| Phase dev | `.cursor/skills/lua-phase-dev/SKILL.md` | Phase 0~7 checklist implementation |
 | UI orchestrator | `.cursor/skills/lua-ui-orchestrator/SKILL.md` | 4-agent pipeline 진입점 |
-| Corp design master | `.cursor/skills/corp-site-design-master/SKILL.md` | Layout/Typography agent 공통 벤치마크 |
+| Corp design master | `.cursor/skills/corp-site-design-master/SKILL.md` | Layout/Typography agent 공통 디자인 기준 |
 | Visual QA reviewer | `.cursor/skills/visual-qa-reviewer/SKILL.md` | 사람 눈 QA agent |
 | Layout regression guard | `.cursor/skills/layout-regression-guard/SKILL.md` | anti-pattern BLOCK agent |
 | **Agent roster** | `.cursor/agents/README.md` | 에이전트 정의·Task prompt |

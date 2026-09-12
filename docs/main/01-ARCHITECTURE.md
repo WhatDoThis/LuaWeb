@@ -3,7 +3,7 @@
 ## 1. 디렉터리 트리 (파일 단위)
 
 ```
-woori-tech-site/
+lua-web/
 ├─ pnpm-workspace.yaml
 ├─ package.json
 ├─ turbo.json

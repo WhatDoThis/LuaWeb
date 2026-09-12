@@ -20,14 +20,6 @@ Corporate site **layout architect**. Optimizes human-perceived column balance, n
 - Font-size tokens (Typography Scaler owns)
 - Hero, home cards
 
-## Benchmark
-
-Fetch or recall **wooritg.com** footer:
-
-- `display: flex; gap: 124px` on container
-- 3 columns: logo | address+copyright | contact grid 60px+value
-- Light theme Lua: `justify-between` on full `siteContainerClass` width
-
 ## Footer recipe (LuaWeb)
 
 ```tsx

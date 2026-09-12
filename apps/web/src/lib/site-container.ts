@@ -1,7 +1,7 @@
 /**
  * lib.site-container (사이트 공통 컨테이너)
  * =======================================
- * wooritg container-width(1400) + xl/2xl 여백(px-20/24) 점진 확장
+ * 사이트 container-width(1400) + xl/2xl 여백(px-20/24) 점진 확장
  *
  * [Main Functions]
  * - siteContainerClass

@@ -5,7 +5,7 @@
 | Anti-pattern | Symptom | Fix |
 |---|---|---|
 | `flex-1` on footer middle column | Email pushed to far right | Remove; use `justify-between` on 3 fixed columns |
-| `ml-auto` on contact column | Huge dead zone | Only if benchmark explicitly uses it; prefer `justify-between` |
+| `ml-auto` on contact column | Huge dead zone | Only if reference layout explicitly uses it; prefer `justify-between` |
 | `w-fit` footer inner + wide container | Left cluster + empty viewport | Full-width `justify-between` |
 | `min-w-0` on GNB wrapper | Korean menu one char per line | Never on nav text; use `whitespace-nowrap` |
 | `grid` 340px side columns + center `min-w-0` | GNB vertical collapse | Use `flex justify-between` header |

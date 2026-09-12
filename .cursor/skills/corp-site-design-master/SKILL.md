@@ -2,7 +2,7 @@
 name: corp-site-design-master
 description: >-
   Corporate IR/company-site UI design master for human-perceived layout, typography,
-  and proportions. Synthesizes wooritg.com and Korean/global B2B benchmarks.
+  and proportions. Uses Lua design tokens and Korean/global B2B corporate patterns.
   Use when footer/header/layout looks wrong to users, wide-screen spacing issues,
   typography imbalance, or user asks for designer agent / human-eye UI review.
 ---
@@ -15,7 +15,7 @@ description: >-
 
 - One change axis per iteration (layout OR typography OR color — never all three)
 - Preserve working interaction design (hover, GNB, lang switcher) unless user asks
-- Compare against live benchmarks before proposing CSS
+- Compare against Lua site tokens and corp IR patterns before proposing CSS
 
 ## When to invoke
 
@@ -23,11 +23,11 @@ description: >-
 - Footer/header wide-screen (1440, 2560) complaints
 - Before merging any layout PR touching `header.tsx`, `footer.tsx`, `globals.css` container/typography
 
-## Benchmark set (fetch CSS/HTML when unsure)
+## Design reference set (fetch CSS/HTML when unsure)
 
 | Site | Role | Key tokens |
 |---|---|---|
-| wooritg.com | Primary KO B2B | container 1400px, footer flex gap 124px, address 22px dark / 16px light equiv |
+| luacorp.co.kr (this site) | Primary | container 1400px, footer 3-column, lua-type-* tokens |
 | Samsung Biologics IR | Global pharma | wide container, calm footer density |
 | Celltrion | KO tech/bio | strong header, readable footer |
 | SK bioscience | KO corporate | section rhythm |
@@ -36,7 +36,7 @@ description: >-
 ## Human-eye review loop (mandatory)
 
 ```
-1. Read user screenshot description OR fetch benchmark CSS
+1. Read user screenshot description OR fetch reference site CSS
 2. Diagnose ONE root cause (e.g. flex-1, ml-auto, mismatched type scale)
 3. Propose minimal diff — max 2 files
 4. typecheck + scripts/verify-routes.ps1
@@ -71,12 +71,6 @@ Source: `globals.css` `:root --lua-fs-*` + `.lua-type-*`
 Row1 (items-center): [Logo fluid] | [Address 1 line, center] | [문의하기 + 이메일 label value same line]
 Row2 (center, mt-5): copyright → privacy (below)
 py-6~8, no border rows on contact, no copyright under address
-```
-
-Legacy wooritg:
-
-```
-[Logo ~200px]  ←justify-between→  [Address + copyright 15–16px]  ←→  [Contact rows 60px tag + value]
 ```
 
 | Token | Value |

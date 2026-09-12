@@ -2,7 +2,7 @@
 
 ## When
 
-- User: footer, header, layout, wide screen, wooritg, UI/UX, "별로", screenshot
+- User: footer, header, layout, wide screen, UI/UX, "별로", screenshot
 - Any edit to `apps/web/src/components/layout/**`, layout sections, `globals.css` container/typography
 
 ## Main agent duties
@@ -60,4 +60,4 @@ Verdict: PASS | BLOCK
 - 1440px에서 보이는 것: …
 ```
 
-Never claim "wooritg matched" without Visual QA PASS.
+Never claim layout is complete without Visual QA PASS.

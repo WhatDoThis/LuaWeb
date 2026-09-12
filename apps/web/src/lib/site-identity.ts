@@ -1,7 +1,7 @@
 /**
  * lib.site-identity (사이트 식별 상수)
  * ====================================
- * HTML data-/id/class 접두 — 벤치마크 사이트와 DOM 식별자 혼동 방지
+ * HTML data-/id/class 접두 — Lua 사이트 전용 DOM 식별자
  *
  * [Main Functions]
  * - LUA_SITE_ID

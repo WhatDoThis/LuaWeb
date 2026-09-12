@@ -1,5 +1,5 @@
 ---
-description: Woori Tech 파일 헤더·Server-Client·Tailwind v4
+description: LuaWeb 파일 헤더·Server-Client·Tailwind v4
 globs: apps/**/*.{ts,tsx},packages/**/*.{ts,tsx}
 alwaysApply: false
 ---

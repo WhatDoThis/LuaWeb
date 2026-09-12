@@ -4,10 +4,10 @@
 
 | 항목 | 내용 |
 |---|---|
-| 프로젝트명 | Woori Tech 기업 홍보 웹사이트 |
-| 목적 | 기술·회사·채용 정보를 SEO 친화적으로 정적 제공 |
-| 타깃 | 잠재 고객, 투자자, 채용 후보자, 협력사 |
-| 벤치마크 | [wooritg.com](https://www.wooritg.com/ko/) — 레이아웃·인터랙션만 1:1, 콘텐츠는 플레이스홀더 |
+| 프로젝트명 | 루아(Lua) 기업 홍보 웹사이트 |
+| 목적 | 기술·회사 정보를 SEO 친화적으로 정적 제공 |
+| 타깃 | 잠재 고객, 투자자, 협력사 |
+| 운영 도메인 | [luacorp.co.kr](https://www.luacorp.co.kr) |
 
 ## 2. 성공 지표 (KPI)
 
@@ -115,7 +115,7 @@
 | 홍보영상 페이지 | 스코프 축소 |
 | 품질·안전방침 페이지 | 경영방침 3개만 |
 | 관리자 CMS | Git + JSON이 CMS |
-| Family sites 드롭다운 | 벤치마크 제외 |
+| Family sites 드롭다운 | 요구 없음 |
 | 공시정보 GNB·탭 연결 | Phase 5+ 주석. 컴포넌트만 선구현 |
 | DART/PDF 실제 연동 | 추후 고도화 |
 
@@ -129,17 +129,6 @@
 | 회사정보 | `packages/env/site.json` | 운영 | JSON |
 
 루트 `env/`, `static/`, `news/` 심볼릭 링크 — 비개발자 접근 편의 (Windows: junction).
-
-## 8. 벤치마크 레퍼런스 URL
-
-| 페이지 유형 | URL |
-|---|---|
-| 홈 | https://www.wooritg.com/ko/ |
-| 서브 공통 | https://www.wooritg.com/ko/company/greeting.php |
-| tech-1 레이아웃 | https://www.wooritg.com/ko/business/soc/ |
-| tech-2 레이아웃 | https://www.wooritg.com/ko/business/offshore-wind-power/ |
-| 게시판 | https://www.wooritg.com/ko/pr-center/press.php |
-| 탭+지도 | https://www.wooritg.com/ko/company/location.php |
 
 ## 확인 필요
 

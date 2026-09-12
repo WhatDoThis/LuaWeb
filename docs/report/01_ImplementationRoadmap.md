@@ -1,4 +1,4 @@
-# Woori Tech 기업 홍보 사이트 — Phase별 상세 구현 로드맵
+# 루아(Lua) 기업 홍보 사이트 — Phase별 상세 구현 로드맵
 
 > **본 문서 하나만으로 Phase 0~7 전체 개발을 수행할 수 있습니다.**  
 > 외부 문서 참조 없이 요구사항·아키텍처·스키마·컴포넌트·단계별 작업·검증·커밋까지 모두 포함합니다.
@@ -9,7 +9,7 @@
 
 1. [프로젝트 개요](#1-프로젝트-개요)
 2. [기술 스택 및 금지 사항](#2-기술-스택-및-금지-사항)
-3. [사이트맵 및 벤치마크](#3-사이트맵-및-벤치마크)
+3. [사이트맵](#3-사이트맵)
 4. [디렉터리 구조](#4-디렉터리-구조)
 5. [아키텍처 규칙](#5-아키텍처-규칙)
 6. [코딩 컨벤션](#6-코딩-컨벤션)
@@ -31,10 +31,10 @@
 
 | 항목 | 내용 |
 |---|---|
-| 프로젝트명 | Woori Tech 기업 홍보 웹사이트 |
-| 목적 | 기술·회사·채용 정보를 SEO 친화적으로 **완전 정적** 제공 |
-| 타깃 | 잠재 고객, 투자자, 채용 후보자, 협력사 |
-| 벤치마크 | wooritg.com — **레이아웃·인터랙션만** 1:1, 텍스트·이미지는 플레이스홀더 |
+| 프로젝트명 | 루아(Lua) 기업 홍보 웹사이트 |
+| 목적 | 기술·회사 정보를 SEO 친화적으로 **완전 정적** 제공 |
+| 타깃 | 잠재 고객, 투자자, 협력사 |
+| 운영 도메인 | luacorp.co.kr |
 | 백엔드 | **없음** (`apps/api` README 슬롯만) |
 | DB | **없음** — Git + JSON/MD가 CMS |
 
@@ -111,7 +111,7 @@
 
 ---
 
-## 3. 사이트맵 및 벤치마크
+## 3. 사이트맵
 
 ```
 /                                    → /ko 리다이렉트
@@ -135,21 +135,12 @@
 /[locale]/career/certificates
 ```
 
-| 유형 | 벤치마크 URL |
-|---|---|
-| 홈 | https://www.wooritg.com/ko/ |
-| 서브 공통 | https://www.wooritg.com/ko/company/greeting.php |
-| tech-1 | https://www.wooritg.com/ko/business/soc/ |
-| tech-2 | https://www.wooritg.com/ko/business/offshore-wind-power/ |
-| 게시판 | https://www.wooritg.com/ko/pr-center/press.php |
-| 탭+지도 | https://www.wooritg.com/ko/company/location.php |
-
 ---
 
 ## 4. 디렉터리 구조
 
 ```
-woori-tech-site/
+lua-web/
 ├─ pnpm-workspace.yaml
 ├─ package.json
 ├─ turbo.json
@@ -436,7 +427,7 @@ packages:
 
 ```json
 {
-  "name": "woori-tech-site",
+  "name": "lua-web",
   "private": true,
   "scripts": {
     "dev": "turbo dev",
@@ -964,7 +955,7 @@ feat(pages): add sub-page shell with IntroHero, LnbBar, and SpHead
 
 1. 세로 라인 + year badge (left)
 2. items bullet list
-3. 최신 연도 상단 또는 하단 — 벤치마크: 하단→상단 역순
+3. 최신 연도 상단 또는 하단 — 하단→상단 역순
 
 ### 5.1.4 organizations — OrgChart
 
@@ -1002,7 +993,7 @@ feat(pages): add sub-page shell with IntroHero, LnbBar, and SpHead
 
 - **CTA·버튼·외부링크 `<a>` 금지**
 - LnbBar `staticMode={true}` 유지
-- 벤치마크: soc / offshore-wind-power **레이아웃만**
+- tech-1 / tech-2: 이미지+텍스트 UI만 (CTA 없음)
 
 ### 5.2.1 공통 컴포넌트 생성
 

@@ -49,7 +49,7 @@ packages:
 
 ```json
 {
-  "name": "woori-tech-site",
+  "name": "lua-web",
   "private": true,
   "scripts": {
     "dev": "turbo dev",
@@ -165,14 +165,14 @@ packages/env/
 
 ```json
 {
-  "companyName": { "ko": "우리테크", "en": "Woori Tech" },
+  "companyName": { "ko": "루아", "en": "Lua" },
   "domain": "https://example.com",
   "contact": { "tel": "02-0000-0000", "fax": "02-0000-0001", "email": "contact@example.com" },
   "addresses": {
     "hq": { "ko": "서울특별시 placeholder", "en": "Seoul placeholder", "zip": "00000" }
   },
   "maps": { "hq": "https://maps.google.com/maps?q=placeholder&output=embed" },
-  "copyright": { "ko": "© Woori Tech. All rights reserved.", "en": "© Woori Tech. All rights reserved." }
+  "copyright": { "ko": "© LUA Corporation. All rights reserved.", "en": "© LUA Corporation. All rights reserved." }
 }
 ```
 
@@ -438,8 +438,8 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Woori Tech',
-  description: 'Woori Tech corporate website',
+  title: 'Lua',
+  description: 'Lua corporate website',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

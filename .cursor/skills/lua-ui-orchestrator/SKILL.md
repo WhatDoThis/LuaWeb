@@ -1,6 +1,6 @@
 ---
 name: lua-ui-orchestrator
-description: LuaWeb UI 4-에이전트 오케스트레이션. Layout Architect→Typography→Visual QA→Regression Guard. UI/푸터/헤더/wooritg/사용자 스크린샷 불만 시 사용.
+description: LuaWeb UI 4-에이전트 오케스트레이션. Layout Architect→Typography→Visual QA→Regression Guard. UI/푸터/헤더/사용자 스크린샷 불만 시 사용.
 ---
 
 # LuaWeb UI Orchestrator
@@ -36,7 +36,7 @@ User input + screenshot
 ## Main agent forbidden
 
 - Ad-hoc footer/header rewrite without agent 3+4
-- wooritg "dark clone" or logo invert without user ask
+- unauthorized dark footer clone or logo invert without user ask
 - GNB/lang switcher style change on layout tasks
 
 ## Legacy roles

@@ -1,7 +1,6 @@
 # 06-LAUNCH-GUIDE — 최종 브라우저 배포·오픈 가이드
 
-**대상**: **루아(Lua)** 기업 홍보 웹사이트 — 운영 오픈 종합 절차서  
-> (벤치마크 사이트 wooritg.com·「우리기술」 명칭과 무관. 본 가이드는 루아 공식 사이트 기준입니다.)
+**대상**: **루아(Lua)주식회사** 공식 홈페이지 — 운영 오픈 종합 절차서
 
 > **전제**: Next.js `output: 'export'` → `apps/web/out/` → Rocky Linux(iwinv) + nginx + HTTPS  
 > **Prd 현황**: `07-SERVER-PRODUCTION.md` — **D0~D6·S0~S3 완료** (`luacorp.co.kr`)  
