@@ -14,10 +14,22 @@ import { NewsBoardPanel } from '@/components/sections/pr/news-board-panel';
 import { loadNewsArticles, toBoardArticle } from '@/lib/board';
 import { getTranslations, setRequestLocale } from '@/lib/i18n';
 import { SubPageLayout } from '@/lib/sub-page-layout';
+import { buildSubPageMetadata } from '@/lib/sub-page-metadata';
 import { getFeatures } from '@repo/env';
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return buildSubPageMetadata({
+    locale,
+    namespace: 'prCenter',
+    pageKey: 'news',
+    currentPath: '/pr-center/news',
+  });
+}
 
 // 1. NewsPage
 export default async function NewsPage({ params }: PageProps) {

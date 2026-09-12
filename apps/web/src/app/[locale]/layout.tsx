@@ -15,6 +15,7 @@
 import { JsonLdOrganization } from '@/components/seo/json-ld-organization';
 import { SiteShell } from '@/components/layout/site-shell';
 import { routing } from '@/i18n/routing';
+import { loadMessages } from '@repo/content';
 import { getMessages, getTranslations, NextIntlClientProvider, setRequestLocale } from '@/lib/i18n';
 import { getSiteBaseUrl } from '@/lib/seo';
 import { getImage, getSite } from '@repo/env';
@@ -49,14 +50,18 @@ export async function generateMetadata({
   const baseUrl = getSiteBaseUrl();
   const title = site.companyName[locale as Locale] ?? t('title');
   const description = t('meta.description');
+  const homeMessages = await loadMessages(locale as Locale);
+  const keywords = homeMessages.home.meta.keywords;
   const ogImage = getImage('common.ogDefault');
 
   return {
+    metadataBase: new URL(baseUrl),
     title: {
       default: title,
       template: `%s | ${title}`,
     },
     description,
+    ...(keywords?.length ? { keywords } : {}),
     openGraph: {
       type: 'website',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -73,6 +78,11 @@ export async function generateMetadata({
       title,
       description,
     },
+    verification: {
+      other: {
+        'naver-site-verification': '14b991a4fbc350d19cd82efa996509089793d530',
+      },
+    },
   };
 }
 
@@ -86,6 +96,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const homeMessages = await loadMessages(locale as Locale);
+  const orgDescription = homeMessages.home.meta.description;
   const site = getSite();
   const logoAsset = getImage('common.logo');
   const footerLogoAsset = getImage('common.logoFooter');
@@ -97,7 +109,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <link rel="stylesheet" href={PRETENDARD_FONT_URL} crossOrigin="anonymous" />
       </head>
       <body className="font-sans antialiased">
-        <JsonLdOrganization locale={locale as Locale} />
+        <JsonLdOrganization locale={locale as Locale} description={orgDescription} />
         <NextIntlClientProvider messages={messages}>
           <SiteShell
             locale={locale as Locale}

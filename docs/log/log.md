@@ -2,6 +2,9 @@
 
 ## Log Index
 
+75. 2026-09-12 문서 인덱스·README·AGENTS 최신 동기화
+74. 2026-09-11 organic SEO·페이지별 metadata·06 가이드 Prd 반영
+73. 2026-09-11 검색엔진 등록 S0~S4 오케스트레이터·로드맵·06 가이드 보강
 72. 2026-09-11 07-SERVER-PRODUCTION D0~D6 완료 반영·Prd 재배포
 71. 2026-09-11 GNB 서브메뉴 EN 한줄(w-max·nowrap)
 70. 2026-09-11 EN 푸터 주소 줄바꿈·열 침범 방지
@@ -72,6 +75,29 @@
 1. 2026-08-22 프로젝트 기획 문서 6종 작성
 
 ## Log Body
+
+75. 2026-09-12 문서 인덱스·README·AGENTS 최신 동기화
+Purpose: report/main 신규 문서(11·13·06·07)가 인덱스·루트 README·AGENTS에 빠짐없이 반영되도록 갱신 Changes:
+
+00_ReportIndex: 11_ContentInventorySuccess, 13_SearchEngineRoadmap, main/06·07 항목 추가
+README.md·AGENTS.md: 런치·서버·배포·검색 로드맵 링크·search-engine 스킬 추가
+Changed files: docs/report/00_ReportIndex, README.md, AGENTS.md, docs/log/log.md
+
+74. 2026-09-11 organic SEO·페이지별 metadata·06 가이드 Prd 반영
+Purpose: 유료 광고 없이 검색 노출 힌트(title·description·JSON-LD·keywords) 적용, S0~S3 완료 내역·노출 확인 루틴을 06-LAUNCH-GUIDE에 반영 Changes:
+
+home.json meta description·keywords, sub-page-metadata.ts, 서브 페이지 generateMetadata
+layout metadataBase·naver verification, JSON-LD alternateName·description
+06-LAUNCH-GUIDE §9.0.0 Prd 기록·§9.5 노출 루틴·§9.6 organic SEO, 13_SearchEngineRoadmap S0~S3 완료
+Changed files: packages/content/**/home.json, apps/web/src/**, docs/main/06-LAUNCH-GUIDE.md, docs/report/13_SearchEngineRoadmap.md, docs/log/log.md
+
+73. 2026-09-11 검색엔진 등록 S0~S4 오케스트레이터·로드맵·06 가이드 보강
+Purpose: D0~D6 완료 후 Google·네이버·Bing 등록을 배포 오케스트레이터와 동일한 Phase S0~S4 흐름으로 진행할 수 있도록 문서·스킬 추가 Changes:
+
+search-engine-registration-orchestrator SKILL·phases.md (S0~S4)
+docs/report/13_SearchEngineRoadmap.md 실행 체크리스트
+06-LAUNCH-GUIDE §9 luacorp.co.kr 확정값·S0~S4·S4 모니터링 보강
+iwinv phases.md D6 후속 → S0~S4 링크 Changed files: .cursor/skills/search-engine-registration-orchestrator/**, docs/report/13_SearchEngineRoadmap.md, docs/main/06-LAUNCH-GUIDE.md, .cursor/skills/iwinv-deploy-orchestrator/phases.md, docs/log/log.md
 
 72. 2026-09-11 07-SERVER-PRODUCTION D0~D6 완료 반영·Prd 재배포
 Purpose: iwinv Prd 최종 현황 문서 갱신(D0~D6·DNS·HTTPS·테라웹메일), deploy.json ssl.enabled, site.json contact.email 반영 빌드·배포 Changes:

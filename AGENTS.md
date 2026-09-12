@@ -9,9 +9,12 @@ Static corporate site: Next.js 16 App Router, `output: 'export'`, ko/en, 17+ rou
 | Path | Role |
 |---|---|
 | `docs/main/` | PRD, architecture, schema (reference) |
-| `docs/main/07-SERVER-PRODUCTION.md` | **Prd iwinv 서버 현황** (Lite·firewalld·명령어) |
+| `docs/main/06-LAUNCH-GUIDE.md` | **운영 오픈 종합 가이드** (DNS·SSL·검색·organic SEO) |
+| `docs/main/07-SERVER-PRODUCTION.md` | **Prd iwinv 서버 현황** (D0~D6 완료·명령어) |
 | `docs/report/01_ImplementationRoadmap.md` | Full roadmap |
 | `docs/report/0N_Phase_N.md` | **Active execution checklist** |
+| `docs/report/12_iwinvDeployRoadmap.md` | iwinv Prd 배포 Phase D0~D6 |
+| `docs/report/13_SearchEngineRoadmap.md` | 검색엔진 등록 Phase S0~S4 |
 | `deploy/` | Dev(Windows) → Prd(Rocky Linux iwinv) |
 
 ## Commands
@@ -68,3 +71,4 @@ Visual QA **FAIL** or Regression **BLOCK** → do not report UI task complete to
 | Layout regression guard | `.cursor/skills/layout-regression-guard/SKILL.md` | anti-pattern BLOCK agent |
 | **Agent roster** | `.cursor/agents/README.md` | 에이전트 정의·Task prompt |
 | **iwinv deploy** | `.cursor/skills/iwinv-deploy-orchestrator/SKILL.md` | iwinv VM·ELCAP·보안·nginx·HTTPS·DNS·메일 단계별 Prd 배포 (Phase D0~D6) |
+| **Search engine registration** | `.cursor/skills/search-engine-registration-orchestrator/SKILL.md` | Google·네이버·Bing 등록 (Phase S0~S4, D0~D6 완료 후) |

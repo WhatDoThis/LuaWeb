@@ -15,9 +15,25 @@ import { BoardView } from '@/components/sections/pr/board-view';
 import { loadNewsArticle, loadNewsArticles } from '@/lib/board';
 import { getTranslations, setRequestLocale } from '@/lib/i18n';
 import { SubPageLayout } from '@/lib/sub-page-layout';
+import { buildNewsArticleMetadata } from '@/lib/sub-page-metadata';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en'; slug: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const article = loadNewsArticle(locale, slug);
+  if (!article) {
+    return {};
+  }
+  return buildNewsArticleMetadata({
+    locale,
+    title: article.title,
+    excerpt: article.excerpt,
+    slug,
+  });
+}
 
 // 1. generateStaticParams
 export function generateStaticParams() {

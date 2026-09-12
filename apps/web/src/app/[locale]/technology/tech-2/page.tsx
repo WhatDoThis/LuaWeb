@@ -12,8 +12,20 @@
 
 import { TechPageSections } from '@/components/sections/technology/tech-page-sections';
 import { SubPageLayout } from '@/lib/sub-page-layout';
+import { buildSubPageMetadata } from '@/lib/sub-page-metadata';
+import type { Metadata } from 'next';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return buildSubPageMetadata({
+    locale,
+    namespace: 'technology',
+    pageKey: 'tech2',
+    currentPath: '/technology/tech-2',
+  });
+}
 
 // 1. Tech2Page
 export default async function Tech2Page({ params }: PageProps) {

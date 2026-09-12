@@ -12,8 +12,20 @@
 
 import { CompanyCertificatesSection } from '@/components/sections/company/company-certificates-section';
 import { SubPageLayout } from '@/lib/sub-page-layout';
+import { buildSubPageMetadata } from '@/lib/sub-page-metadata';
+import type { Metadata } from 'next';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return buildSubPageMetadata({
+    locale,
+    namespace: 'company',
+    pageKey: 'certificates',
+    currentPath: '/company/certificates',
+  });
+}
 
 // 1. CertificatesPage
 export default async function CertificatesPage({ params }: PageProps) {

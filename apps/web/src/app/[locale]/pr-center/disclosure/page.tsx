@@ -12,8 +12,20 @@
 
 import { SubPageLayout } from '@/lib/sub-page-layout';
 import { getTranslations, setRequestLocale } from '@/lib/i18n';
+import { buildSubPageMetadata } from '@/lib/sub-page-metadata';
+import type { Metadata } from 'next';
 
 type PageProps = { params: Promise<{ locale: 'ko' | 'en' }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return buildSubPageMetadata({
+    locale,
+    namespace: 'prCenter',
+    pageKey: 'disclosure',
+    currentPath: '/pr-center/disclosure',
+  });
+}
 
 // 1. DisclosurePage
 export default async function DisclosurePage({ params }: PageProps) {

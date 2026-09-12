@@ -2,7 +2,15 @@
   "title": "LUA Corporation",
   "localeLabel": "Current language",
   "meta": {
-    "description": "LUA Corporation — Data Center Infrastructure and Operations"
+    "description": "LUA Corporation official website. Data center infrastructure and operations, AI-era power and cooling, site development. Based in Anyang, Gyeonggi, Korea.",
+    "keywords": [
+      "LUA Corporation",
+      "luacorp",
+      "data center",
+      "data center infrastructure",
+      "data center operations",
+      "AI infrastructure"
+    ]
   },
   "hero": {
     "slides": [

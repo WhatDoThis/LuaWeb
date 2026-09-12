@@ -137,5 +137,5 @@ curl -I https://www.YOUR-DOMAIN.com/ko/
 ## Phase 완료 후
 
 - [ ] `docs/main/06-LAUNCH-GUIDE.md` §8 오픈 점검
-- [ ] Search Console / 네이버 / Bing (선택)
+- [ ] 검색 등록 S0~S4 (`docs/report/13_SearchEngineRoadmap.md`, `.cursor/skills/search-engine-registration-orchestrator/`)
 - [ ] `docs/log/log.md` 갱신

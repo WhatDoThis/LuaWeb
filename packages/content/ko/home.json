@@ -2,7 +2,16 @@
   "title": "루아주식회사",
   "localeLabel": "현재 언어",
   "meta": {
-    "description": "루아주식회사 — 데이터센터 인프라 및 운영 기술"
+    "description": "루아주식회사(LUA Corporation) 공식 홈페이지. 데이터센터 인프라·운영 기술, AI 데이터센터 전력·냉각, 부지 개발. 경기 안양 본사.",
+    "keywords": [
+      "루아주식회사",
+      "LUA Corporation",
+      "luacorp",
+      "데이터센터",
+      "데이터센터 인프라",
+      "데이터센터 운영",
+      "AI 인프라"
+    ]
   },
   "hero": {
     "slides": [

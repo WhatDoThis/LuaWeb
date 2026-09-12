@@ -4,7 +4,8 @@
 > (벤치마크 사이트 wooritg.com·「우리기술」 명칭과 무관. 본 가이드는 루아 공식 사이트 기준입니다.)
 
 > **전제**: Next.js `output: 'export'` → `apps/web/out/` → Rocky Linux(iwinv) + nginx + HTTPS  
-> **관련 문서**: `deploy/README.md`, `deploy/rocky-linux/README.md`, `packages/env/site.json`, `packages/env/deploy.json`
+> **Prd 현황**: `07-SERVER-PRODUCTION.md` — **D0~D6·S0~S3 완료** (`luacorp.co.kr`)  
+> **관련 문서**: `deploy/README.md`, `deploy/rocky-linux/README.md`, `packages/env/site.json`, `packages/env/deploy.json`, `docs/report/13_SearchEngineRoadmap.md`
 
 ---
 
@@ -20,8 +21,9 @@
 | 6 | iwinv 도메인·DNS 연결 |
 | 7 | SSL(HTTPS) 적용 |
 | 8 | 오픈 전 점검 |
-| 9 | Google·네이버·Bing 검색 등록 |
-| 10 | 오픈 후 모니터링 |
+| 9 | Google·네이버·Bing 검색 등록 (**S0~S4**, `docs/report/13_SearchEngineRoadmap.md`) |
+| 9.6 | organic SEO (검색어·메타·JSON-LD) — 유료 광고 없이 |
+| 10 | 오픈 후·검색 **노출 확인** 모니터링 (§9.5, §11.2) |
 
 ### 용어 미리보기 (본문에서 반복 설명)
 
@@ -38,6 +40,7 @@
 | **robots.txt** | 검색로봇에게 “수집해도 되는 경로 / 하면 안 되는 경로”를 알려 주는 파일 |
 | **색인(Indexing)** | 검색엔진이 페이지를 읽어 검색 결과에 넣을 수 있게 등록하는 과정 |
 | **크롤링(Crawling)** | 검색로봇이 웹페이지를 방문·수집하는 행위 |
+| **organic SEO** | 검색광고 없이 title·description·콘텐츠로 검색 노출을 **유도**하는 작업 (순위·검색어 **보장 없음**) |
 
 ---
 
@@ -483,18 +486,100 @@ sudo certbot renew --dry-run
 검색 등록은 “사이트를 검색 결과에 **넣어 달라**”고 알리는 작업입니다.  
 등록 직후 바로 1위에 노출되지는 않으며, **색인**까지 보통 **수일~수주** 걸릴 수 있습니다.
 
-### 9.0 공통 사전 조건
+> **Prd(luacorp.co.kr)**: iwinv **D0~D6(HTTPS 공개) 완료 후** 진행.  
+> **실행 체크리스트**: `docs/report/13_SearchEngineRoadmap.md`  
+> **에이전트 스킬**: `.cursor/skills/search-engine-registration-orchestrator/` — 배포(D0~D6)와 동일하게 **Phase S0→S4 한 단계씩** 진행.
 
-| 조건 | 확인 방법 |
+### 9.0 Phase S0~S4 개요 (오케스트레이터)
+
+| Phase | 목표 | 완료 게이트 |
+|---|---|---|
+| **S0** | SEO 사전 게이트 | HTTPS·robots·sitemap 정상, 계정 준비 |
+| **S1** | Google Search Console | 소유 확인 + sitemap 성공 |
+| **S2** | 네이버 서치어드바이저 | 소유 확인 + 사이트맵 제출 |
+| **S3** | Bing Webmaster Tools | GSC 가져오기 또는 수동 + sitemap |
+| **S4** | 사후 모니터링 | 색인·404·월간 점검 |
+
+```
+S0 게이트 (sitemap·robots·HTTPS)
+  ↓
+S1 Google — 속성·소유 확인·sitemap·URL 검사
+  ↓
+S2 네이버 — 등록·소유 확인·sitemap·(선택) 수집 요청
+  ↓
+S3 Bing — Import from Google Search Console (권장)
+  ↓
+S4 색인·트래픽 모니터링
+```
+
+**루아 Prd 확정값** (S0~S3 입력 시 그대로 사용):
+
+| 항목 | 값 |
 |---|---|
-| HTTPS 정상 | `https://대표도메인/ko/` 접속 |
-| robots.txt 허용 | `User-agent: *` + `Allow: /` (본 프로젝트 기본값) |
-| sitemap 접근 | 브라우저에서 `/sitemap.xml` 200 OK |
-| 대표 URL 확정 | 등록·sitemap·site.json 모두 **동일 도메인** |
+| 대표 URL | `https://www.luacorp.co.kr` |
+| Google 속성 | **도메인** `luacorp.co.kr` *(www·http/https 전체)* |
+| 네이버·Bing 사이트 URL | `https://www.luacorp.co.kr` |
+| sitemap (네이버·Bing) | `https://www.luacorp.co.kr/sitemap.xml` |
+| sitemap (Google 입력) | `sitemap.xml` *(경로만)* |
+
+### 9.0.0 Prd 완료 기록 (2026-09-11)
+
+| Phase | 방법 | 상태 |
+|---|---|---|
+| S0 | HTTPS·robots·sitemap 게이트 | ✅ |
+| S1 Google | **도메인** `luacorp.co.kr` + iwinv DNS **TXT** (`google-site-verification=...`) | ✅ |
+| S1 sitemap | `sitemap.xml` 제출 — 색인 **승인 진행 중** (정상) | ✅ |
+| S2 네이버 | `https://www.luacorp.co.kr` + HTML `naver1ca80d5dc74efb3674336faa5e15901b.html` | ✅ |
+| S2 robots | `https://www.luacorp.co.kr/robots.txt` — **수집 요청**·실시간 조회는 **https+www** URL 사용 | ✅ |
+| S3 Bing | **Import from Google Search Console** (자동 등록) | ✅ |
+
+### 9.0.1 S0 — SEO 사전 게이트 (선행 필수)
+
+**선행**: `07-SERVER-PRODUCTION.md` — D0~D6 완료.
+
+Dev PC 검증:
+
+```powershell
+curl.exe -sI "https://www.luacorp.co.kr/ko/"
+curl.exe -s "https://www.luacorp.co.kr/robots.txt"
+curl.exe -s "https://www.luacorp.co.kr/sitemap.xml" | Select-Object -First 5
+```
+
+| 조건 | 확인 방법 | Prd 기대값 |
+|---|---|---|
+| HTTPS 정상 | `/ko/` 200, 자물쇠 | ✅ |
+| robots.txt 허용 | `User-agent: *` + `Allow: /` | ✅ |
+| sitemap 접근 | `/sitemap.xml` 200, `<loc>` 도메인 | `www.luacorp.co.kr` |
+| 대표 URL 일치 | site.json·sitemap·등록 URL 동일 | `https://www.luacorp.co.kr` |
+| 검색 Bot 미차단 | firewalld·nginx에서 Googlebot/Yeti/bingbot 차단 없음 | ✅ |
+
+- [x] S0 게이트 통과 → **S1 Google** 시작
+- [x] Google·네이버 로그인 계정 확정
+- [x] 소유 확인: Google **DNS TXT** / 네이버 **HTML 파일** / Bing **GSC 가져오기**
+
+### 9.0.2 소유 확인 — 1회 빌드·배포 (HTML 파일 권장)
+
+정적 export이므로 Search Console 등이 주는 파일을 **`apps/web/public/`** 에 넣고 빌드·배포합니다.
+
+```
+apps/web/public/googleXXXXXXXX.html
+apps/web/public/naverXXXXXXXX.html    (네이버 HTML 방식)
+apps/web/public/BingSiteAuth.xml      (Bing 수동 등록 시만; GSC 가져오기면 생략 가능)
+```
+
+```powershell
+cd c:\Project\LuaWeb
+npm exec --yes pnpm@9.15.9 build
+# apps/web/out/ → /var/www/lua/releases/<timestamp>/ 업로드 (D3과 동일)
+```
+
+메타 태그 방식은 §10.2, DNS TXT는 §10.3·iwinv DNS 관리 참고.
 
 ---
 
-### 9.1 Google — Search Console (구글 서치 콘솔)
+### 9.1 S1 — Google Search Console (구글 서치 콘솔)
+
+> **Phase S1** — S0 게이트 통과 후 진행.
 
 **공식**: [Search Console 속성 추가](https://support.google.com/webmasters/answer/34592?hl=ko)
 
@@ -510,7 +595,9 @@ sudo certbot renew --dry-run
 | **도메인** (`example.com`) | `http`/`https`, `www`/non-www 전체 | **DNS TXT 레코드만** |
 | **URL 접두어** (`https://www.example.com/`) | HTML 태그·파일 업로드 등 선택지 많음 | HTML 메타 태그, HTML 파일, DNS 등 |
 
-**권장(초보)**: URL 접두어 `https://www.YOUR-DOMAIN.com/` — 운영 대표 URL과 **완전히 동일**하게 입력(끝 `/` 포함).
+**Prd 적용**: **도메인** `luacorp.co.kr` — iwinv DNS `@` TXT 추가 (기존 SPF TXT **유지**).
+
+**대안(초보)**: URL 접두어 `https://www.luacorp.co.kr/` — HTML 파일·메타 태그 등 선택지 많음.
 
 #### 소유권 확인 방법 (URL 접두어 기준)
 
@@ -551,7 +638,9 @@ sudo certbot renew --dry-run
 
 ---
 
-### 9.2 네이버 — 서치어드바이저 (Search Advisor)
+### 9.2 S2 — 네이버 서치어드바이저 (Search Advisor)
+
+> **Phase S2** — S1 Google 소유 확인·sitemap 제출 후 진행 (순서 바꿔도 되나 Bing GSC 가져오기는 S1 후가 빠름).
 
 **공식**: [시작하기](https://searchadvisor.naver.com/start), [robots.txt](https://searchadvisor.naver.com/guide/seo-basic-robots), [사이트맵 제출](https://searchadvisor.naver.com/guide/request-feed)
 
@@ -559,7 +648,7 @@ sudo certbot renew --dry-run
 
 1. https://searchadvisor.naver.com/
 2. 네이버 로그인 → **웹마스터 도구**
-3. **사이트 등록** — `https://www.YOUR-DOMAIN.com` (**http와 https 별도**. HTTPS 사이트면 **https** 로 등록)
+3. **사이트 등록** — `https://www.luacorp.co.kr` (**http와 https 별도**. HTTPS 사이트면 **https** 로 등록)
 
 #### 소유 확인
 
@@ -578,7 +667,7 @@ sudo certbot renew --dry-run
 ```
 User-agent: *
 Allow: /
-Sitemap: https://www.YOUR-DOMAIN.com/sitemap.xml
+Sitemap: https://www.luacorp.co.kr/sitemap.xml
 ```
 
 주의 (네이버 공식):
@@ -591,7 +680,7 @@ Sitemap: https://www.YOUR-DOMAIN.com/sitemap.xml
 #### 사이트맵 제출
 
 1. **요청 → 사이트맵 제출**
-2. `https://www.YOUR-DOMAIN.com/sitemap.xml` 입력
+2. `https://www.luacorp.co.kr/sitemap.xml` 입력
 
 **네이버 제한 (공식)**:
 
@@ -612,7 +701,9 @@ Sitemap: https://www.YOUR-DOMAIN.com/sitemap.xml
 
 ---
 
-### 9.3 Bing — Webmaster Tools (빙 웹마스터 도구)
+### 9.3 S3 — Bing Webmaster Tools (빙 웹마스터 도구)
+
+> **Phase S3** — **S1 Google 완료 후** `Import from Google Search Console` 권장 (약 30초).
 
 **공식**: [Bing Webmaster Tools](https://www.bing.com/webmasters), [시작 가이드(2025)](https://blogs.bing.com/webmaster/June-2025/Start-Using-Bing-Webmaster-Tools-to-Improve-Your-Site-Visibility)
 
@@ -628,10 +719,10 @@ Google 등록을 먼저 끝낸 뒤 이 방법을 쓰면 **30초 내** 설정 가
 
 #### 수동 등록
 
-1. **Add a site** → `https://www.YOUR-DOMAIN.com`
+1. **Add a site** → `https://www.luacorp.co.kr`
 2. 소유권 확인: XML 파일(`BingSiteAuth.xml`) 루트 업로드, 메타 태그, DNS TXT/CNAME 중 선택
 3. **Sitemaps → Submit sitemap**
-4. **전체 URL** 입력: `https://www.YOUR-DOMAIN.com/sitemap.xml`  
+4. **전체 URL** 입력: `https://www.luacorp.co.kr/sitemap.xml`  
    (Google과 달리 Bing은 **전체 URL** 필요 — `sitemap.xml` 만 넣으면 실패하는 경우 있음)
 
 #### (선택) IndexNow
@@ -643,11 +734,94 @@ Google 등록을 먼저 끝낸 뒤 이 방법을 쓰면 **30초 내** 설정 가
 
 ### 9.4 검색 등록 요약표
 
-| 플랫폼 | URL | 소유 확인 | 사이트맵 입력 형식 | 공식 가이드 |
+| 플랫폼 | URL | 소유 확인 (Prd) | 사이트맵 입력 형식 | 공식 가이드 |
 |---|---|---|---|---|
-| Google | search.google.com/search-console | DNS TXT / HTML 파일 / 메타 태그 | `sitemap.xml` (경로만) | [도움말](https://support.google.com/webmasters/answer/34592?hl=ko) |
-| 네이버 | searchadvisor.naver.com | HTML 파일 / 메타 태그 / DNS | 전체 URL | [사이트맵](https://searchadvisor.naver.com/guide/request-feed) |
-| Bing | bing.com/webmasters | GSC 가져오기 / 파일 / 메타 / DNS | **전체 URL** | [Bing 블로그](https://blogs.bing.com/webmaster/June-2025/Start-Using-Bing-Webmaster-Tools-to-Improve-Your-Site-Visibility) |
+| Google | search.google.com/search-console | **DNS TXT** `@` | `sitemap.xml` (경로만) | [도움말](https://support.google.com/webmasters/answer/34592?hl=ko) |
+| 네이버 | searchadvisor.naver.com | **HTML** `naver1ca80d5dc74efb3674336faa5e15901b.html` | 전체 URL | [사이트맵](https://searchadvisor.naver.com/guide/request-feed) |
+| Bing | bing.com/webmasters | **GSC 가져오기** | **전체 URL** (자동) | [Bing 블로그](https://blogs.bing.com/webmaster/June-2025/Start-Using-Bing-Webmaster-Tools-to-Improve-Your-Site-Visibility) |
+
+> **네이버 robots.txt 주의**: [공식 가이드](https://searchadvisor.naver.com/guide/seo-basic-robots) — robots는 **호스트·프로토콜별** 적용. URL 실시간 조회·수집은 **`https://www.luacorp.co.kr`** 기준. `http://luacorp.co.kr`(non-www) 조회 시 301 때문에 **「없음」 오탐** 가능.
+
+---
+
+### 9.5 S4 — 검색 노출 확인·모니터링 (지속)
+
+> **Phase S4** — S1~S3 완료 후. **검색어를 “설정”하는 메뉴는 없음** — organic 노출은 콘텐츠·메타 + 시간.
+
+#### 9.5.1 검색어는 어떻게 정해지나
+
+| 요인 | 프로젝트 반영 위치 |
+|---|---|
+| `<title>` · `description` | `packages/content/*/home.json` · 페이지별 `generateMetadata` |
+| 본문·제목 | `packages/content/` JSON |
+| JSON-LD Organization | `json-ld-organization.tsx` |
+| sitemap·robots | 빌드 시 자동 (`sitemap.ts`, `robots.ts`) |
+
+**빨리 잡히기 쉬운 검색어**: `루아주식회사`, `LUA Corporation`, `luacorp`, `site:luacorp.co.kr`  
+**경쟁 큰 일반어**(`데이터센터` 등): 순위 보장 없음 — §9.6 organic SEO로 **유도**만 가능.
+
+#### 9.5.2 노출 확인 루틴
+
+**1~2주 후 (최초)**
+
+| 확인 | 방법 |
+|---|---|
+| Google 색인 | Search Console → **색인 생성** 페이지 수 |
+| Google 검색어 | Search Console → **실적** → 검색어 *(데이터 처리 중이면 며칠 대기)* |
+| Google 수동 검색 | `site:luacorp.co.kr` · `루아주식회사` · `luacorp` |
+| 네이버 | `site:www.luacorp.co.kr` · `루아주식회사` |
+| 네이버 리포트 | 서치어드바이저 → **요약·수집·색인** |
+| Bing | Webmaster Tools → **Pages indexed** |
+
+**월 1회**
+
+- [ ] Search Console — 색인 오류·404 증가
+- [ ] 네이버 — robots/sitemap·수집 리포트
+- [ ] §11.2 서버·SSL 점검
+- [ ] 실적 검색어 보고 → description·뉴스 콘텐츠 조정 (§9.6)
+
+**콘텐츠·SEO 수정 후**
+
+```
+JSON/메타 수정 → pnpm build → releases 업로드
+  → (선택) GSC URL 검사 · 네이버 웹 페이지·robots.txt 수집 요청
+```
+
+#### 9.5.3 기대 기간 (참고)
+
+| 플랫폼 | 색인·실적 데이터 |
+|---|---|
+| Google | 수일~2주 |
+| 네이버 | 1~4주 |
+| Bing | GSC 연동 후 수일~수주 |
+
+---
+
+### 9.6 organic SEO — 유료 광고 없이 적용 (Prd 반영)
+
+검색 **순위·검색어를 지정하는 설정은 없음**. 아래는 **노출 힌트**를 사이트에 박는 작업.
+
+| 항목 | 파일 | Prd 적용 |
+|---|---|---|
+| 홈 description·keywords | `packages/content/ko|en/home.json` → `meta` | ✅ 키워드·설명 보강 |
+| 페이지별 title·description | `apps/web/src/lib/sub-page-metadata.ts` + 각 `page.tsx` `generateMetadata` | ✅ 서브 페이지 |
+| metadataBase · naver verification | `apps/web/src/app/[locale]/layout.tsx` | ✅ |
+| JSON-LD alternateName·description | `json-ld-organization.tsx` | ✅ |
+| 네이버 소유 확인 파일 | `apps/web/public/naver1ca80d5dc74efb3674336faa5e15901b.html` | ✅ |
+
+**수정 후 배포 (필수)**:
+
+```powershell
+cd c:\Project\LuaWeb
+npm exec --yes pnpm@9.15.9 typecheck
+npm exec --yes pnpm@9.15.9 build
+# apps/web/out/ → /var/www/lua/releases/<YYYYMMDD_HHMM>/ → current 심볼릭 (§4, 07-SERVER-PRODUCTION)
+```
+
+**추가 권장 (운영)**
+
+- 뉴스·공지 등록 → sitemap 자동 포함 → (선택) GSC URL 검사·네이버 수집 요청
+- description에 **회사명·핵심 사업어**를 자연스럽게 포함 (키워드 나열 금지)
 
 ---
 
@@ -658,9 +832,9 @@ Google 등록을 먼저 끝낸 뒤 이 방법을 쓰면 **30초 내** 설정 가
 ### 10.1 HTML 파일 (가장 단순)
 
 ```
-apps/web/public/googleXXXXXXXX.html
-apps/web/public/naverXXXXXXXX.html
-apps/web/public/BingSiteAuth.xml
+apps/web/public/googleXXXXXXXX.html          (Google URL 접두어 방식 시)
+apps/web/public/naver1ca80d5dc74efb3674336faa5e15901b.html   (Prd 네이버)
+apps/web/public/BingSiteAuth.xml             (Bing 수동 등록 시만)
 ```
 
 → `pnpm build` → `out/` 루트에 복사됨 → 서버 업로드
@@ -685,6 +859,8 @@ verification: {
 iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.  
 코드 변경 없이 확인 가능 — **DNS 전파 대기** 필요.
 
+**Prd Google TXT** (2026-09-11): `@` TXT `google-site-verification=...` — SPF TXT와 **공존**.
+
 ---
 
 ## 11. 오픈 후 운영·재배포
@@ -700,10 +876,17 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
 
 ### 11.2 정기 점검 (월 1회 권장)
 
+**서버**
+
 - [ ] SSL 만료일 — `certbot certificates`
 - [ ] nginx·디스크 용량 — `df -h`, 로그 로테이션
-- [ ] Search Console — **색인 생성** 오류, 404 증가
+
+**검색·노출** (상세 §9.5.2)
+
+- [ ] Search Console — **색인 생성** 오류, 404 증가, **실적 → 검색어**
 - [ ] 네이버 서치어드바이저 — 수집·색인 리포트, robots/sitemap 오류
+- [ ] Bing Webmaster Tools — indexed pages
+- [ ] 수동 검색: `site:luacorp.co.kr`, `루아주식회사`, `site:www.luacorp.co.kr`
 
 ### 11.3 로그
 
@@ -721,7 +904,8 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
 | `/ko/` 404 | `out/` 미업로드·root 경로 오류 | nginx `root`, `try_files` 확인 |
 | sitemap 도메인이 example.com | `site.json` 미변경 상태로 빌드 | domain 수정 → **재빌드** → 재업로드 |
 | Google 소유 확인 실패 | 파일·메타 미배포 또는 http/https 불일치 | URL 접두어와 실제 접속 URL 일치 확인 |
-| 네이버만 색인 안 됨 | Yeti 차단·http/https 불일치 | robots.txt, **https** 로 사이트 등록 |
+| 네이버만 색인 안 됨 | Yeti 차단·http/https 불일치 | robots.txt, **https+www** 로 등록·조회 |
+| 네이버 robots 「없음」 | `http://luacorp.co.kr` 조회 시 301 | **`https://www.luacorp.co.kr/robots.txt`** · robots.txt **수집 요청** |
 | Bing sitemap 오류 | 경로만 제출 | `https://도메인/sitemap.xml` 전체 URL 제출 |
 
 ---
@@ -745,9 +929,9 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
          ↓
 [8] 브라우저·sitemap·robots 최종 점검
          ↓
-[9] Google Search Console → 네이버 서치어드바이저 → Bing
+[9] S0~S3 검색 등록 + §9.6 organic SEO
          ↓
-[10] 색인·트래픽 모니터링, 콘텐츠 변경 시 재빌드·재배포
+[10] S4 노출 확인 루틴 (§9.5), 콘텐츠 변경 시 재빌드·재배포
 ```
 
 ---
@@ -769,15 +953,16 @@ iwinv DNS에 Google·네이버·Bing이 준 TXT 문자열 추가.
 
 ## 15. 확인 필요 (운영 정보 확정 시 갱신)
 
-- [ ] iwinv VM 공인 IP
-- [ ] 최종 운영 도메인 (www 유무)
-- [ ] 대표 URL 하나로 통일(301)
-- [ ] 검색 등록 담당 Google·네이버·Microsoft 계정
+- [x] iwinv VM 공인 IP — `49.247.132.149` (`07-SERVER-PRODUCTION.md`)
+- [x] 최종 운영 도메인 — `luacorp.co.kr` / `www.luacorp.co.kr`
+- [x] 대표 URL — `https://www.luacorp.co.kr` (301 통일)
+- [x] 검색 등록 — Google·네이버·Bing (S0~S3, 2026-09-11)
+- [ ] S4 노출 확인 루틴 지속 (§9.5.2)
 - [ ] CI → iwinv 자동 배포 SSH 키·시크릿
 
 ---
 
-_문서 버전: 2026-08-23 | 루아(Lua) · LuaWeb 정적 export · iwinv Rocky Linux · nginx · Let’s Encrypt 기준_
+_문서 버전: 2026-09-11 (2차) | luacorp.co.kr Prd · S0~S3 완료 · §9.5 노출 루틴 · §9.6 organic SEO 반영_
 
 **변경 이력**
 

@@ -12,8 +12,10 @@
 | `08_Phase_6.md` | **Phase 6 실행 가이드** — JSON 뉴스 게시판 목록/상세/검색/페이지네이션 |
 | `09_Phase_7.md` | **Phase 7 실행 가이드** — 홈 슬라이더·SEO·CI 배포 파이프라인 |
 | `10_ContentInventory.md` | **콘텐츠 제출 요청서** — 페이지별 본문·사진·연락처만 (UI·아이콘 제외) |
+| `11_ContentInventorySuccess.md` | **확정 콘텐츠 인벤토리** — 제출 완료본·이미지·JSON 반영 기준 |
 | `IMAGE-REQUEST.md` | `pnpm check:images` 실행 시 자동 생성되는 이미지 발주서 |
 | `12_iwinvDeployRoadmap.md` | **iwinv Prd 배포 로드맵** — Phase D0~D6 (VM·ELCAP·보안·nginx·DNS·HTTPS·메일) |
+| `13_SearchEngineRoadmap.md` | **검색엔진 등록 로드맵** — Phase S0~S4 (Google·네이버·Bing·모니터링) |
 
 ## main 폴더 (기반 자료)
 
@@ -25,3 +27,5 @@
 | `main/03-CONTENT-SCHEMA.md` | JSON 스키마 원본 |
 | `main/04-PHASE-PLAN.md` | Phase 한 줄 요약 (상세는 report 로드맵) |
 | `main/05-CONVENTIONS.md` | 코딩 컨벤션 원본 |
+| `main/06-LAUNCH-GUIDE.md` | **운영 오픈 종합 가이드** — 빌드·배포·DNS·SSL·검색 등록·organic SEO |
+| `main/07-SERVER-PRODUCTION.md` | **Prd 서버 현황** — iwinv D0~D6 완료 기록·명령어·재배포 |

@@ -116,8 +116,12 @@ sudo firewall-cmd --reload
 |---|---|
 | `AGENTS.md` | AI/개발 에이전트 가이드 |
 | `deploy/README.md` | Dev → Prd 배포 개요 |
-| `docs/main/06-LAUNCH-GUIDE.md` | DNS·SSL·검색 등록 |
+| `docs/main/06-LAUNCH-GUIDE.md` | DNS·SSL·검색 등록·organic SEO |
+| `docs/main/07-SERVER-PRODUCTION.md` | Prd iwinv 서버 현황 (D0~D6) |
 | `docs/report/01_ImplementationRoadmap.md` | 구현 로드맵 |
+| `docs/report/12_iwinvDeployRoadmap.md` | iwinv Prd 배포 Phase D0~D6 |
+| `docs/report/13_SearchEngineRoadmap.md` | 검색엔진 등록 Phase S0~S4 |
+| `docs/report/00_ReportIndex` | report·main 문서 전체 목록 |
 
 ---
 
